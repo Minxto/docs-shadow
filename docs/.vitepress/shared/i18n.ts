@@ -31,6 +31,7 @@ type UiLabels = {
   next: string
   lastUpdated: string
   langMenu: string
+  onThisPage: string
   homeTitle: string
   homeSubtitle: string
   homeWebsite: string
@@ -156,6 +157,7 @@ const uiEn: UiLabels = {
   next: 'Next',
   lastUpdated: 'Last updated',
   langMenu: 'Language',
+  onThisPage: 'On this page',
   homeTitle: 'Welcome to Shadow Docs',
   homeSubtitle: 'Make sure to follow every step 100% correctly.',
   homeWebsite: 'Website',
@@ -187,6 +189,7 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     next: 'Suivant',
     lastUpdated: 'Dernière mise à jour',
     langMenu: 'Langue',
+    onThisPage: 'Sur cette page',
     homeTitle: 'Bienvenue sur Shadow Docs',
     homeSubtitle: 'Assurez-vous de suivre toutes les étapes à 100 % correctement.',
     homeWebsite: 'Site web',
@@ -215,6 +218,7 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     next: 'Siguiente',
     lastUpdated: 'Última actualización',
     langMenu: 'Idioma',
+    onThisPage: 'En esta página',
     homeTitle: 'Bienvenido a Shadow Docs',
     homeSubtitle: 'Asegúrate de seguir todos los pasos al 100 % correctamente.',
     homeWebsite: 'Sitio web',
@@ -243,6 +247,7 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     next: 'Próximo',
     lastUpdated: 'Última atualização',
     langMenu: 'Idioma',
+    onThisPage: 'Nesta página',
     homeTitle: 'Bem-vindo ao Shadow Docs',
     homeSubtitle: 'Certifique-se de seguir todas as etapas 100% corretamente.',
     homeWebsite: 'Site',
@@ -271,6 +276,7 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     next: 'Successivo',
     lastUpdated: 'Ultimo aggiornamento',
     langMenu: 'Lingua',
+    onThisPage: 'In questa pagina',
     homeTitle: 'Benvenuto su Shadow Docs',
     homeSubtitle: 'Assicurati di seguire tutti i passaggi al 100% correttamente.',
     homeWebsite: 'Sito web',
@@ -299,6 +305,7 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     next: 'Tiếp',
     lastUpdated: 'Cập nhật lần cuối',
     langMenu: 'Ngôn ngữ',
+    onThisPage: 'Trên trang này',
     homeTitle: 'Chào mừng đến Shadow Docs',
     homeSubtitle: 'Hãy chắc chắn thực hiện tất cả các bước 100% chính xác.',
     homeWebsite: 'Trang web',
@@ -327,6 +334,7 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     next: '下一页',
     lastUpdated: '最后更新',
     langMenu: '语言',
+    onThisPage: '本页内容',
     homeTitle: '欢迎使用 Shadow Docs',
     homeSubtitle: '请确保 100% 正确地完成所有步骤。',
     homeWebsite: '网站',

@@ -6,6 +6,7 @@ import GbIcon from './GbIcon.vue'
 import ThemeToggle from './ThemeToggle.vue'
 import LangSwitcher from './LangSwitcher.vue'
 import PatchNotes from './PatchNotes.vue'
+import OnThisPage from './OnThisPage.vue'
 import { getUiLabels } from '../shared/i18n'
 import { useLocalePath } from './utils'
 
@@ -187,7 +188,8 @@ function pageIcon(link: string) {
       </aside>
 
       <main class="gb-main">
-        <div class="gb-main-inner">
+        <div class="gb-main-row">
+          <div class="gb-main-inner">
           <div v-if="isDocPage && currentSection" class="gb-page-toolbar">
             <a :href="currentSection.base" class="gb-breadcrumb">
               <img src="/logo.webp" alt="Shadow" class="gb-page-logo" />
@@ -230,9 +232,12 @@ function pageIcon(link: string) {
               <strong>{{ nextPage.text }}</strong>
             </a>
           </footer>
+          </div>
         </div>
       </main>
     </div>
+
+    <OnThisPage v-if="isDocPage" />
 
     <ThemeToggle />
   </div>

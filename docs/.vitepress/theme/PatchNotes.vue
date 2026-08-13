@@ -5,13 +5,10 @@ const open = ref(false)
 const rootRef = ref<HTMLElement | null>(null)
 
 const patchNotes = [
-  'Fixed the **VAL 5** error that occurred when you stayed in the lobby for a long time.',
-  'Fixed **VAL -102** errors that occurred for some users right after launching the emulator.',
-  'Optimized the bypass system to prevent errors.',
-  'Improved token retrieval, which was sometimes rejected.',
-  'Added error logs to help track down bugs affecting certain users.',
-  'When using your **Discord ID** for the first time, you won\'t need to enter it again when you restart.',
-  'Added the **MFA bypass system,** activated by **pressing F7.** You must be in the Valorant lobby for it to work.'
+  'Fixed an issue where, when the connection to the emulator was lost, the game would close immediately to prevent a temporary ban.',
+  'Readapted the modules to prevent **error -102**, which should now occur much less frequently.',
+  'Fully optimized the emulator to reduce resource usage.',
+  'Added a **voice notification system** that tells you when the emulator is ready and when the bypass is injected, so you know when you can play or when you should wait.'
 ]
 
 function toggle() {
