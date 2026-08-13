@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
+    "docs:build": "vitepress build docs",
     "preview": "vitepress preview docs"
   },
-  "devDependencies": {
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
     "vitepress": "^1.6.3"
   }
 }
