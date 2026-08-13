@@ -1,18 +1,16 @@
 <template>
   <div class="gb-video">
-    <video controls playsinline preload="metadata" :src="videoSrc">
-      {{ fallbackText }}
-    </video>
+    <div class="gb-video-embed">
+      <iframe
+        :src="streamableEmbedUrl"
+        title="Shadow Emulator tutorial"
+        allow="fullscreen; encrypted-media"
+        allowfullscreen
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{
-  fallbackText?: string
-}>(), {
-  fallbackText: 'Your browser does not support video playback.'
-})
-
-// Dynamic path so Vite does not try to bundle the public video at build time.
-const videoSrc = `/videos/${'easy-bypass.mp4'}`
+const streamableEmbedUrl = 'https://streamable.com/e/c3779m'
 </script>

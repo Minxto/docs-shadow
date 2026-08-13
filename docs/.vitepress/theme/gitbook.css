@@ -840,6 +840,29 @@ html:not(.dark) .gb-search kbd {
   margin: 1.75rem 0 2rem;
 }
 
+.gb-content.vp-doc .gb-video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  background: #000;
+  line-height: 0;
+  box-shadow: inset 0 0 0 1px var(--gb-border-strong);
+}
+
+.gb-content.vp-doc .gb-video-embed iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 102%;
+  height: 116%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: #000;
+}
+
 .gb-content.vp-doc .gb-video video {
   width: 100%;
   max-width: 100%;
