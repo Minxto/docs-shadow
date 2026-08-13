@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# VitePress build output
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.idea/
+*.swp
+*.swo
+
+# Large media (host externally — GitHub limit 100 MB/file)
+docs/public/videos/
+*.mp4
+
+# Optional: source copies at project root (already in docs/public/)
+/logo.webp
+/ShadowEmu.exe
