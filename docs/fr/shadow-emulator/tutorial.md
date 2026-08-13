@@ -6,11 +6,7 @@ Shadow Emulator est un outil **sans redémarrage** qui vous permet de lancer plu
 
 Si vous rencontrez des problèmes ou si le support n'est pas disponible pour vous aider à les résoudre, utilisez l'émulateur comme solution **sans redémarrage** pour faciliter les choses.
 
-<div class="gb-video">
-  <video controls playsinline preload="metadata" src="/videos/easy-bypass.mp4">
-    Votre navigateur ne prend pas en charge la lecture vidéo.
-  </video>
-</div>
+<TutorialVideo fallback-text="Votre navigateur ne prend pas en charge la lecture vidéo." />
 
 Pour une configuration étape par étape, consultez [Comment utiliser](/shadow-emulator/how-to-use) et [Corriger les erreurs](/shadow-emulator/fix-errors).
 

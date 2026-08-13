@@ -6,11 +6,7 @@ Shadow Emulator è uno strumento **senza riavvio** che ti permette di avviare pi
 
 Se riscontri problemi o il supporto non è disponibile per aiutarti a risolverli, usa l'emulatore come soluzione **senza riavvio** per semplificare le cose.
 
-<div class="gb-video">
-  <video controls playsinline preload="metadata" src="/videos/easy-bypass.mp4">
-    Il tuo browser non supporta la riproduzione video.
-  </video>
-</div>
+<TutorialVideo fallback-text="Il tuo browser non supporta la riproduzione video." />
 
 Per la configurazione passo passo, consulta [Come usare](/shadow-emulator/how-to-use) e [Correggere errori](/shadow-emulator/fix-errors).
 

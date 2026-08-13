@@ -6,11 +6,7 @@ Shadow Emulator is a **no-restart** tool that lets you launch multiple games wit
 
 If you run into issues or support is not available to help you fix them, use the emulator as a **no-restart** solution to make things easier.
 
-<div class="gb-video">
-  <video controls playsinline preload="metadata" src="/videos/easy-bypass.mp4">
-    Your browser does not support video playback.
-  </video>
-</div>
+<TutorialVideo />
 
 For step-by-step setup, see [How to use](/shadow-emulator/how-to-use) and [Fix Errors](/shadow-emulator/fix-errors).
 

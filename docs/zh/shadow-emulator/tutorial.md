@@ -6,11 +6,7 @@ Shadow Emulator 是一款**无需重启**的工具，可让您启动多个游戏
 
 如果您遇到问题或无法获得支持帮助您解决，请将模拟器用作**无需重启**的解决方案以简化操作。
 
-<div class="gb-video">
-  <video controls playsinline preload="metadata" src="/videos/easy-bypass.mp4">
-    您的浏览器不支持视频播放。
-  </video>
-</div>
+<TutorialVideo fallback-text="您的浏览器不支持视频播放。" />
 
 有关分步设置，请参阅[使用方法](/shadow-emulator/how-to-use)和[修复错误](/shadow-emulator/fix-errors)。
 

@@ -6,11 +6,7 @@ Shadow Emulator là công cụ **không cần khởi động lại** cho phép b
 
 Nếu bạn gặp sự cố hoặc không có hỗ trợ để giúp bạn khắc phục, hãy sử dụng trình giả lập như giải pháp **không cần khởi động lại** để mọi thứ dễ dàng hơn.
 
-<div class="gb-video">
-  <video controls playsinline preload="metadata" src="/videos/easy-bypass.mp4">
-    Trình duyệt của bạn không hỗ trợ phát video.
-  </video>
-</div>
+<TutorialVideo fallback-text="Trình duyệt của bạn không hỗ trợ phát video." />
 
 Để thiết lập từng bước, xem [Cách sử dụng](/shadow-emulator/how-to-use) và [Sửa lỗi](/shadow-emulator/fix-errors).
 

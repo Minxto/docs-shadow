@@ -6,11 +6,7 @@ O Shadow Emulator é uma ferramenta **sem reinício** que permite iniciar vário
 
 Se você tiver problemas ou o suporte não estiver disponível para ajudá-lo a resolvê-los, use o emulador como solução **sem reinício** para facilitar as coisas.
 
-<div class="gb-video">
-  <video controls playsinline preload="metadata" src="/videos/easy-bypass.mp4">
-    Seu navegador não suporta reprodução de vídeo.
-  </video>
-</div>
+<TutorialVideo fallback-text="Seu navegador não suporta reprodução de vídeo." />
 
 Para configuração passo a passo, consulte [Como usar](/shadow-emulator/how-to-use) e [Corrigir erros](/shadow-emulator/fix-errors).
 
