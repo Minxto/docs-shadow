@@ -19,3 +19,11 @@ Asegúrate de estar en el **lobby** al activarlo. Solo debes usar esta opción c
 ## Cuando inicio la aplicación, me dice que cambie de aplicación después de una actualización. ¿Qué debo hacer?
 
 Sí — ve al Discord oficial o consulta la sección **Tutorial** de este sitio para instalar la última versión disponible. Las versiones antiguas están obsoletas. Incluso si intentas evitar la actualización, corres el riesgo de ser baneado.
+
+## Tengo un error VAN-79. ¿Qué debo hacer?
+
+Debes configurar el reloj de tu PC para que se actualice automáticamente. En la esquina inferior derecha de la barra de tareas, haz clic derecho en el reloj, abre **Ajustar fecha y hora** y activa **Establecer la hora automáticamente**.
+
+## Recibí VAL-5 y un baneo temporal en mi cuenta. ¿Es normal?
+
+Sí. Si usas mal el emulador, ya no se carga correctamente a través de Riot y puedes recibir un baneo. Este baneo es **temporal** y suele durar solo **5 a 10 minutos** antes de poder volver a jugar.

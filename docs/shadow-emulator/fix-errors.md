@@ -19,3 +19,11 @@ Make sure you are in the **lobby** when activating it. You should only use this 
 ## When I launch the app, it tells me to switch applications after an update. What should I do?
 
 Yes — go to the official Discord or check the **Tutorial** section on this site to install the latest available version. Older versions are obsolete. Even if you try to bypass the update, you risk getting banned.
+
+## I get a VAN-79 error. What should I do?
+
+You need to set your PC clock to update automatically. In the bottom-right corner of the taskbar, right-click the clock, open **Adjust date and time**, and turn on **Set time automatically**.
+
+## I got VAL-5 and a temporary ban on my account. Is that normal?
+
+Yes. If you misuse the emulator, it no longer loads through Riot correctly and you can receive a ban. This ban is **temporary** and usually lasts only **5 to 10 minutes** before you can play again.

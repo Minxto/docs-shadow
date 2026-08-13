@@ -19,3 +19,11 @@ Khởi động lại máy tính để khôi phục Vanguard về phiên bản m�
 ## Khi tôi khởi chạy ứng dụng, nó yêu cầu tôi chuyển ứng dụng sau khi cập nhật. Tôi nên làm gì?
 
 Có — hãy vào Discord chính thức hoặc kiểm tra phần **Hướng dẫn** trên trang này để cài đặt phiên bản mới nhất. Các phiên bản cũ đã lỗi thời. Ngay cả khi bạn cố bỏ qua bản cập nhật, bạn vẫn có nguy cơ bị cấm.
+
+## Tôi gặp lỗi VAN-79. Tôi nên làm gì?
+
+Bạn cần đặt đồng hồ PC cập nhật tự động. Ở góc dưới bên phải thanh tác vụ, nhấp chuột phải vào đồng hồ, mở **Điều chỉnh ngày và giờ** và bật **Đặt giờ tự động**.
+
+## Tôi gặp VAL-5 và bị cấm tài khoản tạm thời. Điều này có bình thường không?
+
+Có. Nếu bạn sử dụng trình giả lập không đúng cách, nó sẽ không tải qua Riot đúng nữa và bạn có thể bị cấm. Lệnh cấm này là **tạm thời** và thường chỉ kéo dài **5–10 phút** trước khi bạn có thể chơi lại.

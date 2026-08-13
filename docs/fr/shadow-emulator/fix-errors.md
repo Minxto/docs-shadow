@@ -19,3 +19,11 @@ Assurez-vous d'être dans le **lobby** lors de l'activation. Vous ne devez utili
 ## Lorsque je lance l'application, on me demande de changer d'application après une mise à jour. Que dois-je faire ?
 
 Oui — rendez-vous sur le Discord officiel ou consultez la section **Tutoriel** de ce site pour installer la dernière version disponible. Les anciennes versions sont obsolètes. Même si vous essayez de contourner la mise à jour, vous risquez d'être banni.
+
+## J'ai une erreur VAN-79. Que dois-je faire ?
+
+Vous devez régler l'heure de votre PC en mode automatique. En bas à droite de la barre des tâches, faites un clic droit sur l'horloge, ouvrez **Ajuster la date et l'heure**, puis activez **Définir l'heure automatiquement**.
+
+## J'ai eu VAL-5 et un ban temporaire sur mon compte. Est-ce normal ?
+
+Oui. Si vous utilisez mal l'émulateur, il ne se charge plus correctement via Riot et vous pouvez recevoir un ban. Ce ban est **temporaire** et dure généralement seulement **5 à 10 minutes** avant de pouvoir rejouer.
