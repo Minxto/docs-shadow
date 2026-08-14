@@ -1,5 +1,13 @@
 # Sửa lỗi
 
+<div class="gb-notice gb-notice--info">
+
+**Lưu ý quan trọng**
+
+Bạn phải chọn khu vực tài khoản của mình khi khởi chạy trình giả lập. Nếu không, bạn có thể gặp lỗi **VAL-5**.
+
+</div>
+
 ## Tôi gặp lỗi VAL-5 sau khi kết thúc trận đấu. Tôi nên làm gì?
 
 Điều này là bình thường. Cuối mỗi trận đấu, bạn cần nhấn **F3** và đợi 10–20 giây để trạng thái của trình giả lập chuyển từ «Đang chờ» sang «Đã kết nối».

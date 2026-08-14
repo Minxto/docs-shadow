@@ -750,6 +750,21 @@ html:not(.dark) .gb-search kbd {
   color: #fde047;
 }
 
+.gb-content.vp-doc .gb-notice--info {
+  border-color: rgba(80, 139, 252, 0.45);
+  background: rgba(80, 139, 252, 0.1);
+  color: var(--gb-text);
+}
+
+.gb-content.vp-doc .gb-notice--info strong {
+  color: var(--gb-primary);
+}
+
+.gb-content.vp-doc h1 + .gb-notice {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 /* ── Tutorial video ── */
 .gb-content.vp-doc .gb-download-card {
   display: flex;

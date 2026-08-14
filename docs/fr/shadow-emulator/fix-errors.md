@@ -1,5 +1,13 @@
 # Corriger les erreurs
 
+<div class="gb-notice gb-notice--info">
+
+**Rappel important**
+
+Vous devez choisir la région de votre compte lors du lancement de l'émulateur, sans quoi vous pourriez avoir des erreurs **VAL-5**.
+
+</div>
+
 ## J'obtiens une erreur VAL-5 après avoir terminé une partie. Que dois-je faire ?
 
 C'est normal. À la fin de chaque partie, vous devez appuyer sur **F3** et attendre 10 à 20 secondes pour que le statut de l'émulateur passe de « En attente » à « Connecté ».

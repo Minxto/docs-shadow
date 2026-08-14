@@ -1,5 +1,13 @@
 # Fix Errors
 
+<div class="gb-notice gb-notice--info">
+
+**Important reminder**
+
+You must select your account region when launching the emulator. Otherwise, you may get **VAL-5** errors.
+
+</div>
+
 ## I get a VAL-5 error after finishing a game. What should I do?
 
 This is normal. At the end of each game, you need to press **F3** and wait 10–20 seconds for the emulator's status to change from "Waiting" to "Connected."

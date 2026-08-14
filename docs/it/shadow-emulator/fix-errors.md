@@ -1,5 +1,13 @@
 # Correggere errori
 
+<div class="gb-notice gb-notice--info">
+
+**Promemoria importante**
+
+Devi selezionare la regione del tuo account all'avvio dell'emulatore. Altrimenti, potresti ricevere errori **VAL-5**.
+
+</div>
+
 ## Ricevo un errore VAL-5 dopo aver finito una partita. Cosa devo fare?
 
 È normale. Alla fine di ogni partita, devi premere **F3** e attendere 10–20 secondi affinché lo stato dell'emulatore passi da «In attesa» a «Connesso».
