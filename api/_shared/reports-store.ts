@@ -1,17 +1,10 @@
 import { Redis } from '@upstash/redis'
-import type { ReportReply, StatusReport } from './types'
+import type { ReportReply, StatusReport } from './types.js'
 
 const REPORTS_KEY = 'shadow-status-reports'
 
 function getRedis() {
-  const url = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN
-
-  if (!url || !token) {
-    throw new Error('Redis environment variables are not configured.')
-  }
-
-  return new Redis({ url, token })
+  return Redis.fromEnv()
 }
 
 export async function getReports(): Promise<StatusReport[]> {
