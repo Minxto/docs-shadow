@@ -1,0 +1,3 @@
+# Stato del sistema
+
+<StatusPage />

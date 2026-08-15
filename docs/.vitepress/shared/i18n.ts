@@ -51,6 +51,20 @@ type UiLabels = {
   homeLinkColorAvoidingBans: string
 }
 
+type StatusLabels = {
+  button: string
+  allOperational: string
+  someIssues: string
+  uptimeIntro: string
+  operational: string
+  degraded: string
+  partial: string
+  major: string
+  daysAgo: string
+  today: string
+  uptime: string
+}
+
 const sidebarEn: SidebarLabels = {
   shadowEmulator: 'Shadow Emulator',
   shadowColor: 'Shadow Color',
@@ -357,4 +371,104 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
 
 export function getUiLabels(locale: string): UiLabels {
   return uiLabels[(locale as LocaleKey)] ?? uiLabels.root
+}
+
+const statusEn: StatusLabels = {
+  button: 'Status',
+  allOperational: 'All Systems Operational',
+  someIssues: 'Some Systems Experiencing Issues',
+  uptimeIntro: 'Uptime over the past 90 days.',
+  operational: 'Operational',
+  degraded: 'Degraded Performance',
+  partial: 'Partial Outage',
+  major: 'Major Outage',
+  daysAgo: '90 days ago',
+  today: 'Today',
+  uptime: 'uptime'
+}
+
+export const statusLabels: Record<LocaleKey, StatusLabels> = {
+  root: statusEn,
+  fr: {
+    button: 'Statut',
+    allOperational: 'Tous les systèmes sont opérationnels',
+    someIssues: 'Certains systèmes rencontrent des problèmes',
+    uptimeIntro: 'Disponibilité sur les 90 derniers jours.',
+    operational: 'Opérationnel',
+    degraded: 'Performances dégradées',
+    partial: 'Panne partielle',
+    major: 'Panne majeure',
+    daysAgo: 'Il y a 90 jours',
+    today: "Aujourd'hui",
+    uptime: 'de disponibilité'
+  },
+  es: {
+    button: 'Estado',
+    allOperational: 'Todos los sistemas operativos',
+    someIssues: 'Algunos sistemas presentan problemas',
+    uptimeIntro: 'Tiempo activo en los últimos 90 días.',
+    operational: 'Operativo',
+    degraded: 'Rendimiento degradado',
+    partial: 'Interrupción parcial',
+    major: 'Interrupción mayor',
+    daysAgo: 'Hace 90 días',
+    today: 'Hoy',
+    uptime: 'de tiempo activo'
+  },
+  pt: {
+    button: 'Status',
+    allOperational: 'Todos os sistemas operacionais',
+    someIssues: 'Alguns sistemas estão com problemas',
+    uptimeIntro: 'Tempo de atividade nos últimos 90 dias.',
+    operational: 'Operacional',
+    degraded: 'Desempenho degradado',
+    partial: 'Interrupção parcial',
+    major: 'Interrupção maior',
+    daysAgo: 'Há 90 dias',
+    today: 'Hoje',
+    uptime: 'de tempo de atividade'
+  },
+  it: {
+    button: 'Stato',
+    allOperational: 'Tutti i sistemi operativi',
+    someIssues: 'Alcuni sistemi stanno riscontrando problemi',
+    uptimeIntro: 'Uptime negli ultimi 90 giorni.',
+    operational: 'Operativo',
+    degraded: 'Prestazioni degradate',
+    partial: 'Interruzione parziale',
+    major: 'Interruzione grave',
+    daysAgo: '90 giorni fa',
+    today: 'Oggi',
+    uptime: 'di uptime'
+  },
+  vi: {
+    button: 'Trạng thái',
+    allOperational: 'Tất cả hệ thống đang hoạt động',
+    someIssues: 'Một số hệ thống đang gặp sự cố',
+    uptimeIntro: 'Thời gian hoạt động trong 90 ngày qua.',
+    operational: 'Hoạt động',
+    degraded: 'Hiệu suất suy giảm',
+    partial: 'Gián đoạn một phần',
+    major: 'Gián đoạn nghiêm trọng',
+    daysAgo: '90 ngày trước',
+    today: 'Hôm nay',
+    uptime: 'thời gian hoạt động'
+  },
+  zh: {
+    button: '状态',
+    allOperational: '所有系统运行正常',
+    someIssues: '部分系统出现问题',
+    uptimeIntro: '过去 90 天的正常运行时间。',
+    operational: '正常运行',
+    degraded: '性能下降',
+    partial: '部分中断',
+    major: '严重中断',
+    daysAgo: '90 天前',
+    today: '今天',
+    uptime: '正常运行时间'
+  }
+}
+
+export function getStatusLabels(locale: string): StatusLabels {
+  return statusLabels[(locale as LocaleKey)] ?? statusLabels.root
 }

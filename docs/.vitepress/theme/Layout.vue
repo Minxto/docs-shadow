@@ -6,6 +6,7 @@ import GbIcon from './GbIcon.vue'
 import ThemeToggle from './ThemeToggle.vue'
 import LangSwitcher from './LangSwitcher.vue'
 import PatchNotes from './PatchNotes.vue'
+import StatusButton from './StatusButton.vue'
 import OnThisPage from './OnThisPage.vue'
 import { getUiLabels } from '../shared/i18n'
 import { useLocalePath } from './utils'
@@ -87,6 +88,8 @@ const isDocPage = computed(() => {
   return path.includes('/shadow-emulator/') || path.includes('/shadow-color/')
 })
 
+const isStatusPage = computed(() => normalizeDocPath(route.path) === '/status')
+
 const currentIndex = computed(() =>
   navItems.value.findIndex(item => isActive(item.link))
 )
@@ -137,6 +140,7 @@ function pageIcon(link: string) {
           <span class="gb-brand-title">{{ ui.siteTitle }}</span>
         </a>
         <div class="gb-header-actions">
+          <StatusButton />
           <PatchNotes />
           <LangSwitcher />
           <SearchBar :placeholder="ui.search" />
@@ -205,6 +209,13 @@ function pageIcon(link: string) {
                 <path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </button>
+          </div>
+
+          <div v-else-if="isStatusPage" class="gb-page-toolbar">
+            <a :href="homePath" class="gb-breadcrumb">
+              <GbIcon name="home" :size="16" />
+              <span>{{ ui.welcomeSidebar }}</span>
+            </a>
           </div>
 
           <div v-else class="gb-page-toolbar">

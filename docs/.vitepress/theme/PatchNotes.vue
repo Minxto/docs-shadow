@@ -5,10 +5,10 @@ const open = ref(false)
 const rootRef = ref<HTMLElement | null>(null)
 
 const patchNotes = [
-  'Fixed an issue where, when the connection to the emulator was lost, the game would close immediately to prevent a temporary ban.',
-  'Readapted the modules to prevent **error -102**, which should now occur much less frequently.',
-  'Fully optimized the emulator to reduce resource usage.',
-  'Added a **voice notification system** that tells you when the emulator is ready and when the bypass is injected, so you know when you can play or when you should wait.'
+  'Patch addressing in-game connection losses that resulted in a temporary ban.',
+  'Patch fixing the system that required you to restart your game every time you used an account.',
+  'Patch for certain regions where it was impossible to connect.',
+  'Improvements to the system that allows you to maintain your connection to Riot.'
 ]
 
 function toggle() {
@@ -56,7 +56,7 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
         <path d="M9 12h6M9 16h4" stroke-linecap="round" />
       </svg>
       <span>Patch Notes</span>
-      <span class="gb-patch-badge">13/08</span>
+      <span class="gb-patch-badge">15/08</span>
       <svg class="gb-lang-chevron" :class="{ open }" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
@@ -65,7 +65,7 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
     <div v-if="open" class="gb-notify-panel">
       <div class="gb-notify-header">
         <span class="gb-notify-title">Patch Notes</span>
-        <span class="gb-notify-date">13/08</span>
+        <span class="gb-notify-date">15/08</span>
       </div>
       <ul class="gb-notify-list">
         <li
