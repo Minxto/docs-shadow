@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useData } from 'vitepress'
+import { getPatchNotesLabels } from '../shared/i18n'
+
+const { localeIndex } = useData()
+const labels = computed(() => getPatchNotesLabels(localeIndex.value))
 
 const open = ref(false)
 const rootRef = ref<HTMLElement | null>(null)
-
-const patchNotes = [
-  'Patch addressing in-game connection losses that resulted in a temporary ban.',
-  'Patch fixing the system that required you to restart your game every time you used an account.',
-  'Patch for certain regions where it was impossible to connect.',
-  'Improvements to the system that allows you to maintain your connection to Riot.'
-]
 
 function toggle() {
   open.value = !open.value
@@ -47,7 +45,7 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
       type="button"
       class="gb-lang-btn gb-patch-btn"
       :aria-expanded="open"
-      aria-label="Patch notes"
+      :aria-label="labels.ariaLabel"
       @click.stop="toggle"
     >
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -55,7 +53,7 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
         <path d="M9 3.5h6a1.5 1.5 0 0 1 1.5 1.5V7H7.5V5A1.5 1.5 0 0 1 9 3.5Z" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M9 12h6M9 16h4" stroke-linecap="round" />
       </svg>
-      <span>Patch Notes</span>
+      <span>{{ labels.title }}</span>
       <span class="gb-patch-badge">15/08</span>
       <svg class="gb-lang-chevron" :class="{ open }" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
@@ -64,12 +62,12 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
 
     <div v-if="open" class="gb-notify-panel">
       <div class="gb-notify-header">
-        <span class="gb-notify-title">Patch Notes</span>
+        <span class="gb-notify-title">{{ labels.title }}</span>
         <span class="gb-notify-date">15/08</span>
       </div>
       <ul class="gb-notify-list">
         <li
-          v-for="(note, index) in patchNotes"
+          v-for="(note, index) in labels.notes"
           :key="index"
           v-html="renderNote(note)"
         />

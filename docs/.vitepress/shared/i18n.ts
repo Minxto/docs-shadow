@@ -631,6 +631,7 @@ type ReportLabels = {
   loading: string
   refresh: string
   profanityError: string
+  linkError: string
   submitError: string
   unavailable: string
   posting: string
@@ -650,6 +651,7 @@ const reportEn: ReportLabels = {
   loading: 'Loading reports...',
   refresh: 'Refresh',
   profanityError: 'Insults and offensive language are not allowed.',
+  linkError: 'Links and advertising are not allowed.',
   submitError: 'Could not submit. Please try again.',
   unavailable: 'Reports are temporarily unavailable.',
   posting: 'Posting...'
@@ -672,6 +674,7 @@ export const reportLabels: Record<LocaleKey, ReportLabels> = {
     loading: 'Chargement...',
     refresh: 'Actualiser',
     profanityError: 'Les insultes et propos offensants sont interdits.',
+    linkError: 'Les liens et la publicité sont interdits.',
     submitError: 'Envoi impossible. Réessayez.',
     unavailable: 'Signalements temporairement indisponibles.',
     posting: 'Envoi...'
@@ -691,6 +694,7 @@ export const reportLabels: Record<LocaleKey, ReportLabels> = {
     loading: 'Cargando...',
     refresh: 'Actualizar',
     profanityError: 'No se permiten insultos ni lenguaje ofensivo.',
+    linkError: 'No se permiten enlaces ni publicidad.',
     submitError: 'No se pudo enviar. Inténtalo de nuevo.',
     unavailable: 'Reportes temporalmente no disponibles.',
     posting: 'Enviando...'
@@ -710,6 +714,7 @@ export const reportLabels: Record<LocaleKey, ReportLabels> = {
     loading: 'Carregando...',
     refresh: 'Atualizar',
     profanityError: 'Insultos e linguagem ofensiva não são permitidos.',
+    linkError: 'Links e publicidade não são permitidos.',
     submitError: 'Não foi possível enviar. Tente novamente.',
     unavailable: 'Relatórios temporariamente indisponíveis.',
     posting: 'Enviando...'
@@ -729,6 +734,7 @@ export const reportLabels: Record<LocaleKey, ReportLabels> = {
     loading: 'Caricamento...',
     refresh: 'Aggiorna',
     profanityError: 'Insulti e linguaggio offensivo non sono ammessi.',
+    linkError: 'Link e pubblicità non sono ammessi.',
     submitError: 'Invio non riuscito. Riprova.',
     unavailable: 'Segnalazioni temporaneamente non disponibili.',
     posting: 'Invio...'
@@ -748,6 +754,7 @@ export const reportLabels: Record<LocaleKey, ReportLabels> = {
     loading: 'Đang tải...',
     refresh: 'Làm mới',
     profanityError: 'Không được phép dùng ngôn từ xúc phạm.',
+    linkError: 'Không được phép đăng liên kết hoặc quảng cáo.',
     submitError: 'Không thể gửi. Vui lòng thử lại.',
     unavailable: 'Báo cáo tạm thời không khả dụng.',
     posting: 'Đang gửi...'
@@ -767,6 +774,7 @@ export const reportLabels: Record<LocaleKey, ReportLabels> = {
     loading: '加载中...',
     refresh: '刷新',
     profanityError: '不允许侮辱或攻击性语言。',
+    linkError: '不允许发布链接或广告。',
     submitError: '提交失败，请重试。',
     unavailable: '报告功能暂时不可用。',
     posting: '提交中...'
@@ -775,4 +783,89 @@ export const reportLabels: Record<LocaleKey, ReportLabels> = {
 
 export function getReportLabels(locale: string): ReportLabels {
   return reportLabels[(locale as LocaleKey)] ?? reportLabels.root
+}
+
+type PatchNotesLabels = {
+  title: string
+  ariaLabel: string
+  notes: string[]
+}
+
+const patchNotesEn: PatchNotesLabels = {
+  title: 'Patch Notes',
+  ariaLabel: 'Patch notes',
+  notes: [
+    'Patch addressing in-game connection losses that resulted in a temporary ban.',
+    'Patch fixing the system that required you to restart your game every time you used an account.',
+    'Patch for certain regions where it was impossible to connect.',
+    'Improvements to the system that allows you to maintain your connection to Riot.'
+  ]
+}
+
+export const patchNotesLabels: Record<LocaleKey, PatchNotesLabels> = {
+  root: patchNotesEn,
+  fr: {
+    title: 'Notes de patch',
+    ariaLabel: 'Notes de patch',
+    notes: [
+      'Correctif pour les déconnexions en jeu entraînant un ban temporaire.',
+      'Correctif du système qui obligeait à redémarrer le jeu à chaque changement de compte.',
+      'Correctif pour certaines régions où la connexion était impossible.',
+      'Améliorations du système permettant de maintenir la connexion à Riot.'
+    ]
+  },
+  es: {
+    title: 'Notas del parche',
+    ariaLabel: 'Notas del parche',
+    notes: [
+      'Parche que corrige las desconexiones en el juego que provocaban un baneo temporal.',
+      'Parche que corrige el sistema que obligaba a reiniciar el juego cada vez que usabas una cuenta.',
+      'Parche para ciertas regiones donde era imposible conectarse.',
+      'Mejoras en el sistema que permite mantener la conexión con Riot.'
+    ]
+  },
+  pt: {
+    title: 'Notas de patch',
+    ariaLabel: 'Notas de patch',
+    notes: [
+      'Patch para perdas de conexão no jogo que resultavam em ban temporário.',
+      'Patch que corrige o sistema que exigia reiniciar o jogo toda vez que usava uma conta.',
+      'Patch para certas regiões onde era impossível conectar.',
+      'Melhorias no sistema que permite manter a conexão com a Riot.'
+    ]
+  },
+  it: {
+    title: 'Note di patch',
+    ariaLabel: 'Note di patch',
+    notes: [
+      'Patch per le disconnessioni in-game che causavano un ban temporaneo.',
+      'Patch che risolve il sistema che richiedeva di riavviare il gioco ogni volta che usavi un account.',
+      'Patch per alcune regioni dove era impossibile connettersi.',
+      'Miglioramenti al sistema che permette di mantenere la connessione a Riot.'
+    ]
+  },
+  vi: {
+    title: 'Ghi chú bản vá',
+    ariaLabel: 'Ghi chú bản vá',
+    notes: [
+      'Bản vá khắc phục mất kết nối trong game dẫn đến ban tạm thời.',
+      'Bản vá sửa hệ thống yêu cầu khởi động lại game mỗi lần đổi tài khoản.',
+      'Bản vá cho một số khu vực không thể kết nối.',
+      'Cải thiện hệ thống giúp duy trì kết nối với Riot.'
+    ]
+  },
+  zh: {
+    title: '更新说明',
+    ariaLabel: '更新说明',
+    notes: [
+      '修复游戏中断线导致临时封禁的问题。',
+      '修复每次切换账号都需要重启游戏的系统问题。',
+      '修复某些地区无法连接的问题。',
+      '改进与 Riot 保持连接的系统。'
+    ]
+  }
+}
+
+export function getPatchNotesLabels(locale: string): PatchNotesLabels {
+  return patchNotesLabels[(locale as LocaleKey)] ?? patchNotesLabels.root
 }

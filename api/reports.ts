@@ -21,6 +21,16 @@ const BLOCKLIST = [
   'f u c k', 's h i t', 'sh1t', 'fck', 'fuk', 'btch', 'b1tch', 'a$$', 'a$$hole'
 ]
 
+const LINK_PATTERNS = [
+  /https?:\/\//i,
+  /\bwww\./i,
+  /\bdiscord\.gg\b/i,
+  /\bdiscord(?:app)?\.com\/invite\b/i,
+  /\bt\.me\b/i,
+  /\btelegram\.(?:me|dog)\b/i,
+  /\b[a-z0-9][-a-z0-9]{0,62}\.(com|gg|io|net|org|me|co|xyz|dev|app|link|tv|fr|de|es|pt|it|ru|tk|ml|ga|cf|gq|ly|be|cc|to|sh|ws|info|biz|uk|us|ca|nl|pl|cz|br|au|in|jp|kr|cn)\b/i
+]
+
 function normalize(text: string) {
   return text
     .toLowerCase()
@@ -49,10 +59,17 @@ function containsProfanity(text: string) {
   })
 }
 
+function containsLink(text: string) {
+  if (LINK_PATTERNS.some(pattern => pattern.test(text))) return true
+  if (/discord[\s.(_-]*gg/i.test(text)) return true
+  return false
+}
+
 function validateContent(text: string, fieldName: string) {
   const trimmed = text.trim()
   if (!trimmed) return `${fieldName} is required.`
   if (containsProfanity(trimmed)) return 'Insults and offensive language are not allowed.'
+  if (containsLink(trimmed)) return 'Links and advertising are not allowed.'
   return null
 }
 

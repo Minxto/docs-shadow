@@ -2,7 +2,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useData } from 'vitepress'
 import { getReportLabels } from '../shared/i18n'
-import { containsProfanity } from '@shared/profanity'
+import { containsProfanity, containsLink } from '@shared/profanity'
 
 type ReportReply = {
   id: string
@@ -63,6 +63,9 @@ function formatTime(value: string) {
 function validateFields(author: string, message: string) {
   if (containsProfanity(author) || containsProfanity(message)) {
     return labels.value.profanityError
+  }
+  if (containsLink(author) || containsLink(message)) {
+    return labels.value.linkError
   }
   if (!message.trim()) {
     return labels.value.submitError
