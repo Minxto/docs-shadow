@@ -215,9 +215,9 @@ const pastIncidents = computed<PastIncidentDay[]>(() => [
       {
         title: labels.value.gatewayMajorIssue,
         tone: 'major',
-        status: 'monitoring',
-        statusLabel: labels.value.monitoring,
-        message: labels.value.monitoringMessage
+        status: 'resolved',
+        statusLabel: labels.value.resolved,
+        message: labels.value.resolvedMessage
       }
     ]
   },
@@ -260,7 +260,7 @@ const services = computed<ServiceGroup[]>(() => {
   }
 
   const gatewayHistory = buildHistory(gatewayOverrides)
-  const gatewayStatus = worstStatus(gatewayHistory.map(day => day.status))
+  const gatewayStatus: DayStatus = 'operational'
   const emulatorComponents: ComponentStatus[] = [
     {
       id: 'api',
