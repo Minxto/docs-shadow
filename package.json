@@ -14,9 +14,7 @@
   },
   "dependencies": {
     "@upstash/redis": "^1.34.3",
+    "@vercel/node": "^5.0.0",
     "vitepress": "^1.6.3"
-  },
-  "devDependencies": {
-    "@vercel/node": "^5.0.0"
   }
 }

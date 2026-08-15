@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { validateContent } from '../../shared/profanity.js'
-import { addReport, getReports } from '../_shared/reports-store.js'
+import { validateContent } from '../../shared/profanity'
+import { addReport, getReports } from './_shared/reports-store'
 
 function sanitizeAuthor(value: unknown, fallback: string) {
   const author = typeof value === 'string' ? value.trim().slice(0, 32) : ''

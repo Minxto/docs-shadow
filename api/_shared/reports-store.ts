@@ -1,5 +1,5 @@
 import { Redis } from '@upstash/redis'
-import type { ReportReply, StatusReport } from './types.js'
+import type { ReportReply, StatusReport } from './types'
 
 const REPORTS_KEY = 'shadow-status-reports'
 
