@@ -475,6 +475,23 @@ html:not(.dark) .gb-search kbd {
   text-decoration: none;
 }
 
+.gb-sidebar-footer {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px 14px;
+  border-top: 1px solid var(--gb-border);
+}
+
+.gb-sidebar-search {
+  display: none;
+}
+
+.gb-sidebar-search .gb-search-wrap {
+  width: 100%;
+}
+
 /* ── Main content ── */
 .gb-main {
   flex: 1;
@@ -1857,34 +1874,74 @@ body.gb-menu-open {
 
   .gb-header-inner {
     gap: 10px;
+    justify-content: space-between;
     padding: 0 max(12px, env(safe-area-inset-right)) 0 max(12px, env(safe-area-inset-left));
+  }
+
+  .gb-header .gb-brand {
+    display: none;
+  }
+
+  .gb-header-search {
+    display: none;
   }
 
   .gb-header-actions {
     gap: 6px;
     margin-left: auto;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    flex-shrink: 0;
+    overflow: visible;
   }
 
   .gb-header-actions::-webkit-scrollbar {
     display: none;
   }
 
-  .gb-brand {
-    margin-left: 0;
-    min-width: 0;
-    flex: 1;
-  }
-
-  .gb-brand-icon {
+  .gb-status-btn,
+  .gb-patch-btn,
+  .gb-lang-btn {
     width: 40px;
+    min-width: 40px;
     height: 40px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
   }
 
-  .gb-brand-title {
-    font-size: 14px;
+  .gb-status-btn span,
+  .gb-patch-btn span,
+  .gb-patch-btn .gb-lang-chevron,
+  .gb-lang-btn > span,
+  .gb-lang-btn .gb-lang-chevron {
+    display: none;
+  }
+
+  .gb-sidebar-search {
+    display: block;
+  }
+
+  .gb-sidebar-search .gb-search {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 40px;
+    padding: 0 12px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .gb-sidebar-search .gb-search span {
+    display: inline;
+    flex: 1;
+    text-align: left;
+  }
+
+  .gb-sidebar-search .gb-search kbd {
+    display: none;
+  }
+
+  .gb-sidebar-footer {
+    margin-top: auto;
   }
 
   .gb-outline {
@@ -1962,27 +2019,6 @@ body.gb-menu-open {
 
   .home-hero-notice {
     font-size: 14px;
-  }
-
-  .gb-search {
-    min-width: 40px;
-    width: 40px;
-    padding: 0;
-    justify-content: center;
-  }
-
-  .gb-search span,
-  .gb-search kbd {
-    display: none;
-  }
-
-  .gb-status-btn span,
-  .gb-patch-btn > span:not(.gb-patch-badge) {
-    display: none;
-  }
-
-  .gb-lang-btn {
-    padding: 0 10px;
   }
 
   .gb-page-toolbar {
@@ -2073,12 +2109,8 @@ body.gb-menu-open {
 }
 
 @media (max-width: 540px) {
-  .gb-brand-title {
-    font-size: 12px;
-  }
-
   .gb-header-actions {
-    max-width: 52%;
+    max-width: none;
   }
 
   .gb-copy span,
@@ -2088,14 +2120,6 @@ body.gb-menu-open {
 
   .gb-copy {
     padding: 8px 10px;
-  }
-
-  .gb-patch-badge {
-    display: none;
-  }
-
-  .gb-lang-btn span:not(.gb-patch-badge) {
-    display: none;
   }
 
   .gb-content.vp-doc {
