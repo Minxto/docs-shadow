@@ -212,14 +212,7 @@ function pageIcon(link: string) {
             </button>
           </div>
 
-          <div v-else-if="isStatusPage" class="gb-page-toolbar">
-            <a :href="homePath" class="gb-breadcrumb">
-              <GbIcon name="home" :size="16" />
-              <span>{{ ui.welcomeSidebar }}</span>
-            </a>
-          </div>
-
-          <div v-else class="gb-page-toolbar">
+          <div v-else-if="!isStatusPage" class="gb-page-toolbar">
             <a :href="homePath" class="gb-breadcrumb">
               <GbIcon name="home" :size="16" />
               <span>{{ ui.welcomeSidebar }}</span>
