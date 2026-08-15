@@ -49,6 +49,11 @@ export default defineConfig({
     }
   },
   vite: {
+    resolve: {
+      alias: {
+        '@shared': path.resolve(__dirname, '../../shared')
+      }
+    },
     server: {
       watch: {
         ignored: ['**/public/videos/**', '**/public/downloads/**', '**/*.mp4', '**/*.exe']

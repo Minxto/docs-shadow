@@ -616,3 +616,163 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
 export function getStatusLabels(locale: string): StatusLabels {
   return statusLabels[(locale as LocaleKey)] ?? statusLabels.root
 }
+
+type ReportLabels = {
+  title: string
+  subtitle: string
+  namePlaceholder: string
+  messagePlaceholder: string
+  submitReport: string
+  submitReply: string
+  reply: string
+  replies: string
+  anonymous: string
+  empty: string
+  loading: string
+  refresh: string
+  profanityError: string
+  submitError: string
+  unavailable: string
+  posting: string
+}
+
+const reportEn: ReportLabels = {
+  title: 'Community Reports',
+  subtitle: 'Share an issue visible to everyone.',
+  namePlaceholder: 'Your name (optional)',
+  messagePlaceholder: 'Describe the issue...',
+  submitReport: 'Post report',
+  submitReply: 'Post reply',
+  reply: 'Reply',
+  replies: 'replies',
+  anonymous: 'Anonymous',
+  empty: 'No reports yet. Be the first to post one.',
+  loading: 'Loading reports...',
+  refresh: 'Refresh',
+  profanityError: 'Insults and offensive language are not allowed.',
+  submitError: 'Could not submit. Please try again.',
+  unavailable: 'Reports are temporarily unavailable.',
+  posting: 'Posting...'
+}
+
+export const reportLabels: Record<LocaleKey, ReportLabels> = {
+  root: reportEn,
+  fr: {
+    ...reportEn,
+    title: 'Signalements',
+    subtitle: 'Partagez un problème visible par tous.',
+    namePlaceholder: 'Votre nom (optionnel)',
+    messagePlaceholder: 'Décrivez le problème...',
+    submitReport: 'Publier',
+    submitReply: 'Répondre',
+    reply: 'Répondre',
+    replies: 'réponses',
+    anonymous: 'Anonyme',
+    empty: 'Aucun signalement pour le moment.',
+    loading: 'Chargement...',
+    refresh: 'Actualiser',
+    profanityError: 'Les insultes et propos offensants sont interdits.',
+    submitError: 'Envoi impossible. Réessayez.',
+    unavailable: 'Signalements temporairement indisponibles.',
+    posting: 'Envoi...'
+  },
+  es: {
+    ...reportEn,
+    title: 'Reportes',
+    subtitle: 'Comparte un problema visible para todos.',
+    namePlaceholder: 'Tu nombre (opcional)',
+    messagePlaceholder: 'Describe el problema...',
+    submitReport: 'Publicar',
+    submitReply: 'Responder',
+    reply: 'Responder',
+    replies: 'respuestas',
+    anonymous: 'Anónimo',
+    empty: 'Aún no hay reportes.',
+    loading: 'Cargando...',
+    refresh: 'Actualizar',
+    profanityError: 'No se permiten insultos ni lenguaje ofensivo.',
+    submitError: 'No se pudo enviar. Inténtalo de nuevo.',
+    unavailable: 'Reportes temporalmente no disponibles.',
+    posting: 'Enviando...'
+  },
+  pt: {
+    ...reportEn,
+    title: 'Relatórios',
+    subtitle: 'Compartilhe um problema visível para todos.',
+    namePlaceholder: 'Seu nome (opcional)',
+    messagePlaceholder: 'Descreva o problema...',
+    submitReport: 'Publicar',
+    submitReply: 'Responder',
+    reply: 'Responder',
+    replies: 'respostas',
+    anonymous: 'Anônimo',
+    empty: 'Nenhum relatório ainda.',
+    loading: 'Carregando...',
+    refresh: 'Atualizar',
+    profanityError: 'Insultos e linguagem ofensiva não são permitidos.',
+    submitError: 'Não foi possível enviar. Tente novamente.',
+    unavailable: 'Relatórios temporariamente indisponíveis.',
+    posting: 'Enviando...'
+  },
+  it: {
+    ...reportEn,
+    title: 'Segnalazioni',
+    subtitle: 'Condividi un problema visibile a tutti.',
+    namePlaceholder: 'Il tuo nome (opzionale)',
+    messagePlaceholder: 'Descrivi il problema...',
+    submitReport: 'Pubblica',
+    submitReply: 'Rispondi',
+    reply: 'Rispondi',
+    replies: 'risposte',
+    anonymous: 'Anonimo',
+    empty: 'Nessuna segnalazione ancora.',
+    loading: 'Caricamento...',
+    refresh: 'Aggiorna',
+    profanityError: 'Insulti e linguaggio offensivo non sono ammessi.',
+    submitError: 'Invio non riuscito. Riprova.',
+    unavailable: 'Segnalazioni temporaneamente non disponibili.',
+    posting: 'Invio...'
+  },
+  vi: {
+    ...reportEn,
+    title: 'Báo cáo',
+    subtitle: 'Chia sẻ sự cố cho mọi người xem.',
+    namePlaceholder: 'Tên của bạn (tuỳ chọn)',
+    messagePlaceholder: 'Mô tả sự cố...',
+    submitReport: 'Đăng báo cáo',
+    submitReply: 'Trả lời',
+    reply: 'Trả lời',
+    replies: 'phản hồi',
+    anonymous: 'Ẩn danh',
+    empty: 'Chưa có báo cáo nào.',
+    loading: 'Đang tải...',
+    refresh: 'Làm mới',
+    profanityError: 'Không được phép dùng ngôn từ xúc phạm.',
+    submitError: 'Không thể gửi. Vui lòng thử lại.',
+    unavailable: 'Báo cáo tạm thời không khả dụng.',
+    posting: 'Đang gửi...'
+  },
+  zh: {
+    ...reportEn,
+    title: '社区报告',
+    subtitle: '发布所有人可见的问题。',
+    namePlaceholder: '您的名字（可选）',
+    messagePlaceholder: '描述问题...',
+    submitReport: '发布报告',
+    submitReply: '回复',
+    reply: '回复',
+    replies: '条回复',
+    anonymous: '匿名',
+    empty: '暂无报告。',
+    loading: '加载中...',
+    refresh: '刷新',
+    profanityError: '不允许侮辱或攻击性语言。',
+    submitError: '提交失败，请重试。',
+    unavailable: '报告功能暂时不可用。',
+    posting: '提交中...'
+  }
+}
+
+export function getReportLabels(locale: string): ReportLabels {
+  return reportLabels[(locale as LocaleKey)] ?? reportLabels.root
+}

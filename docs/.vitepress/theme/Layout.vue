@@ -7,6 +7,7 @@ import ThemeToggle from './ThemeToggle.vue'
 import LangSwitcher from './LangSwitcher.vue'
 import PatchNotes from './PatchNotes.vue'
 import StatusButton from './StatusButton.vue'
+import StatusReports from './StatusReports.vue'
 import OnThisPage from './OnThisPage.vue'
 import { getUiLabels } from '../shared/i18n'
 import { useLocalePath } from './utils'
@@ -249,6 +250,7 @@ function pageIcon(link: string) {
     </div>
 
     <OnThisPage v-if="isDocPage" />
+    <StatusReports v-if="isStatusPage" />
 
     <ThemeToggle />
   </div>
