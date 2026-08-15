@@ -35,7 +35,12 @@ type BarTarget = {
 }
 
 const HISTORY_DAYS = 90
-const TODAY = new Date(2026, 7, 15)
+
+function startOfToday() {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  return today
+}
 
 function dateKey(date: Date) {
   return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
@@ -44,8 +49,10 @@ function dateKey(date: Date) {
 function buildHistory(
   overrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {}
 ): DayEntry[] {
+  const today = startOfToday()
+
   return Array.from({ length: HISTORY_DAYS }, (_, index) => {
-    const date = new Date(TODAY)
+    const date = new Date(today)
     date.setDate(date.getDate() - (HISTORY_DAYS - 1 - index))
     const override = overrides[dateKey(date)]
 
