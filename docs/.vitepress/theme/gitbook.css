@@ -549,7 +549,7 @@ html:not(.dark) .gb-search kbd {
 .gb-reports {
   position: fixed;
   top: calc(var(--gb-header-height) + 28px);
-  right: 50px;
+  right: 100px;
   width: 340px;
   max-height: calc(100vh - var(--gb-header-height) - 56px);
   overflow-y: auto;
