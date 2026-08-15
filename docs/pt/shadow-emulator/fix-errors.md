@@ -8,6 +8,19 @@ Você deve escolher a região da sua conta ao iniciar o emulador. Caso contrári
 
 </div>
 
+## O Vanguard pede uma reinicialização. O que devo fazer?
+
+![Reinicialização do Vanguard necessária](/images/vanguard-restart.png)
+
+Nosso emulador foi feito **100% para ajudar você a evitar bans**, então é normal que, às vezes, o Vanguard fique fechado assim. Temos uma técnica para você: abra o **Prompt de Comando como administrador** e execute os seguintes comandos:
+
+```bat
+sc stop vgc
+sc stop vgk
+sc start vgc
+sc start vgk
+```
+
 ## Recebo um erro VAL-5 após terminar uma partida. O que devo fazer?
 
 Isso é normal. No final de cada partida, você precisa pressionar **F3** e aguardar 10–20 segundos para que o status do emulador mude de «Aguardando» para «Conectado».

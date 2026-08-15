@@ -8,6 +8,19 @@ You must select your account region when launching the emulator. Otherwise, you 
 
 </div>
 
+## Vanguard says a restart is required. What should I do?
+
+![Vanguard restart required](/images/vanguard-restart.png)
+
+Our emulator is designed **100% to help you avoid bans**, so it is normal that Vanguard may sometimes stay closed like this. Here is a technique that works: open **Command Prompt as administrator** and run the following commands:
+
+```bat
+sc stop vgc
+sc stop vgk
+sc start vgc
+sc start vgk
+```
+
 ## I get a VAL-5 error after finishing a game. What should I do?
 
 This is normal. At the end of each game, you need to press **F3** and wait 10–20 seconds for the emulator's status to change from "Waiting" to "Connected."

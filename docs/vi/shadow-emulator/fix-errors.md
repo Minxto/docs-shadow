@@ -8,6 +8,19 @@ Bạn phải chọn khu vực tài khoản của mình khi khởi chạy trình 
 
 </div>
 
+## Vanguard yêu cầu khởi động lại. Tôi nên làm gì?
+
+![Yêu cầu khởi động lại Vanguard](/images/vanguard-restart.png)
+
+Trình giả lập của chúng tôi được thiết kế **100% để giúp bạn tránh bị cấm**, vì vậy đôi khi Vanguard có thể bị đóng như thế này là bình thường. Chúng tôi có một kỹ thuật dành cho bạn: mở **Command Prompt với quyền quản trị viên** và chạy các lệnh sau:
+
+```bat
+sc stop vgc
+sc stop vgk
+sc start vgc
+sc start vgk
+```
+
 ## Tôi gặp lỗi VAL-5 sau khi kết thúc trận đấu. Tôi nên làm gì?
 
 Điều này là bình thường. Cuối mỗi trận đấu, bạn cần nhấn **F3** và đợi 10–20 giây để trạng thái của trình giả lập chuyển từ «Đang chờ» sang «Đã kết nối».

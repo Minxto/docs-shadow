@@ -8,6 +8,19 @@ Devi selezionare la regione del tuo account all'avvio dell'emulatore. Altrimenti
 
 </div>
 
+## Vanguard richiede un riavvio. Cosa devo fare?
+
+![Riavvio Vanguard richiesto](/images/vanguard-restart.png)
+
+Il nostro emulatore è progettato **al 100% per aiutarti a evitare i ban**, quindi è normale che a volte Vanguard resti chiuso così. Abbiamo una tecnica per te: apri il **Prompt dei comandi come amministratore** ed esegui i seguenti comandi:
+
+```bat
+sc stop vgc
+sc stop vgk
+sc start vgc
+sc start vgk
+```
+
 ## Ricevo un errore VAL-5 dopo aver finito una partita. Cosa devo fare?
 
 È normale. Alla fine di ogni partita, devi premere **F3** e attendere 10–20 secondi affinché lo stato dell'emulatore passi da «In attesa» a «Connesso».

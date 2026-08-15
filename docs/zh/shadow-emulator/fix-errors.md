@@ -8,6 +8,19 @@
 
 </div>
 
+## Vanguard 要求重启。我该怎么办？
+
+![Vanguard 需要重启](/images/vanguard-restart.png)
+
+我们的模拟器 **100% 专为帮助您避免封禁而设计**，因此 Vanguard 有时保持关闭状态是正常的。我们有一个解决方法：以**管理员身份**打开**命令提示符**，然后运行以下命令：
+
+```bat
+sc stop vgc
+sc stop vgk
+sc start vgc
+sc start vgk
+```
+
 ## 比赛结束后出现 VAL-5 错误。我该怎么办？
 
 这是正常的。每场比赛结束时，您需要按 **F3** 并等待 10–20 秒，使模拟器状态从「等待中」变为「已连接」。

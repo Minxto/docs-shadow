@@ -8,6 +8,19 @@ Vous devez choisir la région de votre compte lors du lancement de l'émulateur,
 
 </div>
 
+## Vanguard demande un redémarrage. Que faire ?
+
+![Redémarrage Vanguard requis](/images/vanguard-restart.png)
+
+Notre émulateur est conçu **à 100 % pour éviter les bans**, il est donc normal que par moments Vanguard reste fermé comme ceci. Nous avons une technique pour vous : ouvrez le **CMD en administrateur** et exécutez les commandes suivantes :
+
+```bat
+sc stop vgc
+sc stop vgk
+sc start vgc
+sc start vgk
+```
+
 ## J'obtiens une erreur VAL-5 après avoir terminé une partie. Que dois-je faire ?
 
 C'est normal. À la fin de chaque partie, vous devez appuyer sur **F3** et attendre 10 à 20 secondes pour que le statut de l'émulateur passe de « En attente » à « Connecté ».
