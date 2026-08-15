@@ -1,54 +1,303 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useData } from 'vitepress'
 import { getStatusLabels } from '../shared/i18n'
 
 type DayStatus = 'operational' | 'degraded' | 'partial' | 'major'
 
-type ServiceStatus = {
+type DayEntry = {
+  date: Date
+  status: DayStatus
+  duration?: string
+  related?: string
+}
+
+type ComponentStatus = {
   id: string
   name: string
-  status: 'operational' | 'degraded' | 'partial' | 'major'
-  history: DayStatus[]
+  status: DayStatus
+  history: DayEntry[]
 }
 
-function buildHistory(overrides: Partial<Record<number, DayStatus>> = {}): DayStatus[] {
-  return Array.from({ length: 90 }, (_, index) => overrides[index] ?? 'operational')
+type ServiceGroup = {
+  id: string
+  name: string
+  status: DayStatus
+  components?: ComponentStatus[]
+  history?: DayEntry[]
 }
 
-const services: ServiceStatus[] = [
-  {
-    id: 'shadow-emulator',
-    name: 'Shadow Emulator',
-    status: 'operational',
-    history: buildHistory({ 62: 'degraded' })
-  },
-  {
-    id: 'shadow-color-bot',
-    name: 'Shadow Color bot',
-    status: 'operational',
-    history: buildHistory()
+type HoverTarget = {
+  groupId: string
+  componentId: string
+  index: number
+  anchor: HTMLElement
+}
+
+const HISTORY_DAYS = 90
+const TODAY = new Date(2026, 7, 15)
+
+function dateKey(date: Date) {
+  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
+}
+
+function buildHistory(
+  overrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {}
+): DayEntry[] {
+  return Array.from({ length: HISTORY_DAYS }, (_, index) => {
+    const date = new Date(TODAY)
+    date.setDate(date.getDate() - (HISTORY_DAYS - 1 - index))
+    const override = overrides[dateKey(date)]
+
+    return {
+      date,
+      status: override?.status ?? 'operational',
+      duration: override?.duration,
+      related: override?.related
+    }
+  })
+}
+
+function worstStatus(statuses: DayStatus[]): DayStatus {
+  const rank: Record<DayStatus, number> = {
+    operational: 0,
+    degraded: 1,
+    partial: 2,
+    major: 3
   }
-]
 
-function uptimePercent(history: DayStatus[]) {
-  const operationalDays = history.filter(day => day === 'operational').length
+  return statuses.reduce<DayStatus>(
+    (worst, status) => (rank[status] > rank[worst] ? status : worst),
+    'operational'
+  )
+}
+
+function uptimePercent(history: DayEntry[]) {
+  const operationalDays = history.filter(day => day.status === 'operational').length
   return ((operationalDays / history.length) * 100).toFixed(2)
 }
 
-function statusLabel(status: ServiceStatus['status'], labels: ReturnType<typeof getStatusLabels>) {
+function statusLabel(status: DayStatus, labels: ReturnType<typeof getStatusLabels>) {
   if (status === 'operational') return labels.operational
   if (status === 'degraded') return labels.degraded
   if (status === 'partial') return labels.partial
   return labels.major
 }
 
-const { localeIndex } = useData()
+function formatDayDate(date: Date, locale: string) {
+  return new Intl.DateTimeFormat(locale, {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  }).format(date)
+}
+
+function formatIncidentDate(date: Date, locale: string) {
+  return new Intl.DateTimeFormat(locale, {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(date)
+}
+
+type MetricPeriod = 'day' | 'week' | 'month'
+
+type PastIncidentEntry = {
+  title: string
+  tone: 'partial' | 'major'
+  status: 'resolved' | 'monitoring'
+  message: string
+  statusLabel: string
+}
+
+type PastIncidentDay = {
+  date: Date
+  empty?: boolean
+  entries?: PastIncidentEntry[]
+}
+
+const metricPeriod = ref<MetricPeriod>('day')
+
+const { localeIndex, lang } = useData()
 const labels = computed(() => getStatusLabels(localeIndex.value))
 
+const metricSeries: Record<MetricPeriod, number[]> = {
+  day: [118, 132, 145, 160, 152, 167, 174, 168, 155, 149, 162, 167],
+  week: [142, 138, 151, 159, 167, 161, 154, 148, 156, 163, 170, 167],
+  month: [155, 149, 158, 164, 172, 168, 161, 157, 165, 169, 171, 167]
+}
+
+const metricLabels: Record<MetricPeriod, string[]> = {
+  day: ['06:00', '09:00', '12:00', '15:00', '18:00', '21:00', '15 Aug', '03:00'],
+  week: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Today'],
+  month: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+}
+
+const currentMetricValues = computed(() => metricSeries[metricPeriod.value])
+const currentMetricValue = computed(() => `${currentMetricValues.value.at(-1)} ms`)
+
+const chartPoints = computed(() => {
+  const values = currentMetricValues.value
+  const max = Math.max(...values, 200)
+  const min = Math.min(...values, 100)
+  const range = max - min || 1
+  const width = 640
+  const height = 140
+  const padding = 12
+
+  return values
+    .map((value, index) => {
+      const x = padding + (index / (values.length - 1)) * (width - padding * 2)
+      const y = height - padding - ((value - min) / range) * (height - padding * 2)
+      return `${x},${y}`
+    })
+    .join(' ')
+})
+
+const pastIncidents = computed<PastIncidentDay[]>(() => [
+  {
+    date: new Date(2026, 7, 15),
+    entries: [
+      {
+        title: labels.value.gatewayMajorIssue,
+        tone: 'major',
+        status: 'monitoring',
+        statusLabel: labels.value.monitoring,
+        message: labels.value.monitoringMessage
+      }
+    ]
+  },
+  {
+    date: new Date(2026, 7, 14),
+    entries: [
+      {
+        title: labels.value.gatewayPartialIssue,
+        tone: 'partial',
+        status: 'resolved',
+        statusLabel: labels.value.resolved,
+        message: labels.value.resolvedMessage
+      }
+    ]
+  },
+  {
+    date: new Date(2026, 7, 13),
+    empty: true
+  }
+])
+
+const metricPeriods = computed(() => ([
+  { id: 'day' as const, label: labels.value.day },
+  { id: 'week' as const, label: labels.value.week },
+  { id: 'month' as const, label: labels.value.month }
+]))
+
+const services = computed<ServiceGroup[]>(() => {
+  const gatewayOverrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {
+    [dateKey(new Date(2026, 7, 14))]: {
+      status: 'partial',
+      duration: '0 hrs 21 mins',
+      related: labels.value.gatewayPartialIssue
+    },
+    [dateKey(new Date(2026, 7, 15))]: {
+      status: 'major',
+      duration: '1 hr 12 mins',
+      related: labels.value.gatewayMajorIssue
+    }
+  }
+
+  const gatewayHistory = buildHistory(gatewayOverrides)
+  const gatewayStatus = worstStatus(gatewayHistory.map(day => day.status))
+  const emulatorComponents: ComponentStatus[] = [
+    {
+      id: 'api',
+      name: labels.value.api,
+      status: 'operational',
+      history: buildHistory()
+    },
+    {
+      id: 'gateway',
+      name: labels.value.gateway,
+      status: gatewayStatus,
+      history: gatewayHistory
+    },
+    {
+      id: 'discord-link',
+      name: labels.value.discordLink,
+      status: 'operational',
+      history: buildHistory()
+    }
+  ]
+
+  return [
+    {
+      id: 'shadow-emulator',
+      name: 'Shadow Emulator',
+      status: 'operational',
+      components: emulatorComponents
+    },
+    {
+      id: 'shadow-color-bot',
+      name: 'Shadow Color bot',
+      status: 'operational',
+      history: buildHistory()
+    }
+  ]
+})
+
 const allOperational = computed(() =>
-  services.every(service => service.status === 'operational')
+  services.value.every(service => {
+    if (service.components) {
+      return service.components.every(component => component.status === 'operational')
+    }
+    return service.status === 'operational'
+  })
 )
+
+const hover = ref<HoverTarget | null>(null)
+
+function setHover(
+  groupId: string,
+  componentId: string,
+  index: number,
+  event: MouseEvent
+) {
+  hover.value = {
+    groupId,
+    componentId,
+    index,
+    anchor: event.currentTarget as HTMLElement
+  }
+}
+
+function clearHover() {
+  hover.value = null
+}
+
+const hoveredDay = computed(() => {
+  if (!hover.value) return null
+
+  const group = services.value.find(item => item.id === hover.value!.groupId)
+  if (!group) return null
+
+  if (group.components) {
+    const component = group.components.find(item => item.id === hover.value!.componentId)
+    return component?.history[hover.value.index] ?? null
+  }
+
+  return group.history?.[hover.value.index] ?? null
+})
+
+const tooltipStyle = computed(() => {
+  if (!hover.value) return {}
+
+  const rect = hover.value.anchor.getBoundingClientRect()
+  const left = rect.left + rect.width / 2
+
+  return {
+    left: `${left}px`,
+    top: `${rect.top - 10}px`
+  }
+})
 </script>
 
 <template>
@@ -67,6 +316,7 @@ const allOperational = computed(() =>
         v-for="service in services"
         :key="service.id"
         class="gb-status-service"
+        :class="{ 'gb-status-service--group': service.components }"
       >
         <div class="gb-status-service-head">
           <h2 class="gb-status-service-name">{{ service.name }}</h2>
@@ -78,22 +328,169 @@ const allOperational = computed(() =>
           </span>
         </div>
 
-        <div class="gb-status-bars" role="img" :aria-label="`${service.name} uptime`">
-          <span
-            v-for="(day, index) in service.history"
-            :key="index"
-            class="gb-status-bar"
-            :class="`gb-status-bar--${day}`"
-            :title="`${index + 1} / 90`"
-          />
-        </div>
+        <template v-if="service.components">
+          <div
+            v-for="component in service.components"
+            :key="component.id"
+            class="gb-status-component"
+          >
+            <div class="gb-status-component-head">
+              <h3 class="gb-status-component-name">{{ component.name }}</h3>
+              <span
+                class="gb-status-service-state"
+                :class="`gb-status-service-state--${component.status}`"
+              >
+                {{ statusLabel(component.status, labels) }}
+              </span>
+            </div>
 
-        <div class="gb-status-meta">
-          <span>{{ labels.daysAgo }}</span>
-          <span class="gb-status-uptime">{{ uptimePercent(service.history) }}% {{ labels.uptime }}</span>
-          <span>{{ labels.today }}</span>
-        </div>
+            <div class="gb-status-bars" role="img" :aria-label="`${component.name} uptime`">
+              <span
+                v-for="(day, index) in component.history"
+                :key="index"
+                class="gb-status-bar"
+                :class="`gb-status-bar--${day.status}`"
+                @mouseenter="setHover(service.id, component.id, index, $event)"
+                @mouseleave="clearHover"
+              />
+            </div>
+
+            <div class="gb-status-meta">
+              <span>{{ labels.daysAgo }}</span>
+              <span class="gb-status-uptime">{{ uptimePercent(component.history) }}% {{ labels.uptime }}</span>
+              <span>{{ labels.today }}</span>
+            </div>
+          </div>
+        </template>
+
+        <template v-else>
+          <div class="gb-status-bars" role="img" :aria-label="`${service.name} uptime`">
+            <span
+              v-for="(day, index) in service.history"
+              :key="index"
+              class="gb-status-bar"
+              :class="`gb-status-bar--${day.status}`"
+              @mouseenter="setHover(service.id, service.id, index, $event)"
+              @mouseleave="clearHover"
+            />
+          </div>
+
+          <div class="gb-status-meta">
+            <span>{{ labels.daysAgo }}</span>
+            <span class="gb-status-uptime">{{ uptimePercent(service.history!) }}% {{ labels.uptime }}</span>
+            <span>{{ labels.today }}</span>
+          </div>
+        </template>
       </section>
     </div>
+
+    <section class="gb-status-bottom">
+      <div class="gb-status-bottom-head">
+        <h2 class="gb-status-section-title">{{ labels.systemMetrics }}</h2>
+        <div class="gb-status-tabs" role="tablist" aria-label="Metrics period">
+          <button
+            v-for="period in metricPeriods"
+            :key="period.id"
+            type="button"
+            class="gb-status-tab"
+            :class="{ active: metricPeriod === period.id }"
+            role="tab"
+            :aria-selected="metricPeriod === period.id"
+            @click="metricPeriod = period.id"
+          >
+            {{ period.label }}
+          </button>
+        </div>
+      </div>
+
+      <div class="gb-status-metric-card">
+        <div class="gb-status-metric-head">
+          <span>{{ labels.apiResponseTime }}</span>
+          <strong>{{ currentMetricValue }}</strong>
+        </div>
+
+        <div class="gb-status-chart-wrap">
+          <svg class="gb-status-chart" viewBox="0 0 640 140" preserveAspectRatio="none" aria-hidden="true">
+            <polyline
+              fill="none"
+              stroke="#2f81f7"
+              stroke-width="2.5"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              :points="chartPoints"
+            />
+          </svg>
+          <div class="gb-status-chart-labels">
+            <span
+              v-for="(label, index) in metricLabels[metricPeriod]"
+              :key="`${metricPeriod}-${index}`"
+            >
+              {{ label }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gb-status-bottom gb-status-bottom--incidents">
+      <h2 class="gb-status-section-title">{{ labels.pastIncidents }}</h2>
+
+      <div
+        v-for="day in pastIncidents"
+        :key="day.date.toISOString()"
+        class="gb-status-incident-day"
+      >
+        <h3 class="gb-status-incident-date">{{ formatIncidentDate(day.date, lang) }}</h3>
+
+        <p v-if="day.empty" class="gb-status-incident-empty">{{ labels.noIncidentsReported }}</p>
+
+        <article
+          v-for="(entry, index) in day.entries"
+          :key="index"
+          class="gb-status-incident-entry"
+        >
+          <p
+            class="gb-status-incident-title"
+            :class="`gb-status-incident-title--${entry.tone}`"
+          >
+            {{ entry.title }}
+          </p>
+          <p class="gb-status-incident-update">
+            <strong>{{ entry.statusLabel }}</strong>
+            <span> - {{ entry.message }}</span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <Teleport to="body">
+      <div
+        v-if="hover && hoveredDay"
+        class="gb-status-tooltip"
+        :style="tooltipStyle"
+      >
+        <p class="gb-status-tooltip-date">{{ formatDayDate(hoveredDay.date, lang) }}</p>
+
+        <template v-if="hoveredDay.status === 'operational'">
+          <p class="gb-status-tooltip-text">{{ labels.noDowntime }}</p>
+        </template>
+
+        <template v-else>
+          <div
+            class="gb-status-tooltip-incident"
+            :class="`gb-status-tooltip-incident--${hoveredDay.status}`"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2 1 21h22L12 2Zm0 6a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V9a1 1 0 0 1 1-1Zm0 10a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z" />
+            </svg>
+            <span>{{ statusLabel(hoveredDay.status, labels) }}</span>
+            <span v-if="hoveredDay.duration" class="gb-status-tooltip-duration">{{ hoveredDay.duration }}</span>
+          </div>
+
+          <p v-if="hoveredDay.related" class="gb-status-tooltip-related-label">{{ labels.related }}</p>
+          <p v-if="hoveredDay.related" class="gb-status-tooltip-related">{{ hoveredDay.related }}</p>
+        </template>
+      </div>
+    </Teleport>
   </div>
 </template>

@@ -63,6 +63,24 @@ type StatusLabels = {
   daysAgo: string
   today: string
   uptime: string
+  noDowntime: string
+  related: string
+  gatewayPartialIssue: string
+  gatewayMajorIssue: string
+  api: string
+  gateway: string
+  discordLink: string
+  systemMetrics: string
+  apiResponseTime: string
+  day: string
+  week: string
+  month: string
+  pastIncidents: string
+  noIncidentsReported: string
+  resolved: string
+  resolvedMessage: string
+  monitoring: string
+  monitoringMessage: string
 }
 
 const sidebarEn: SidebarLabels = {
@@ -384,7 +402,25 @@ const statusEn: StatusLabels = {
   major: 'Major Outage',
   daysAgo: '90 days ago',
   today: 'Today',
-  uptime: 'uptime'
+  uptime: 'uptime',
+  noDowntime: 'No downtime recorded on this day.',
+  related: 'RELATED',
+  gatewayPartialIssue: 'Gateway connection instability',
+  gatewayMajorIssue: 'Gateway service interruption',
+  api: 'API',
+  gateway: 'Gateway',
+  discordLink: 'Discord Link',
+  systemMetrics: 'System Metrics',
+  apiResponseTime: 'API Response Time',
+  day: 'Day',
+  week: 'Week',
+  month: 'Month',
+  pastIncidents: 'Past Incidents',
+  noIncidentsReported: 'No incidents reported today.',
+  resolved: 'Resolved',
+  resolvedMessage: 'This incident has been resolved.',
+  monitoring: 'Monitoring',
+  monitoringMessage: 'We are monitoring the situation after the outage.'
 }
 
 export const statusLabels: Record<LocaleKey, StatusLabels> = {
@@ -400,7 +436,25 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Panne majeure',
     daysAgo: 'Il y a 90 jours',
     today: "Aujourd'hui",
-    uptime: 'de disponibilité'
+    uptime: 'de disponibilité',
+    noDowntime: 'Aucune interruption enregistrée ce jour-là.',
+    related: 'LIÉ',
+    gatewayPartialIssue: 'Instabilité de la connexion Gateway',
+    gatewayMajorIssue: 'Interruption du service Gateway',
+    api: 'API',
+    gateway: 'Gateway',
+    discordLink: 'Lien Discord',
+    systemMetrics: 'Métriques système',
+    apiResponseTime: 'Temps de réponse API',
+    day: 'Jour',
+    week: 'Semaine',
+    month: 'Mois',
+    pastIncidents: 'Incidents passés',
+    noIncidentsReported: 'Aucun incident signalé aujourd’hui.',
+    resolved: 'Résolu',
+    resolvedMessage: 'Cet incident a été résolu.',
+    monitoring: 'Surveillance',
+    monitoringMessage: 'Nous surveillons la situation après la panne.'
   },
   es: {
     button: 'Estado',
@@ -413,7 +467,25 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Interrupción mayor',
     daysAgo: 'Hace 90 días',
     today: 'Hoy',
-    uptime: 'de tiempo activo'
+    uptime: 'de tiempo activo',
+    noDowntime: 'No se registró tiempo de inactividad este día.',
+    related: 'RELACIONADO',
+    gatewayPartialIssue: 'Inestabilidad de la conexión Gateway',
+    gatewayMajorIssue: 'Interrupción del servicio Gateway',
+    api: 'API',
+    gateway: 'Gateway',
+    discordLink: 'Enlace de Discord',
+    systemMetrics: 'Métricas del sistema',
+    apiResponseTime: 'Tiempo de respuesta de la API',
+    day: 'Día',
+    week: 'Semana',
+    month: 'Mes',
+    pastIncidents: 'Incidentes pasados',
+    noIncidentsReported: 'No se reportaron incidentes hoy.',
+    resolved: 'Resuelto',
+    resolvedMessage: 'Este incidente ha sido resuelto.',
+    monitoring: 'Monitoreo',
+    monitoringMessage: 'Estamos monitoreando la situación después de la interrupción.'
   },
   pt: {
     button: 'Status',
@@ -426,7 +498,25 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Interrupção maior',
     daysAgo: 'Há 90 dias',
     today: 'Hoje',
-    uptime: 'de tempo de atividade'
+    uptime: 'de tempo de atividade',
+    noDowntime: 'Nenhuma indisponibilidade registrada neste dia.',
+    related: 'RELACIONADO',
+    gatewayPartialIssue: 'Instabilidade na conexão Gateway',
+    gatewayMajorIssue: 'Interrupção do serviço Gateway',
+    api: 'API',
+    gateway: 'Gateway',
+    discordLink: 'Link do Discord',
+    systemMetrics: 'Métricas do sistema',
+    apiResponseTime: 'Tempo de resposta da API',
+    day: 'Dia',
+    week: 'Semana',
+    month: 'Mês',
+    pastIncidents: 'Incidentes anteriores',
+    noIncidentsReported: 'Nenhum incidente reportado hoje.',
+    resolved: 'Resolvido',
+    resolvedMessage: 'Este incidente foi resolvido.',
+    monitoring: 'Monitoramento',
+    monitoringMessage: 'Estamos monitorando a situação após a interrupção.'
   },
   it: {
     button: 'Stato',
@@ -439,7 +529,25 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Interruzione grave',
     daysAgo: '90 giorni fa',
     today: 'Oggi',
-    uptime: 'di uptime'
+    uptime: 'di uptime',
+    noDowntime: 'Nessun downtime registrato in questo giorno.',
+    related: 'CORRELATO',
+    gatewayPartialIssue: 'Instabilità della connessione Gateway',
+    gatewayMajorIssue: 'Interruzione del servizio Gateway',
+    api: 'API',
+    gateway: 'Gateway',
+    discordLink: 'Link Discord',
+    systemMetrics: 'Metriche di sistema',
+    apiResponseTime: 'Tempo di risposta API',
+    day: 'Giorno',
+    week: 'Settimana',
+    month: 'Mese',
+    pastIncidents: 'Incidenti passati',
+    noIncidentsReported: 'Nessun incidente segnalato oggi.',
+    resolved: 'Risolto',
+    resolvedMessage: 'Questo incidente è stato risolto.',
+    monitoring: 'Monitoraggio',
+    monitoringMessage: 'Stiamo monitorando la situazione dopo l’interruzione.'
   },
   vi: {
     button: 'Trạng thái',
@@ -452,7 +560,25 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Gián đoạn nghiêm trọng',
     daysAgo: '90 ngày trước',
     today: 'Hôm nay',
-    uptime: 'thời gian hoạt động'
+    uptime: 'thời gian hoạt động',
+    noDowntime: 'Không có sự cố nào được ghi nhận trong ngày này.',
+    related: 'LIÊN QUAN',
+    gatewayPartialIssue: 'Kết nối Gateway không ổn định',
+    gatewayMajorIssue: 'Gián đoạn dịch vụ Gateway',
+    api: 'API',
+    gateway: 'Gateway',
+    discordLink: 'Liên kết Discord',
+    systemMetrics: 'Số liệu hệ thống',
+    apiResponseTime: 'Thời gian phản hồi API',
+    day: 'Ngày',
+    week: 'Tuần',
+    month: 'Tháng',
+    pastIncidents: 'Sự cố trong quá khứ',
+    noIncidentsReported: 'Không có sự cố nào được báo cáo hôm nay.',
+    resolved: 'Đã giải quyết',
+    resolvedMessage: 'Sự cố này đã được giải quyết.',
+    monitoring: 'Đang theo dõi',
+    monitoringMessage: 'Chúng tôi đang theo dõi tình hình sau sự cố.'
   },
   zh: {
     button: '状态',
@@ -465,7 +591,25 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: '严重中断',
     daysAgo: '90 天前',
     today: '今天',
-    uptime: '正常运行时间'
+    uptime: '正常运行时间',
+    noDowntime: '当天未记录任何停机时间。',
+    related: '相关',
+    gatewayPartialIssue: 'Gateway 连接不稳定',
+    gatewayMajorIssue: 'Gateway 服务中断',
+    api: 'API',
+    gateway: 'Gateway',
+    discordLink: 'Discord 链接',
+    systemMetrics: '系统指标',
+    apiResponseTime: 'API 响应时间',
+    day: '日',
+    week: '周',
+    month: '月',
+    pastIncidents: '历史事件',
+    noIncidentsReported: '今天未报告任何事件。',
+    resolved: '已解决',
+    resolvedMessage: '此事件已解决。',
+    monitoring: '监控中',
+    monitoringMessage: '我们正在中断发生后监控情况。'
   }
 }
 
