@@ -111,7 +111,7 @@ type MetricPeriod = 'day' | 'week' | 'month'
 
 type PastIncidentEntry = {
   title: string
-  tone: 'partial' | 'major'
+  tone: 'partial' | 'major' | 'resolved'
   status: 'resolved' | 'monitoring'
   message: string
   statusLabel: string
@@ -214,7 +214,7 @@ const pastIncidents = computed<PastIncidentDay[]>(() => [
     entries: [
       {
         title: labels.value.gatewayMajorIssue,
-        tone: 'major',
+        tone: 'resolved',
         status: 'resolved',
         statusLabel: labels.value.resolved,
         message: labels.value.resolvedMessage
@@ -251,11 +251,6 @@ const services = computed<ServiceGroup[]>(() => {
       status: 'partial',
       duration: '7 hrs',
       related: labels.value.gatewayPartialIssue
-    },
-    [dateKey(new Date(2026, 7, 15))]: {
-      status: 'major',
-      duration: '1 hr 12 mins',
-      related: labels.value.gatewayMajorIssue
     }
   }
 
