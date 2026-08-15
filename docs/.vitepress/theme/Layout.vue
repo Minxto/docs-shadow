@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Content, useData, useRoute } from 'vitepress'
-import { computed, ref } from 'vue'
+import { computed, onUnmounted, ref, watch } from 'vue'
 import SearchBar from './SearchBar.vue'
 import GbIcon from './GbIcon.vue'
 import ThemeToggle from './ThemeToggle.vue'
@@ -119,6 +119,30 @@ const lastUpdatedText = computed(() => {
 })
 
 const copied = ref(false)
+const menuOpen = ref(false)
+
+function openMenu() {
+  menuOpen.value = true
+}
+
+function closeMenu() {
+  menuOpen.value = false
+}
+
+watch(menuOpen, (open) => {
+  document.body.classList.toggle('gb-menu-open', open)
+})
+
+watch(
+  () => route.path,
+  () => {
+    closeMenu()
+  }
+)
+
+onUnmounted(() => {
+  document.body.classList.remove('gb-menu-open')
+})
 
 async function copyPage() {
   const text = document.querySelector('.gb-content')?.textContent ?? ''
@@ -136,6 +160,20 @@ function pageIcon(link: string) {
   <div class="gb-site">
     <header class="gb-header">
       <div class="gb-header-inner">
+        <button
+          type="button"
+          class="gb-menu-btn"
+          :aria-expanded="menuOpen"
+          :aria-label="menuOpen ? ui.closeMenu : ui.openMenu"
+          @click="menuOpen ? closeMenu() : openMenu()"
+        >
+          <svg v-if="!menuOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+          </svg>
+          <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" stroke-linecap="round" />
+          </svg>
+        </button>
         <a :href="homePath" class="gb-brand">
           <img src="/logo.webp" alt="Shadow" class="gb-brand-icon" />
           <span class="gb-brand-title">{{ ui.siteTitle }}</span>
@@ -149,19 +187,30 @@ function pageIcon(link: string) {
       </div>
     </header>
 
+    <div
+      v-if="menuOpen"
+      class="gb-sidebar-backdrop"
+      aria-hidden="true"
+      @click="closeMenu"
+    />
+
     <div class="gb-body">
-      <aside class="gb-sidebar">
+      <aside
+        class="gb-sidebar"
+        :class="{ open: menuOpen }"
+        :aria-hidden="menuOpen ? undefined : true"
+      >
         <div class="gb-sidebar-gutter" aria-hidden="true"></div>
         <div class="gb-sidebar-inner">
           <div class="gb-sidebar-scroll">
-            <a :href="homePath" class="gb-sidebar-welcome">{{ ui.welcomeSidebar }}</a>
+            <a :href="homePath" class="gb-sidebar-welcome" @click="closeMenu">{{ ui.welcomeSidebar }}</a>
 
             <div
               v-for="group in sidebarGroups"
               :key="group.title"
               class="gb-sidebar-block"
             >
-              <a :href="group.base" class="gb-sidebar-section">
+              <a :href="group.base" class="gb-sidebar-section" @click="closeMenu">
                 <span class="gb-sidebar-section-icon">
                   <GbIcon :name="group.icon" :size="16" />
                 </span>
@@ -174,6 +223,7 @@ function pageIcon(link: string) {
                   :href="item.link"
                   class="gb-sidebar-link"
                   :class="{ active: isActive(item.link) }"
+                  @click="closeMenu"
                 >
                   <span class="gb-sidebar-link-icon">
                     <GbIcon :name="pageIcon(item.link)" :size="16" />
@@ -195,6 +245,8 @@ function pageIcon(link: string) {
       <main class="gb-main">
         <div class="gb-main-row">
           <div class="gb-main-inner">
+          <OnThisPage v-if="isDocPage" />
+
           <div v-if="isDocPage && currentSection" class="gb-page-toolbar">
             <a :href="currentSection.base" class="gb-breadcrumb">
               <img src="/logo.webp" alt="Shadow" class="gb-page-logo" />
@@ -242,7 +294,6 @@ function pageIcon(link: string) {
       </main>
     </div>
 
-    <OnThisPage v-if="isDocPage" />
     <StatusReports v-if="isStatusPage" />
 
     <ThemeToggle />

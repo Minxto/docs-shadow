@@ -31,6 +31,8 @@ type UiLabels = {
   next: string
   lastUpdated: string
   langMenu: string
+  openMenu: string
+  closeMenu: string
   onThisPage: string
   homeTitle: string
   homeSubtitle: string
@@ -189,6 +191,8 @@ const uiEn: UiLabels = {
   next: 'Next',
   lastUpdated: 'Last updated',
   langMenu: 'Language',
+  openMenu: 'Open menu',
+  closeMenu: 'Close menu',
   onThisPage: 'On this page',
   homeTitle: 'Welcome to Shadow Docs',
   homeSubtitle: 'Make sure to follow every step 100% correctly.',
@@ -221,6 +225,8 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     next: 'Suivant',
     lastUpdated: 'Dernière mise à jour',
     langMenu: 'Langue',
+    openMenu: 'Ouvrir le menu',
+    closeMenu: 'Fermer le menu',
     onThisPage: 'Sur cette page',
     homeTitle: 'Bienvenue sur Shadow Docs',
     homeSubtitle: 'Assurez-vous de suivre toutes les étapes à 100 % correctement.',
