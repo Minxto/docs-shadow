@@ -1361,6 +1361,15 @@ html:not(.dark) .gb-status-btn.active {
   background: #cf222e;
 }
 
+.gb-status-bar--active {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgba(47, 129, 247, 0.85);
+  transform: scaleY(1.08);
+}
+
+.gb-status-tooltip--pinned {
+  pointer-events: auto;
+}
+
 .gb-status-meta {
   display: grid;
   grid-template-columns: 1fr auto 1fr;

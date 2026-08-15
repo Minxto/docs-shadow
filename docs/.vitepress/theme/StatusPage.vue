@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useData } from 'vitepress'
 import { getStatusLabels } from '../shared/i18n'
 
@@ -27,7 +27,7 @@ type ServiceGroup = {
   history?: DayEntry[]
 }
 
-type HoverTarget = {
+type BarTarget = {
   groupId: string
   componentId: string
   index: number
@@ -195,7 +195,7 @@ const services = computed<ServiceGroup[]>(() => {
   const gatewayOverrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {
     [dateKey(new Date(2026, 7, 14))]: {
       status: 'partial',
-      duration: '0 hrs 21 mins',
+      duration: '7 hrs',
       related: labels.value.gatewayPartialIssue
     },
     [dateKey(new Date(2026, 7, 15))]: {
@@ -253,15 +253,20 @@ const allOperational = computed(() =>
   })
 )
 
-const hover = ref<HoverTarget | null>(null)
+const active = ref<BarTarget | null>(null)
+const pinned = ref(false)
 
-function setHover(
+function barKey(target: BarTarget) {
+  return `${target.groupId}:${target.componentId}:${target.index}`
+}
+
+function setActiveTarget(
   groupId: string,
   componentId: string,
   index: number,
   event: MouseEvent
 ) {
-  hover.value = {
+  active.value = {
     groupId,
     componentId,
     index,
@@ -269,28 +274,87 @@ function setHover(
   }
 }
 
-function clearHover() {
-  hover.value = null
+function onBarEnter(
+  groupId: string,
+  componentId: string,
+  index: number,
+  event: MouseEvent
+) {
+  if (!pinned.value) {
+    setActiveTarget(groupId, componentId, index, event)
+  }
 }
 
-const hoveredDay = computed(() => {
-  if (!hover.value) return null
+function onBarLeave() {
+  if (!pinned.value) {
+    active.value = null
+  }
+}
 
-  const group = services.value.find(item => item.id === hover.value!.groupId)
+function onBarClick(
+  groupId: string,
+  componentId: string,
+  index: number,
+  event: Event
+) {
+  event.stopPropagation()
+
+  const next: BarTarget = {
+    groupId,
+    componentId,
+    index,
+    anchor: event.currentTarget as HTMLElement
+  }
+
+  if (pinned.value && active.value && barKey(active.value) === barKey(next)) {
+    pinned.value = false
+    active.value = null
+    return
+  }
+
+  active.value = next
+  pinned.value = true
+}
+
+function isBarActive(groupId: string, componentId: string, index: number) {
+  return (
+    active.value?.groupId === groupId
+    && active.value?.componentId === componentId
+    && active.value?.index === index
+  )
+}
+
+function onDocumentClick(event: MouseEvent) {
+  if (!pinned.value) return
+
+  const target = event.target as Element
+  if (target.closest('.gb-status-bar') || target.closest('.gb-status-tooltip')) return
+
+  pinned.value = false
+  active.value = null
+}
+
+onMounted(() => document.addEventListener('click', onDocumentClick))
+onUnmounted(() => document.removeEventListener('click', onDocumentClick))
+
+const activeDay = computed(() => {
+  if (!active.value) return null
+
+  const group = services.value.find(item => item.id === active.value!.groupId)
   if (!group) return null
 
   if (group.components) {
-    const component = group.components.find(item => item.id === hover.value!.componentId)
-    return component?.history[hover.value.index] ?? null
+    const component = group.components.find(item => item.id === active.value!.componentId)
+    return component?.history[active.value.index] ?? null
   }
 
-  return group.history?.[hover.value.index] ?? null
+  return group.history?.[active.value.index] ?? null
 })
 
 const tooltipStyle = computed(() => {
-  if (!hover.value) return {}
+  if (!active.value) return {}
 
-  const rect = hover.value.anchor.getBoundingClientRect()
+  const rect = active.value.anchor.getBoundingClientRect()
   const left = rect.left + rect.width / 2
 
   return {
@@ -349,9 +413,16 @@ const tooltipStyle = computed(() => {
                 v-for="(day, index) in component.history"
                 :key="index"
                 class="gb-status-bar"
-                :class="`gb-status-bar--${day.status}`"
-                @mouseenter="setHover(service.id, component.id, index, $event)"
-                @mouseleave="clearHover"
+                :class="[
+                  `gb-status-bar--${day.status}`,
+                  { 'gb-status-bar--active': isBarActive(service.id, component.id, index) }
+                ]"
+                role="button"
+                tabindex="0"
+                @mouseenter="onBarEnter(service.id, component.id, index, $event)"
+                @mouseleave="onBarLeave"
+                @click="onBarClick(service.id, component.id, index, $event)"
+                @keydown.enter.prevent="onBarClick(service.id, component.id, index, $event)"
               />
             </div>
 
@@ -369,9 +440,16 @@ const tooltipStyle = computed(() => {
               v-for="(day, index) in service.history"
               :key="index"
               class="gb-status-bar"
-              :class="`gb-status-bar--${day.status}`"
-              @mouseenter="setHover(service.id, service.id, index, $event)"
-              @mouseleave="clearHover"
+              :class="[
+                `gb-status-bar--${day.status}`,
+                { 'gb-status-bar--active': isBarActive(service.id, service.id, index) }
+              ]"
+              role="button"
+              tabindex="0"
+              @mouseenter="onBarEnter(service.id, service.id, index, $event)"
+              @mouseleave="onBarLeave"
+              @click="onBarClick(service.id, service.id, index, $event)"
+              @keydown.enter.prevent="onBarClick(service.id, service.id, index, $event)"
             />
           </div>
 
@@ -465,30 +543,31 @@ const tooltipStyle = computed(() => {
 
     <Teleport to="body">
       <div
-        v-if="hover && hoveredDay"
+        v-if="active && activeDay"
         class="gb-status-tooltip"
+        :class="{ 'gb-status-tooltip--pinned': pinned }"
         :style="tooltipStyle"
       >
-        <p class="gb-status-tooltip-date">{{ formatDayDate(hoveredDay.date, lang) }}</p>
+        <p class="gb-status-tooltip-date">{{ formatDayDate(activeDay.date, lang) }}</p>
 
-        <template v-if="hoveredDay.status === 'operational'">
+        <template v-if="activeDay.status === 'operational'">
           <p class="gb-status-tooltip-text">{{ labels.noDowntime }}</p>
         </template>
 
         <template v-else>
           <div
             class="gb-status-tooltip-incident"
-            :class="`gb-status-tooltip-incident--${hoveredDay.status}`"
+            :class="`gb-status-tooltip-incident--${activeDay.status}`"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 2 1 21h22L12 2Zm0 6a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V9a1 1 0 0 1 1-1Zm0 10a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z" />
             </svg>
-            <span>{{ statusLabel(hoveredDay.status, labels) }}</span>
-            <span v-if="hoveredDay.duration" class="gb-status-tooltip-duration">{{ hoveredDay.duration }}</span>
+            <span>{{ statusLabel(activeDay.status, labels) }}</span>
+            <span v-if="activeDay.duration" class="gb-status-tooltip-duration">{{ activeDay.duration }}</span>
           </div>
 
-          <p v-if="hoveredDay.related" class="gb-status-tooltip-related-label">{{ labels.related }}</p>
-          <p v-if="hoveredDay.related" class="gb-status-tooltip-related">{{ hoveredDay.related }}</p>
+          <p v-if="activeDay.related" class="gb-status-tooltip-related-label">{{ labels.related }}</p>
+          <p v-if="activeDay.related" class="gb-status-tooltip-related">{{ activeDay.related }}</p>
         </template>
       </div>
     </Teleport>
