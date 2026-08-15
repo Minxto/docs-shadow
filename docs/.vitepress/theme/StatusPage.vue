@@ -251,6 +251,11 @@ const services = computed<ServiceGroup[]>(() => {
       status: 'partial',
       duration: '7 hrs',
       related: labels.value.gatewayPartialIssue
+    },
+    [dateKey(new Date(2026, 7, 15))]: {
+      status: 'major',
+      duration: '1 hr 12 mins',
+      related: labels.value.gatewayMajorIssue
     }
   }
 
