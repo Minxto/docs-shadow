@@ -549,11 +549,11 @@ html:not(.dark) .gb-search kbd {
 .gb-reports {
   position: fixed;
   top: calc(var(--gb-header-height) + 28px);
-  right: 24px;
-  width: 300px;
+  right: 200px;
+  width: 260px;
   max-height: calc(100vh - var(--gb-header-height) - 56px);
   overflow-y: auto;
-  padding: 0 4px 24px 0;
+  padding: 0;
   z-index: 20;
 }
 
@@ -562,34 +562,22 @@ html:not(.dark) .gb-search kbd {
 }
 
 .gb-reports-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0;
   color: var(--gb-text-muted);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .gb-reports-subtitle {
-  margin: 6px 0 10px;
+  margin: 6px 0 0;
   color: var(--gb-text-muted);
   font-size: 12px;
   line-height: 1.45;
-}
-
-.gb-reports-refresh {
-  border: 1px solid var(--gb-border-strong);
-  border-radius: 8px;
-  background: var(--gb-bg-elevated);
-  color: var(--gb-text-body);
-  font-size: 12px;
-  font-family: inherit;
-  padding: 6px 10px;
-  cursor: pointer;
-}
-
-.gb-reports-refresh:hover {
-  border-color: rgba(80, 139, 252, 0.4);
-  color: var(--gb-text);
 }
 
 .gb-reports-form {

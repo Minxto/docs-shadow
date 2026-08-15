@@ -180,9 +180,6 @@ onUnmounted(() => {
     <div class="gb-reports-head">
       <div class="gb-reports-title">{{ labels.title }}</div>
       <p class="gb-reports-subtitle">{{ labels.subtitle }}</p>
-      <button type="button" class="gb-reports-refresh" @click="loadReports">
-        {{ labels.refresh }}
-      </button>
     </div>
 
     <form class="gb-reports-form" @submit.prevent="submitReport">
