@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { validateContent } from '../../../shared/profanity'
+import { validateContent } from '../../_shared/profanity'
 import { addReply } from '../../_shared/reports-store'
 
 function sanitizeAuthor(value: unknown, fallback: string) {

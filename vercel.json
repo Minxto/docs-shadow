@@ -3,5 +3,10 @@
   "framework": null,
   "installCommand": "npm install",
   "buildCommand": "npm run docs:build",
-  "outputDirectory": "docs/.vitepress/dist"
+  "outputDirectory": "docs/.vitepress/dist",
+  "functions": {
+    "api/**/*.ts": {
+      "includeFiles": "api/_shared/**"
+    }
+  }
 }
