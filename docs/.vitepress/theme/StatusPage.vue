@@ -121,10 +121,20 @@ const metricPeriod = ref<MetricPeriod>('day')
 const { localeIndex, lang } = useData()
 const labels = computed(() => getStatusLabels(localeIndex.value))
 
+const CHART_WIDTH = 640
+const CHART_HEIGHT = 140
+const CHART_PADDING = 12
+
 const metricSeries: Record<MetricPeriod, number[]> = {
   day: [118, 132, 145, 160, 152, 167, 174, 168, 155, 149, 162, 167],
   week: [142, 138, 151, 159, 167, 161, 154, 148, 156, 163, 170, 167],
   month: [155, 149, 158, 164, 172, 168, 161, 157, 165, 169, 171, 167]
+}
+
+const metricPointLabels: Record<MetricPeriod, string[]> = {
+  day: ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+  week: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Today'],
+  month: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr']
 }
 
 const metricLabels: Record<MetricPeriod, string[]> = {
@@ -134,25 +144,62 @@ const metricLabels: Record<MetricPeriod, string[]> = {
 }
 
 const currentMetricValues = computed(() => metricSeries[metricPeriod.value])
-const currentMetricValue = computed(() => `${currentMetricValues.value.at(-1)} ms`)
+const metricHoverIndex = ref<number | null>(null)
+const chartWrapRef = ref<HTMLElement | null>(null)
 
-const chartPoints = computed(() => {
+const displayedMetricValue = computed(() => {
   const values = currentMetricValues.value
+  const index = metricHoverIndex.value ?? values.length - 1
+  return `${values[index]} ms`
+})
+
+function buildChartCoords(values: number[], pointLabels: string[]) {
   const max = Math.max(...values, 200)
   const min = Math.min(...values, 100)
   const range = max - min || 1
-  const width = 640
-  const height = 140
-  const padding = 12
 
-  return values
-    .map((value, index) => {
-      const x = padding + (index / (values.length - 1)) * (width - padding * 2)
-      const y = height - padding - ((value - min) / range) * (height - padding * 2)
-      return `${x},${y}`
-    })
-    .join(' ')
+  return values.map((value, index) => ({
+    x: CHART_PADDING + (index / (values.length - 1)) * (CHART_WIDTH - CHART_PADDING * 2),
+    y: CHART_HEIGHT - CHART_PADDING - ((value - min) / range) * (CHART_HEIGHT - CHART_PADDING * 2),
+    value,
+    label: pointLabels[index] ?? ''
+  }))
+}
+
+const chartCoords = computed(() =>
+  buildChartCoords(currentMetricValues.value, metricPointLabels[metricPeriod.value])
+)
+
+const chartPolyline = computed(() =>
+  chartCoords.value.map(point => `${point.x},${point.y}`).join(' ')
+)
+
+const metricTooltipStyle = computed(() => {
+  if (metricHoverIndex.value === null || !chartWrapRef.value) return {}
+
+  const point = chartCoords.value[metricHoverIndex.value]
+  const rect = chartWrapRef.value.getBoundingClientRect()
+  const left = rect.left + (point.x / CHART_WIDTH) * rect.width
+  const top = rect.top + (point.y / CHART_HEIGHT) * rect.height
+
+  return {
+    left: `${left}px`,
+    top: `${top - 10}px`
+  }
 })
+
+const metricTooltip = computed(() => {
+  if (metricHoverIndex.value === null) return null
+  return chartCoords.value[metricHoverIndex.value] ?? null
+})
+
+function onMetricPointEnter(index: number) {
+  metricHoverIndex.value = index
+}
+
+function onMetricPointLeave() {
+  metricHoverIndex.value = null
+}
 
 const pastIncidents = computed<PastIncidentDay[]>(() => [
   {
@@ -474,7 +521,7 @@ const tooltipStyle = computed(() => {
             :class="{ active: metricPeriod === period.id }"
             role="tab"
             :aria-selected="metricPeriod === period.id"
-            @click="metricPeriod = period.id"
+            @click="metricPeriod = period.id; metricHoverIndex = null"
           >
             {{ period.label }}
           </button>
@@ -484,18 +531,45 @@ const tooltipStyle = computed(() => {
       <div class="gb-status-metric-card">
         <div class="gb-status-metric-head">
           <span>{{ labels.apiResponseTime }}</span>
-          <strong>{{ currentMetricValue }}</strong>
+          <strong>{{ displayedMetricValue }}</strong>
         </div>
 
-        <div class="gb-status-chart-wrap">
-          <svg class="gb-status-chart" viewBox="0 0 640 140" preserveAspectRatio="none" aria-hidden="true">
+        <div ref="chartWrapRef" class="gb-status-chart-wrap">
+          <svg
+            class="gb-status-chart"
+            :viewBox="`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`"
+            preserveAspectRatio="none"
+          >
             <polyline
               fill="none"
               stroke="#2f81f7"
               stroke-width="2.5"
               stroke-linejoin="round"
               stroke-linecap="round"
-              :points="chartPoints"
+              :points="chartPolyline"
+            />
+
+            <circle
+              v-if="metricHoverIndex !== null"
+              :cx="chartCoords[metricHoverIndex].x"
+              :cy="chartCoords[metricHoverIndex].y"
+              r="4.5"
+              fill="#2f81f7"
+              stroke="#fff"
+              stroke-width="2"
+              pointer-events="none"
+            />
+
+            <circle
+              v-for="(point, index) in chartCoords"
+              :key="`${metricPeriod}-${index}`"
+              :cx="point.x"
+              :cy="point.y"
+              r="12"
+              fill="transparent"
+              class="gb-status-chart-hit"
+              @mouseenter="onMetricPointEnter(index)"
+              @mouseleave="onMetricPointLeave"
             />
           </svg>
           <div class="gb-status-chart-labels">
@@ -542,6 +616,15 @@ const tooltipStyle = computed(() => {
     </section>
 
     <Teleport to="body">
+      <div
+        v-if="metricTooltip"
+        class="gb-status-tooltip gb-status-tooltip--metric"
+        :style="metricTooltipStyle"
+      >
+        <p class="gb-status-tooltip-date">{{ metricTooltip.label }}</p>
+        <p class="gb-status-tooltip-text">{{ metricTooltip.value }} ms</p>
+      </div>
+
       <div
         v-if="active && activeDay"
         class="gb-status-tooltip"

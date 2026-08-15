@@ -1553,12 +1553,33 @@ html:not(.dark) .gb-status-btn.active {
 
 .gb-status-chart-wrap {
   width: 100%;
+  position: relative;
 }
 
 .gb-status-chart {
   display: block;
   width: 100%;
   height: 140px;
+}
+
+.gb-status-chart-hit {
+  cursor: crosshair;
+}
+
+.gb-status-tooltip--metric {
+  min-width: 88px;
+  text-align: center;
+}
+
+.gb-status-tooltip--metric .gb-status-tooltip-date {
+  margin-bottom: 4px;
+}
+
+.gb-status-tooltip--metric .gb-status-tooltip-text {
+  margin: 0;
+  color: #1f2328;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .gb-status-chart-labels {
