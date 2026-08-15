@@ -36,6 +36,21 @@ const replyMessages = ref<Record<string, string>>({})
 
 let refreshTimer: ReturnType<typeof setInterval> | null = null
 
+async function parseJsonResponse(response: Response) {
+  const text = await response.text()
+  if (!text) return {}
+
+  try {
+    return JSON.parse(text) as Record<string, unknown>
+  } catch {
+    if (response.status >= 500) {
+      unavailable.value = true
+      throw new Error(labels.value.unavailable)
+    }
+    throw new Error(labels.value.submitError)
+  }
+}
+
 function formatTime(value: string) {
   return new Intl.DateTimeFormat(lang.value, {
     day: 'numeric',
@@ -58,19 +73,19 @@ function validateFields(author: string, message: string) {
 async function loadReports() {
   try {
     const response = await fetch('/api/reports')
-    const data = await response.json()
+    const data = await parseJsonResponse(response)
 
     if (!response.ok) {
       unavailable.value = response.status === 503
-      throw new Error(data.error ?? labels.value.submitError)
+      throw new Error(typeof data.error === 'string' ? data.error : labels.value.submitError)
     }
 
-    reports.value = data.reports ?? []
+    reports.value = (data.reports as StatusReport[] | undefined) ?? []
     unavailable.value = false
     error.value = ''
-  } catch {
+  } catch (err) {
     if (!unavailable.value) {
-      error.value = labels.value.unavailable
+      error.value = err instanceof Error ? err.message : labels.value.unavailable
     }
   } finally {
     loading.value = false
@@ -96,15 +111,16 @@ async function submitReport() {
         message: reportMessage.value.trim()
       })
     })
-    const data = await response.json()
+    const data = await parseJsonResponse(response)
 
     if (!response.ok) {
       if (response.status === 503) unavailable.value = true
-      throw new Error(data.error ?? labels.value.submitError)
+      throw new Error(typeof data.error === 'string' ? data.error : labels.value.submitError)
     }
 
-    if (data.report) {
-      reports.value = [data.report, ...reports.value.filter(item => item.id !== data.report.id)]
+    const report = data.report as StatusReport | undefined
+    if (report) {
+      reports.value = [report, ...reports.value.filter(item => item.id !== report.id)]
     } else {
       await loadReports()
     }
@@ -139,15 +155,16 @@ async function submitReply(reportId: string) {
         message: message.trim()
       })
     })
-    const data = await response.json()
+    const data = await parseJsonResponse(response)
 
     if (!response.ok) {
       if (response.status === 503) unavailable.value = true
-      throw new Error(data.error ?? labels.value.submitError)
+      throw new Error(typeof data.error === 'string' ? data.error : labels.value.submitError)
     }
 
-    if (data.report) {
-      reports.value = reports.value.map(item => (item.id === reportId ? data.report : item))
+    const report = data.report as StatusReport | undefined
+    if (report) {
+      reports.value = reports.value.map(item => (item.id === reportId ? report : item))
     } else {
       await loadReports()
     }
