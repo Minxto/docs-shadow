@@ -35,6 +35,7 @@ type BarTarget = {
 }
 
 const HISTORY_DAYS = 90
+const todayAnchor = ref(startOfToday())
 
 function startOfToday() {
   const today = new Date()
@@ -42,15 +43,24 @@ function startOfToday() {
   return today
 }
 
+function daysAgo(count: number, from = todayAnchor.value) {
+  const date = new Date(from)
+  date.setDate(date.getDate() - count)
+  return date
+}
+
+function isSameDay(a: Date, b: Date) {
+  return dateKey(a) === dateKey(b)
+}
+
 function dateKey(date: Date) {
   return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
 }
 
 function buildHistory(
+  today: Date,
   overrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {}
 ): DayEntry[] {
-  const today = startOfToday()
-
   return Array.from({ length: HISTORY_DAYS }, (_, index) => {
     const date = new Date(today)
     date.setDate(date.getDate() - (HISTORY_DAYS - 1 - index))
@@ -105,6 +115,21 @@ function formatIncidentDate(date: Date, locale: string) {
     day: 'numeric',
     year: 'numeric'
   }).format(date)
+}
+
+function formatBarDate(date: Date, locale: string) {
+  const today = todayAnchor.value
+
+  if (isSameDay(date, today)) return labels.value.today
+
+  const yesterday = daysAgo(1, today)
+  if (isSameDay(date, yesterday)) return labels.value.yesterday
+
+  return formatDayDate(date, locale)
+}
+
+function isTodayBar(index: number, history: DayEntry[]) {
+  return index === history.length - 1
 }
 
 type MetricPeriod = 'day' | 'week' | 'month'
@@ -208,9 +233,19 @@ function onMetricPointLeave() {
   metricHoverIndex.value = null
 }
 
+function metricLatencyClass(value: number) {
+  if (value < 150) return 'gb-status-tooltip--fast'
+  if (value < 200) return 'gb-status-tooltip--ok'
+  return 'gb-status-tooltip--slow'
+}
+
 const pastIncidents = computed<PastIncidentDay[]>(() => [
   {
-    date: new Date(2026, 7, 15),
+    date: daysAgo(0),
+    empty: true
+  },
+  {
+    date: daysAgo(1),
     entries: [
       {
         title: labels.value.gatewayMajorIssue,
@@ -222,7 +257,7 @@ const pastIncidents = computed<PastIncidentDay[]>(() => [
     ]
   },
   {
-    date: new Date(2026, 7, 14),
+    date: daysAgo(2),
     entries: [
       {
         title: labels.value.gatewayPartialIssue,
@@ -234,7 +269,7 @@ const pastIncidents = computed<PastIncidentDay[]>(() => [
     ]
   },
   {
-    date: new Date(2026, 7, 13),
+    date: daysAgo(3),
     empty: true
   }
 ])
@@ -246,27 +281,28 @@ const metricPeriods = computed(() => ([
 ]))
 
 const services = computed<ServiceGroup[]>(() => {
+  const today = todayAnchor.value
   const gatewayOverrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {
-    [dateKey(new Date(2026, 7, 14))]: {
+    [dateKey(daysAgo(2, today))]: {
       status: 'partial',
       duration: '7 hrs',
       related: labels.value.gatewayPartialIssue
     },
-    [dateKey(new Date(2026, 7, 15))]: {
+    [dateKey(daysAgo(1, today))]: {
       status: 'major',
       duration: '1 hr 12 mins',
       related: labels.value.gatewayMajorIssue
     }
   }
 
-  const gatewayHistory = buildHistory(gatewayOverrides)
+  const gatewayHistory = buildHistory(today, gatewayOverrides)
   const gatewayStatus: DayStatus = 'operational'
   const emulatorComponents: ComponentStatus[] = [
     {
       id: 'api',
       name: labels.value.api,
       status: 'operational',
-      history: buildHistory()
+      history: buildHistory(today)
     },
     {
       id: 'gateway',
@@ -278,7 +314,7 @@ const services = computed<ServiceGroup[]>(() => {
       id: 'discord-link',
       name: labels.value.discordLink,
       status: 'operational',
-      history: buildHistory()
+      history: buildHistory(today)
     }
   ]
 
@@ -293,7 +329,7 @@ const services = computed<ServiceGroup[]>(() => {
       id: 'shadow-color-bot',
       name: 'Shadow Color bot',
       status: 'operational',
-      history: buildHistory()
+      history: buildHistory(today)
     }
   ]
 })
@@ -388,7 +424,10 @@ function onDocumentClick(event: MouseEvent) {
   active.value = null
 }
 
-onMounted(() => document.addEventListener('click', onDocumentClick))
+onMounted(() => {
+  todayAnchor.value = startOfToday()
+  document.addEventListener('click', onDocumentClick)
+})
 onUnmounted(() => document.removeEventListener('click', onDocumentClick))
 
 const activeDay = computed(() => {
@@ -465,12 +504,16 @@ const tooltipStyle = computed(() => {
             <div class="gb-status-bars" role="img" :aria-label="`${component.name} uptime`">
               <span
                 v-for="(day, index) in component.history"
-                :key="index"
+                :key="`${component.id}-${dateKey(day.date)}`"
                 class="gb-status-bar"
                 :class="[
                   `gb-status-bar--${day.status}`,
-                  { 'gb-status-bar--active': isBarActive(service.id, component.id, index) }
+                  {
+                    'gb-status-bar--active': isBarActive(service.id, component.id, index),
+                    'gb-status-bar--today': isTodayBar(index, component.history)
+                  }
                 ]"
+                :aria-label="formatBarDate(day.date, lang)"
                 role="button"
                 tabindex="0"
                 @mouseenter="onBarEnter(service.id, component.id, index, $event)"
@@ -492,12 +535,16 @@ const tooltipStyle = computed(() => {
           <div class="gb-status-bars" role="img" :aria-label="`${service.name} uptime`">
             <span
               v-for="(day, index) in service.history"
-              :key="index"
+              :key="`${service.id}-${dateKey(day.date)}`"
               class="gb-status-bar"
               :class="[
                 `gb-status-bar--${day.status}`,
-                { 'gb-status-bar--active': isBarActive(service.id, service.id, index) }
+                {
+                  'gb-status-bar--active': isBarActive(service.id, service.id, index),
+                  'gb-status-bar--today': isTodayBar(index, service.history!)
+                }
               ]"
+              :aria-label="formatBarDate(day.date, lang)"
               role="button"
               tabindex="0"
               @mouseenter="onBarEnter(service.id, service.id, index, $event)"
@@ -601,7 +648,9 @@ const tooltipStyle = computed(() => {
       >
         <h3 class="gb-status-incident-date">{{ formatIncidentDate(day.date, lang) }}</h3>
 
-        <p v-if="day.empty" class="gb-status-incident-empty">{{ labels.noIncidentsReported }}</p>
+        <p v-if="day.empty" class="gb-status-incident-empty">
+          {{ isSameDay(day.date, todayAnchor) ? labels.noIncidentsReported : labels.noIncidentsOnDay }}
+        </p>
 
         <article
           v-for="(entry, index) in day.entries"
@@ -626,10 +675,14 @@ const tooltipStyle = computed(() => {
       <div
         v-if="metricTooltip"
         class="gb-status-tooltip gb-status-tooltip--metric"
+        :class="metricLatencyClass(metricTooltip.value)"
         :style="metricTooltipStyle"
       >
-        <p class="gb-status-tooltip-date">{{ metricTooltip.label }}</p>
-        <p class="gb-status-tooltip-text">{{ metricTooltip.value }} ms</p>
+        <span class="gb-status-tooltip-metric-time">{{ metricTooltip.label }}</span>
+        <div class="gb-status-tooltip-metric-body">
+          <span class="gb-status-tooltip-metric-value">{{ metricTooltip.value }}</span>
+          <span class="gb-status-tooltip-metric-unit">ms</span>
+        </div>
       </div>
 
       <div
@@ -638,7 +691,7 @@ const tooltipStyle = computed(() => {
         :class="{ 'gb-status-tooltip--pinned': pinned }"
         :style="tooltipStyle"
       >
-        <p class="gb-status-tooltip-date">{{ formatDayDate(activeDay.date, lang) }}</p>
+        <p class="gb-status-tooltip-date">{{ formatBarDate(activeDay.date, lang) }}</p>
 
         <template v-if="activeDay.status === 'operational'">
           <p class="gb-status-tooltip-text">{{ labels.noDowntime }}</p>

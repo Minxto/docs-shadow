@@ -1550,6 +1550,10 @@ html:not(.dark) .gb-status-btn.active {
   transform: scaleY(1.08);
 }
 
+.gb-status-bar--today {
+  box-shadow: 0 0 0 1px rgba(47, 129, 247, 0.45);
+}
+
 .gb-status-tooltip--pinned {
   pointer-events: auto;
 }
@@ -1583,26 +1587,55 @@ html:not(.dark) .gb-status-btn.active {
   position: fixed;
   z-index: 200;
   width: min(280px, calc(100vw - 24px));
-  padding: 12px 14px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  padding: 14px 16px;
+  border: 1px solid var(--gb-border-strong);
+  border-radius: 12px;
+  background: var(--gb-bg-elevated);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 16px 40px rgba(0, 0, 0, 0.22);
   pointer-events: none;
-  transform: translate(-50%, calc(-100% - 8px));
+  transform: translate(-50%, calc(-100% - 14px));
+  animation: gb-tooltip-in 0.15s ease-out;
+}
+
+.gb-status-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-right: 1px solid var(--gb-border-strong);
+  border-bottom: 1px solid var(--gb-border-strong);
+  background: var(--gb-bg-elevated);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+@keyframes gb-tooltip-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-100% - 8px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, calc(-100% - 14px));
+  }
 }
 
 .gb-status-tooltip-date {
   margin: 0 0 8px;
-  color: #1f2328;
-  font-size: 14px;
+  color: var(--gb-text);
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .gb-status-tooltip-text {
   margin: 0;
-  color: #57606a;
+  color: var(--gb-text-body);
   font-size: 13px;
   line-height: 1.45;
 }
@@ -1613,9 +1646,10 @@ html:not(.dark) .gb-status-btn.active {
   gap: 8px;
   margin-bottom: 10px;
   padding: 10px 12px;
-  border-radius: 6px;
-  background: #f6f8fa;
-  color: #1f2328;
+  border: 1px solid var(--gb-border);
+  border-radius: 8px;
+  background: var(--gb-bg);
+  color: var(--gb-text);
   font-size: 13px;
   font-weight: 500;
   line-height: 1.3;
@@ -1641,7 +1675,7 @@ html:not(.dark) .gb-status-btn.active {
 
 .gb-status-tooltip-duration {
   margin-left: auto;
-  color: #57606a;
+  color: var(--gb-text-muted);
   font-size: 12px;
   font-weight: 400;
   white-space: nowrap;
@@ -1649,15 +1683,16 @@ html:not(.dark) .gb-status-btn.active {
 
 .gb-status-tooltip-related-label {
   margin: 0 0 4px;
-  color: #8c959f;
+  color: var(--gb-text-muted);
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .gb-status-tooltip-related {
   margin: 0;
-  color: #1f2328;
+  color: var(--gb-text-body);
   font-size: 13px;
   line-height: 1.45;
 }
@@ -1751,19 +1786,85 @@ html:not(.dark) .gb-status-btn.active {
 }
 
 .gb-status-tooltip--metric {
-  min-width: 88px;
+  width: auto;
+  min-width: 104px;
+  padding: 10px 14px 12px;
   text-align: center;
+  overflow: hidden;
 }
 
-.gb-status-tooltip--metric .gb-status-tooltip-date {
-  margin-bottom: 4px;
+.gb-status-tooltip--metric::before {
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
 }
 
-.gb-status-tooltip--metric .gb-status-tooltip-text {
-  margin: 0;
-  color: #1f2328;
-  font-size: 14px;
+.gb-status-tooltip-metric-time {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--gb-text-muted);
+  font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.gb-status-tooltip-metric-body {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 3px;
+}
+
+.gb-status-tooltip-metric-value {
+  color: var(--gb-text);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.gb-status-tooltip-metric-unit {
+  color: var(--gb-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.gb-status-tooltip--metric.gb-status-tooltip--fast .gb-status-tooltip-metric-value {
+  color: #3fb950;
+}
+
+.gb-status-tooltip--metric.gb-status-tooltip--ok .gb-status-tooltip-metric-value {
+  color: #58a6ff;
+}
+
+.gb-status-tooltip--metric.gb-status-tooltip--slow .gb-status-tooltip-metric-value {
+  color: #d29922;
+}
+
+.gb-status-tooltip--metric.gb-status-tooltip--fast::after,
+.gb-status-tooltip--metric.gb-status-tooltip--ok::after,
+.gb-status-tooltip--metric.gb-status-tooltip--slow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  border-radius: 12px 12px 0 0;
+}
+
+.gb-status-tooltip--metric.gb-status-tooltip--fast::after {
+  background: #3fb950;
+}
+
+.gb-status-tooltip--metric.gb-status-tooltip--ok::after {
+  background: #58a6ff;
+}
+
+.gb-status-tooltip--metric.gb-status-tooltip--slow::after {
+  background: #d29922;
 }
 
 .gb-status-chart-labels {

@@ -64,6 +64,7 @@ type StatusLabels = {
   major: string
   daysAgo: string
   today: string
+  yesterday: string
   uptime: string
   noDowntime: string
   related: string
@@ -79,6 +80,7 @@ type StatusLabels = {
   month: string
   pastIncidents: string
   noIncidentsReported: string
+  noIncidentsOnDay: string
   resolved: string
   resolvedMessage: string
   monitoring: string
@@ -408,6 +410,7 @@ const statusEn: StatusLabels = {
   major: 'Major Outage',
   daysAgo: '90 days ago',
   today: 'Today',
+  yesterday: 'Yesterday',
   uptime: 'uptime',
   noDowntime: 'No downtime recorded on this day.',
   related: 'RELATED',
@@ -423,6 +426,7 @@ const statusEn: StatusLabels = {
   month: 'Month',
   pastIncidents: 'Past Incidents',
   noIncidentsReported: 'No incidents reported today.',
+  noIncidentsOnDay: 'No incidents reported.',
   resolved: 'Resolved',
   resolvedMessage: 'This incident has been resolved.',
   monitoring: 'Monitoring',
@@ -442,6 +446,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Panne majeure',
     daysAgo: 'Il y a 90 jours',
     today: "Aujourd'hui",
+    yesterday: 'Hier',
     uptime: 'de disponibilité',
     noDowntime: 'Aucune interruption enregistrée ce jour-là.',
     related: 'LIÉ',
@@ -457,6 +462,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     month: 'Mois',
     pastIncidents: 'Incidents passés',
     noIncidentsReported: 'Aucun incident signalé aujourd’hui.',
+    noIncidentsOnDay: 'Aucun incident signalé.',
     resolved: 'Résolu',
     resolvedMessage: 'Cet incident a été résolu.',
     monitoring: 'Surveillance',
@@ -473,6 +479,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Interrupción mayor',
     daysAgo: 'Hace 90 días',
     today: 'Hoy',
+    yesterday: 'Ayer',
     uptime: 'de tiempo activo',
     noDowntime: 'No se registró tiempo de inactividad este día.',
     related: 'RELACIONADO',
@@ -488,6 +495,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     month: 'Mes',
     pastIncidents: 'Incidentes pasados',
     noIncidentsReported: 'No se reportaron incidentes hoy.',
+    noIncidentsOnDay: 'No se reportaron incidentes.',
     resolved: 'Resuelto',
     resolvedMessage: 'Este incidente ha sido resuelto.',
     monitoring: 'Monitoreo',
@@ -504,6 +512,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Interrupção maior',
     daysAgo: 'Há 90 dias',
     today: 'Hoje',
+    yesterday: 'Ontem',
     uptime: 'de tempo de atividade',
     noDowntime: 'Nenhuma indisponibilidade registrada neste dia.',
     related: 'RELACIONADO',
@@ -519,6 +528,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     month: 'Mês',
     pastIncidents: 'Incidentes anteriores',
     noIncidentsReported: 'Nenhum incidente reportado hoje.',
+    noIncidentsOnDay: 'Nenhum incidente reportado.',
     resolved: 'Resolvido',
     resolvedMessage: 'Este incidente foi resolvido.',
     monitoring: 'Monitoramento',
@@ -535,6 +545,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Interruzione grave',
     daysAgo: '90 giorni fa',
     today: 'Oggi',
+    yesterday: 'Ieri',
     uptime: 'di uptime',
     noDowntime: 'Nessun downtime registrato in questo giorno.',
     related: 'CORRELATO',
@@ -550,6 +561,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     month: 'Mese',
     pastIncidents: 'Incidenti passati',
     noIncidentsReported: 'Nessun incidente segnalato oggi.',
+    noIncidentsOnDay: 'Nessun incidente segnalato.',
     resolved: 'Risolto',
     resolvedMessage: 'Questo incidente è stato risolto.',
     monitoring: 'Monitoraggio',
@@ -566,6 +578,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: 'Gián đoạn nghiêm trọng',
     daysAgo: '90 ngày trước',
     today: 'Hôm nay',
+    yesterday: 'Hôm qua',
     uptime: 'thời gian hoạt động',
     noDowntime: 'Không có sự cố nào được ghi nhận trong ngày này.',
     related: 'LIÊN QUAN',
@@ -581,6 +594,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     month: 'Tháng',
     pastIncidents: 'Sự cố trong quá khứ',
     noIncidentsReported: 'Không có sự cố nào được báo cáo hôm nay.',
+    noIncidentsOnDay: 'Không có sự cố nào được báo cáo.',
     resolved: 'Đã giải quyết',
     resolvedMessage: 'Sự cố này đã được giải quyết.',
     monitoring: 'Đang theo dõi',
@@ -597,6 +611,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     major: '严重中断',
     daysAgo: '90 天前',
     today: '今天',
+    yesterday: '昨天',
     uptime: '正常运行时间',
     noDowntime: '当天未记录任何停机时间。',
     related: '相关',
@@ -612,6 +627,7 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     month: '月',
     pastIncidents: '历史事件',
     noIncidentsReported: '今天未报告任何事件。',
+    noIncidentsOnDay: '未报告任何事件。',
     resolved: '已解决',
     resolvedMessage: '此事件已解决。',
     monitoring: '监控中',
@@ -801,10 +817,11 @@ const patchNotesEn: PatchNotesLabels = {
   title: 'Patch Notes',
   ariaLabel: 'Patch notes',
   notes: [
-    'Patch addressing in-game connection losses that resulted in a temporary ban.',
-    'Patch fixing the system that required you to restart your game every time you used an account.',
-    'Patch for certain regions where it was impossible to connect.',
-    'Improvements to the system that allows you to maintain your connection to Riot.'
+    'Adaptation following the Vanguard update',
+    'Reduced VAL-102 kicks',
+    'Improved the session system to prevent kicks',
+    'Further work on temporary bans',
+    'Improved emulator stability'
   ]
 }
 
@@ -814,60 +831,66 @@ export const patchNotesLabels: Record<LocaleKey, PatchNotesLabels> = {
     title: 'Notes de patch',
     ariaLabel: 'Notes de patch',
     notes: [
-      'Correctif pour les déconnexions en jeu entraînant un ban temporaire.',
-      'Correctif du système qui obligeait à redémarrer le jeu à chaque changement de compte.',
-      'Correctif pour certaines régions où la connexion était impossible.',
-      'Améliorations du système permettant de maintenir la connexion à Riot.'
+      'Adaptation suite à la mise à jour Vanguard',
+      'Réduction des kicks VAL-102',
+      'Amélioration du système de session pour éviter les kicks',
+      'Travail supplémentaire sur les bans temporaires',
+      'Amélioration de la stabilité de l\'émulateur'
     ]
   },
   es: {
     title: 'Notas del parche',
     ariaLabel: 'Notas del parche',
     notes: [
-      'Parche que corrige las desconexiones en el juego que provocaban un baneo temporal.',
-      'Parche que corrige el sistema que obligaba a reiniciar el juego cada vez que usabas una cuenta.',
-      'Parche para ciertas regiones donde era imposible conectarse.',
-      'Mejoras en el sistema que permite mantener la conexión con Riot.'
+      'Adaptación tras la actualización de Vanguard',
+      'Reducción de kicks VAL-102',
+      'Mejora del sistema de sesión para evitar kicks',
+      'Más trabajo sobre los baneos temporales',
+      'Mejora de la estabilidad del emulador'
     ]
   },
   pt: {
     title: 'Notas de patch',
     ariaLabel: 'Notas de patch',
     notes: [
-      'Patch para perdas de conexão no jogo que resultavam em ban temporário.',
-      'Patch que corrige o sistema que exigia reiniciar o jogo toda vez que usava uma conta.',
-      'Patch para certas regiões onde era impossível conectar.',
-      'Melhorias no sistema que permite manter a conexão com a Riot.'
+      'Adaptação após a atualização do Vanguard',
+      'Redução de kicks VAL-102',
+      'Melhoria do sistema de sessão para evitar kicks',
+      'Mais trabalho em bans temporários',
+      'Melhoria da estabilidade do emulador'
     ]
   },
   it: {
     title: 'Note di patch',
     ariaLabel: 'Note di patch',
     notes: [
-      'Patch per le disconnessioni in-game che causavano un ban temporaneo.',
-      'Patch che risolve il sistema che richiedeva di riavviare il gioco ogni volta che usavi un account.',
-      'Patch per alcune regioni dove era impossibile connettersi.',
-      'Miglioramenti al sistema che permette di mantenere la connessione a Riot.'
+      'Adattamento in seguito all\'aggiornamento Vanguard',
+      'Riduzione dei kick VAL-102',
+      'Miglioramento del sistema di sessione per prevenire i kick',
+      'Ulteriore lavoro sui ban temporanei',
+      'Miglioramento della stabilità dell\'emulatore'
     ]
   },
   vi: {
     title: 'Ghi chú bản vá',
     ariaLabel: 'Ghi chú bản vá',
     notes: [
-      'Bản vá khắc phục mất kết nối trong game dẫn đến ban tạm thời.',
-      'Bản vá sửa hệ thống yêu cầu khởi động lại game mỗi lần đổi tài khoản.',
-      'Bản vá cho một số khu vực không thể kết nối.',
-      'Cải thiện hệ thống giúp duy trì kết nối với Riot.'
+      'Điều chỉnh sau bản cập nhật Vanguard',
+      'Giảm kick VAL-102',
+      'Cải thiện hệ thống phiên để tránh kick',
+      'Tiếp tục xử lý ban tạm thời',
+      'Cải thiện độ ổn định của emulator'
     ]
   },
   zh: {
     title: '更新说明',
     ariaLabel: '更新说明',
     notes: [
-      '修复游戏中断线导致临时封禁的问题。',
-      '修复每次切换账号都需要重启游戏的系统问题。',
-      '修复某些地区无法连接的问题。',
-      '改进与 Riot 保持连接的系统。'
+      '适配 Vanguard 更新',
+      '减少 VAL-102 踢出',
+      '改进会话系统以防止踢出',
+      '进一步处理临时封禁',
+      '提升模拟器稳定性'
     ]
   }
 }
