@@ -70,6 +70,8 @@ type StatusLabels = {
   related: string
   gatewayPartialIssue: string
   gatewayMajorIssue: string
+  gatewayValErrorsIssue: string
+  gatewayValErrorsMessage: string
   api: string
   gateway: string
   discordLink: string
@@ -416,6 +418,8 @@ const statusEn: StatusLabels = {
   related: 'RELATED',
   gatewayPartialIssue: 'Gateway connection instability',
   gatewayMajorIssue: 'Gateway service interruption',
+  gatewayValErrorsIssue: 'Gateway partial outage due to Val5 and VAL-102 errors',
+  gatewayValErrorsMessage: 'We are investigating Val5 and VAL-102 errors affecting Gateway connectivity.',
   api: 'API',
   gateway: 'Gateway',
   discordLink: 'Discord Link',
@@ -452,6 +456,8 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     related: 'LIÉ',
     gatewayPartialIssue: 'Instabilité de la connexion Gateway',
     gatewayMajorIssue: 'Interruption du service Gateway',
+    gatewayValErrorsIssue: 'Panne partielle Gateway suite aux erreurs Val5 et VAL-102',
+    gatewayValErrorsMessage: 'Nous enquêtons sur les erreurs Val5 et VAL-102 affectant la connexion Gateway.',
     api: 'API',
     gateway: 'Gateway',
     discordLink: 'Lien Discord',
@@ -485,6 +491,8 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     related: 'RELACIONADO',
     gatewayPartialIssue: 'Inestabilidad de la conexión Gateway',
     gatewayMajorIssue: 'Interrupción del servicio Gateway',
+    gatewayValErrorsIssue: 'Interrupción parcial de Gateway por errores Val5 y VAL-102',
+    gatewayValErrorsMessage: 'Estamos investigando los errores Val5 y VAL-102 que afectan la conexión Gateway.',
     api: 'API',
     gateway: 'Gateway',
     discordLink: 'Enlace de Discord',
@@ -518,6 +526,8 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     related: 'RELACIONADO',
     gatewayPartialIssue: 'Instabilidade na conexão Gateway',
     gatewayMajorIssue: 'Interrupção do serviço Gateway',
+    gatewayValErrorsIssue: 'Interrupção parcial do Gateway devido a erros Val5 e VAL-102',
+    gatewayValErrorsMessage: 'Estamos investigando erros Val5 e VAL-102 que afetam a conexão Gateway.',
     api: 'API',
     gateway: 'Gateway',
     discordLink: 'Link do Discord',
@@ -551,6 +561,8 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     related: 'CORRELATO',
     gatewayPartialIssue: 'Instabilità della connessione Gateway',
     gatewayMajorIssue: 'Interruzione del servizio Gateway',
+    gatewayValErrorsIssue: 'Interruzione parziale Gateway dovuta a errori Val5 e VAL-102',
+    gatewayValErrorsMessage: 'Stiamo investigando gli errori Val5 e VAL-102 che influenzano la connessione Gateway.',
     api: 'API',
     gateway: 'Gateway',
     discordLink: 'Link Discord',
@@ -584,6 +596,8 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     related: 'LIÊN QUAN',
     gatewayPartialIssue: 'Kết nối Gateway không ổn định',
     gatewayMajorIssue: 'Gián đoạn dịch vụ Gateway',
+    gatewayValErrorsIssue: 'Sự cố một phần Gateway do lỗi Val5 và VAL-102',
+    gatewayValErrorsMessage: 'Chúng tôi đang điều tra lỗi Val5 và VAL-102 ảnh hưởng đến kết nối Gateway.',
     api: 'API',
     gateway: 'Gateway',
     discordLink: 'Liên kết Discord',
@@ -617,6 +631,8 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     related: '相关',
     gatewayPartialIssue: 'Gateway 连接不稳定',
     gatewayMajorIssue: 'Gateway 服务中断',
+    gatewayValErrorsIssue: 'Gateway 因 Val5 和 VAL-102 错误部分中断',
+    gatewayValErrorsMessage: '我们正在调查影响 Gateway 连接的 Val5 和 VAL-102 错误。',
     api: 'API',
     gateway: 'Gateway',
     discordLink: 'Discord 链接',

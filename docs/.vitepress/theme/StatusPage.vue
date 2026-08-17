@@ -35,6 +35,8 @@ type BarTarget = {
 }
 
 const HISTORY_DAYS = 90
+const GATEWAY_INCIDENT_14 = new Date(2026, 7, 14)
+const GATEWAY_INCIDENT_15 = new Date(2026, 7, 15)
 const todayAnchor = ref(startOfToday())
 
 function startOfToday() {
@@ -242,10 +244,18 @@ function metricLatencyClass(value: number) {
 const pastIncidents = computed<PastIncidentDay[]>(() => [
   {
     date: daysAgo(0),
-    empty: true
+    entries: [
+      {
+        title: labels.value.gatewayValErrorsIssue,
+        tone: 'partial',
+        status: 'monitoring',
+        statusLabel: labels.value.monitoring,
+        message: labels.value.gatewayValErrorsMessage
+      }
+    ]
   },
   {
-    date: daysAgo(1),
+    date: new Date(GATEWAY_INCIDENT_15),
     entries: [
       {
         title: labels.value.gatewayMajorIssue,
@@ -257,7 +267,7 @@ const pastIncidents = computed<PastIncidentDay[]>(() => [
     ]
   },
   {
-    date: daysAgo(2),
+    date: new Date(GATEWAY_INCIDENT_14),
     entries: [
       {
         title: labels.value.gatewayPartialIssue,
@@ -269,7 +279,7 @@ const pastIncidents = computed<PastIncidentDay[]>(() => [
     ]
   },
   {
-    date: daysAgo(3),
+    date: new Date(2026, 7, 13),
     empty: true
   }
 ])
@@ -283,12 +293,17 @@ const metricPeriods = computed(() => ([
 const services = computed<ServiceGroup[]>(() => {
   const today = todayAnchor.value
   const gatewayOverrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {
-    [dateKey(daysAgo(2, today))]: {
+    [dateKey(daysAgo(0, today))]: {
+      status: 'partial',
+      duration: '5 hrs',
+      related: labels.value.gatewayValErrorsIssue
+    },
+    [dateKey(GATEWAY_INCIDENT_14)]: {
       status: 'partial',
       duration: '7 hrs',
       related: labels.value.gatewayPartialIssue
     },
-    [dateKey(daysAgo(1, today))]: {
+    [dateKey(GATEWAY_INCIDENT_15)]: {
       status: 'major',
       duration: '1 hr 12 mins',
       related: labels.value.gatewayMajorIssue
@@ -296,7 +311,7 @@ const services = computed<ServiceGroup[]>(() => {
   }
 
   const gatewayHistory = buildHistory(today, gatewayOverrides)
-  const gatewayStatus: DayStatus = 'operational'
+  const gatewayStatus: DayStatus = 'partial'
   const emulatorComponents: ComponentStatus[] = [
     {
       id: 'api',
