@@ -37,6 +37,7 @@ type BarTarget = {
 const HISTORY_DAYS = 90
 const GATEWAY_INCIDENT_14 = new Date(2026, 7, 14)
 const GATEWAY_INCIDENT_15 = new Date(2026, 7, 15)
+const GATEWAY_INCIDENT_17 = new Date(2026, 7, 17)
 const todayAnchor = ref(startOfToday())
 
 function startOfToday() {
@@ -244,6 +245,10 @@ function metricLatencyClass(value: number) {
 const pastIncidents = computed<PastIncidentDay[]>(() => [
   {
     date: daysAgo(0),
+    empty: true
+  },
+  {
+    date: new Date(GATEWAY_INCIDENT_17),
     entries: [
       {
         title: labels.value.gatewayValErrorsIssue,
@@ -293,7 +298,7 @@ const metricPeriods = computed(() => ([
 const services = computed<ServiceGroup[]>(() => {
   const today = todayAnchor.value
   const gatewayOverrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {
-    [dateKey(daysAgo(0, today))]: {
+    [dateKey(GATEWAY_INCIDENT_17)]: {
       status: 'partial',
       duration: '5 hrs',
       related: labels.value.gatewayValErrorsIssue
