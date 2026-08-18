@@ -19,6 +19,14 @@
 
 Après chaque partie, lorsque vous revenez au lobby, appuyez sur **F3** et attendez **10 secondes** avant de lancer la file d'attente pour votre prochaine partie.
 
+<div class="gb-notice gb-notice--warning">
+
+**Statut Session**
+
+Veuillez attendre que la rubrique **Session :** passe de **WAITING** à **CONNECTED** avant de lancer, sinon vous prendrez une erreur Val5.
+
+</div>
+
 <div class="gb-notice gb-notice--danger">
 
 **Note importante**

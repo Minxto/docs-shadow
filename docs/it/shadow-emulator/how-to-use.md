@@ -19,6 +19,14 @@
 
 Dopo ogni partita, quando torni in lobby, premi **F3** e attendi **10 secondi** prima di entrare in coda per la prossima partita.
 
+<div class="gb-notice gb-notice--warning">
+
+**Stato Session**
+
+Attendi che **Session:** passi da **WAITING** a **CONNECTED** prima di avviare, altrimenti riceverai un errore Val5.
+
+</div>
+
 <div class="gb-notice gb-notice--danger">
 
 **Nota importante**

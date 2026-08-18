@@ -19,6 +19,14 @@
 
 Sau mỗi trận đấu, khi bạn quay lại sảnh chờ, nhấn **F3** và đợi **10 giây** trước khi xếp hàng cho trận tiếp theo.
 
+<div class="gb-notice gb-notice--warning">
+
+**Trạng thái Session**
+
+Vui lòng đợi **Session:** chuyển từ **WAITING** sang **CONNECTED** trước khi khởi chạy, nếu không bạn sẽ gặp lỗi Val5.
+
+</div>
+
 <div class="gb-notice gb-notice--danger">
 
 **Lưu ý quan trọng**

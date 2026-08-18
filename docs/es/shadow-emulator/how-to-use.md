@@ -19,6 +19,14 @@
 
 Después de cada partida, cuando vuelvas al lobby, presiona **F3** y espera **10 segundos** antes de buscar tu siguiente partida.
 
+<div class="gb-notice gb-notice--warning">
+
+**Estado de Session**
+
+Espera a que **Session:** pase de **WAITING** a **CONNECTED** antes de lanzar, de lo contrario recibirás un error Val5.
+
+</div>
+
 <div class="gb-notice gb-notice--danger">
 
 **Nota importante**

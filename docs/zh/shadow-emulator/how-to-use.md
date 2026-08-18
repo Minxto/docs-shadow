@@ -19,6 +19,14 @@
 
 每场比赛结束后，当您返回大厅时，按 **F3** 并等待 **10 秒**，然后再排队下一场比赛。
 
+<div class="gb-notice gb-notice--warning">
+
+**Session 状态**
+
+请在启动前等待 **Session:** 从 **WAITING** 变为 **CONNECTED**，否则会出现 Val5 错误。
+
+</div>
+
 <div class="gb-notice gb-notice--danger">
 
 **重要提示**

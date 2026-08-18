@@ -19,7 +19,13 @@
 
 After each game, when you return to the lobby, press **F3** and wait **10 seconds** before queuing for your next match.
 
-<div class="gb-notice gb-notice--danger">
+<div class="gb-notice gb-notice--warning">
+
+**Session status**
+
+Please wait until **Session:** changes from **WAITING** to **CONNECTED** before launching, otherwise you will get a Val5 error.
+
+</div>
 
 **Important note**
 

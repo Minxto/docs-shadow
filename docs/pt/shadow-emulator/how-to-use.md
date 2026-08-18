@@ -19,6 +19,14 @@
 
 Após cada partida, quando voltar ao lobby, pressione **F3** e aguarde **10 segundos** antes de entrar na fila para a próxima partida.
 
+<div class="gb-notice gb-notice--warning">
+
+**Status da Session**
+
+Aguarde até que **Session:** mude de **WAITING** para **CONNECTED** antes de iniciar, caso contrário você receberá um erro Val5.
+
+</div>
+
 <div class="gb-notice gb-notice--danger">
 
 **Nota importante**
