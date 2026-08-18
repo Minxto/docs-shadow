@@ -233,9 +233,6 @@ function pageIcon(link: string) {
               </nav>
             </div>
           </div>
-          <div class="gb-sidebar-footer">
-            <SearchBar class="gb-sidebar-search" :placeholder="ui.search" />
-          </div>
         </div>
       </aside>
 
