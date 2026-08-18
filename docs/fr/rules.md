@@ -2,7 +2,7 @@
 
 ## Bon usage de l'application
 
-En utilisant les applications Shadow, vous acceptez de respecter ces règles. Tout manquement peut entraîner des sanctions permanentes.
+En utilisant les applications Shadow, vous acceptez de respecter ces règles. Elles s'appliquent à **Shadow Emulator** et **Shadow Color**. Tout manquement peut entraîner des sanctions permanentes.
 
 ## Comportements interdits
 
@@ -23,6 +23,62 @@ Tout manque de respect, harcèlement ou propos inappropriés envers l'équipe ou
 <div class="gb-notice gb-notice--danger">
 
 **Ban permanent** — application et Discord.
+
+</div>
+
+### Partage ou revente d'accès
+
+Partager votre compte, votre licence ou votre accès avec d'autres personnes, ou revendre un accès, est interdit et peut entraîner un **ban définitif**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban définitif** — application et Discord.
+
+</div>
+
+### Leak et redistribution
+
+Diffuser l'application, des builds internes, des versions crackées ou des informations confidentielles est interdit et peut entraîner un **ban définitif**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban définitif** — application et Discord.
+
+</div>
+
+### Abus du support et faux signalements
+
+Spammer les canaux de support, abuser des Community Reports ou publier de fausses informations peut entraîner un **ban définitif**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban définitif** — application et Discord.
+
+</div>
+
+### Contournement de ban
+
+Créer de nouveaux comptes ou utiliser une autre identité pour contourner un ban définitif est interdit et peut entraîner un **ban définitif**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban définitif** — application et Discord.
+
+</div>
+
+## Obligations
+
+### Adhésion au Discord officiel
+
+Vous devez rejoindre et rester sur le **serveur Discord officiel** pour utiliser l'application. Quitter le serveur ou utiliser un compte non lié peut entraîner une perte d'accès.
+
+### Mise à jour de l'application
+
+Utilisez toujours la **dernière version** de l'application. Les versions obsolètes ne sont plus prises en charge et augmentent le risque d'erreurs, de déconnexions ou de bans en jeu.
+
+<div class="gb-notice gb-notice--warning">
+
+**Mise à jour obligatoire** — téléchargez la dernière version depuis le Discord officiel ou ce site de documentation.
 
 </div>
 

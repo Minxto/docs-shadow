@@ -19,7 +19,8 @@ const links = computed(() => [
   { href: localePath('/shadow-color/how-to-use'), label: ui.value.homeLinkColorHowToUse, icon: 'help' },
   { href: localePath('/shadow-color/tutorial'), label: ui.value.homeLinkColorTutorial, icon: 'video' },
   { href: localePath('/shadow-color/fix-errors'), label: ui.value.homeLinkColorFixErrors, icon: 'wrench' },
-  { href: localePath('/shadow-color/avoiding-game-bans'), label: ui.value.homeLinkColorAvoidingBans, icon: 'shield' }
+  { href: localePath('/shadow-color/avoiding-game-bans'), label: ui.value.homeLinkColorAvoidingBans, icon: 'shield' },
+  { href: localePath('/rules'), label: ui.value.homeLinkRules, icon: 'shield' }
 ])
 </script>
 

@@ -2,7 +2,7 @@
 
 ## Proper use of the application
 
-By using Shadow applications, you agree to follow these rules. Failure to comply may result in permanent sanctions.
+By using Shadow applications, you agree to follow these rules. These rules apply to **Shadow Emulator** and **Shadow Color**. Failure to comply may result in permanent sanctions.
 
 ## Prohibited behavior
 
@@ -23,6 +23,62 @@ Any lack of respect, harassment, or inappropriate remarks toward the team or the
 <div class="gb-notice gb-notice--danger">
 
 **Permanent ban** — application and Discord.
+
+</div>
+
+### Sharing or reselling access
+
+Sharing your account, license, or access with others, or reselling access, is prohibited and may result in a **permanent ban**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Permanent ban** — application and Discord.
+
+</div>
+
+### Leaks and redistribution
+
+Distributing the application, internal builds, cracked versions, or confidential information is prohibited and may result in a **permanent ban**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Permanent ban** — application and Discord.
+
+</div>
+
+### Support abuse and false reports
+
+Spamming support channels, abusing Community Reports, or posting false or misleading information may result in a **permanent ban**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Permanent ban** — application and Discord.
+
+</div>
+
+### Ban evasion
+
+Creating new accounts or using alternate identities to bypass a permanent ban is prohibited and may result in a **permanent ban**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Permanent ban** — application and Discord.
+
+</div>
+
+## Requirements
+
+### Official Discord membership
+
+You must join and remain on the **official Discord server** to use the application. Leaving the server or using an unlinked account may result in losing access.
+
+### Keep your application updated
+
+Always use the **latest version** of the application. Outdated versions are unsupported and increase your risk of errors, disconnections, or game bans.
+
+<div class="gb-notice gb-notice--warning">
+
+**Update required** — download the latest version from the official Discord or this documentation site.
 
 </div>
 

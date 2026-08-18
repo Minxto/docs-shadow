@@ -1,5 +1,13 @@
 # 使用方法
 
+<div class="gb-notice gb-notice--warning">
+
+**规则**
+
+使用应用程序前，请阅读[使用规则](/zh/rules)。
+
+</div>
+
 ## 如何使用？
 
 1. 下载 Shadow Emulator，安装到您的 PC 上，然后启动应用程序。

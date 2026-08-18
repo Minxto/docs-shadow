@@ -2,7 +2,7 @@
 
 ## Sử dụng ứng dụng đúng cách
 
-Khi sử dụng các ứng dụng Shadow, bạn đồng ý tuân thủ các quy tắc này. Vi phạm có thể dẫn đến hình phạt vĩnh viễn.
+Khi sử dụng các ứng dụng Shadow, bạn đồng ý tuân thủ các quy tắc này. Chúng áp dụng cho **Shadow Emulator** và **Shadow Color**. Vi phạm có thể dẫn đến hình phạt vĩnh viễn.
 
 ## Hành vi bị cấm
 
@@ -23,6 +23,62 @@ Mọi hành vi thiếu tôn trọng, quấy rối hoặc lời nói không phù 
 <div class="gb-notice gb-notice--danger">
 
 **Ban vĩnh viễn** — ứng dụng và Discord.
+
+</div>
+
+### Chia sẻ hoặc bán lại quyền truy cập
+
+Chia sẻ tài khoản, giấy phép hoặc quyền truy cập với người khác, hoặc bán lại quyền truy cập, đều bị cấm và có thể dẫn đến **ban vĩnh viễn**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban vĩnh viễn** — ứng dụng và Discord.
+
+</div>
+
+### Rò rỉ và phân phối lại
+
+Phân phối ứng dụng, bản build nội bộ, phiên bản crack hoặc thông tin bảo mật đều bị cấm và có thể dẫn đến **ban vĩnh viễn**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban vĩnh viễn** — ứng dụng và Discord.
+
+</div>
+
+### Lạm dụng hỗ trợ và báo cáo sai
+
+Spam kênh hỗ trợ, lạm dụng Community Reports hoặc đăng thông tin sai lệch có thể dẫn đến **ban vĩnh viễn**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban vĩnh viễn** — ứng dụng và Discord.
+
+</div>
+
+### Trốn ban
+
+Tạo tài khoản mới hoặc dùng danh tính khác để né ban vĩnh viễn đều bị cấm và có thể dẫn đến **ban vĩnh viễn**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban vĩnh viễn** — ứng dụng và Discord.
+
+</div>
+
+## Yêu cầu
+
+### Tham gia Discord chính thức
+
+Bạn phải tham gia và ở lại **máy chủ Discord chính thức** để sử dụng ứng dụng. Rời khỏi máy chủ hoặc dùng tài khoản chưa liên kết có thể dẫn đến mất quyền truy cập.
+
+### Cập nhật ứng dụng
+
+Luôn sử dụng **phiên bản mới nhất** của ứng dụng. Phiên bản cũ không được hỗ trợ và tăng nguy cơ lỗi, mất kết nối hoặc bị ban trong game.
+
+<div class="gb-notice gb-notice--warning">
+
+**Bắt buộc cập nhật** — tải phiên bản mới nhất từ Discord chính thức hoặc trang tài liệu này.
 
 </div>
 

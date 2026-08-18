@@ -1,5 +1,13 @@
 # Cách sử dụng
 
+<div class="gb-notice gb-notice--warning">
+
+**Quy tắc**
+
+Trước khi sử dụng ứng dụng, hãy đọc [quy tắc sử dụng](/vi/rules).
+
+</div>
+
 ## Tôi sử dụng như thế nào?
 
 1. Tải xuống Shadow Emulator, cài đặt trên PC của bạn, sau đó khởi chạy ứng dụng.

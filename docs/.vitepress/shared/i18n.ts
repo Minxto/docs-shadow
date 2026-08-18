@@ -53,6 +53,7 @@ type UiLabels = {
   homeLinkColorTutorial: string
   homeLinkColorFixErrors: string
   homeLinkColorAvoidingBans: string
+  homeLinkRules: string
 }
 
 type StatusLabels = {
@@ -237,7 +238,8 @@ const uiEn: UiLabels = {
   homeLinkColorHowToUse: 'Shadow Color — How to use',
   homeLinkColorTutorial: 'Shadow Color — Tutorial',
   homeLinkColorFixErrors: 'Shadow Color — Fix Errors',
-  homeLinkColorAvoidingBans: 'Shadow Color — Avoiding Game-Bans'
+  homeLinkColorAvoidingBans: 'Shadow Color — Avoiding Game-Bans',
+  homeLinkRules: 'Rules — Proper usage'
 }
 
 export const uiLabels: Record<LocaleKey, UiLabels> = {
@@ -271,7 +273,8 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     homeLinkColorHowToUse: 'Shadow Color — Comment utiliser',
     homeLinkColorTutorial: 'Shadow Color — Tutoriel',
     homeLinkColorFixErrors: 'Shadow Color — Corriger les erreurs',
-    homeLinkColorAvoidingBans: 'Shadow Color — Éviter les bans'
+    homeLinkColorAvoidingBans: 'Shadow Color — Éviter les bans',
+    homeLinkRules: 'Règles — Bon usage'
   },
   es: {
     ...uiEn,
@@ -300,7 +303,8 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     homeLinkColorHowToUse: 'Shadow Color — Cómo usar',
     homeLinkColorTutorial: 'Shadow Color — Tutorial',
     homeLinkColorFixErrors: 'Shadow Color — Corregir errores',
-    homeLinkColorAvoidingBans: 'Shadow Color — Evitar baneos'
+    homeLinkColorAvoidingBans: 'Shadow Color — Evitar baneos',
+    homeLinkRules: 'Reglas — Uso correcto'
   },
   pt: {
     ...uiEn,
@@ -329,7 +333,8 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     homeLinkColorHowToUse: 'Shadow Color — Como usar',
     homeLinkColorTutorial: 'Shadow Color — Tutorial',
     homeLinkColorFixErrors: 'Shadow Color — Corrigir erros',
-    homeLinkColorAvoidingBans: 'Shadow Color — Evitar bans'
+    homeLinkColorAvoidingBans: 'Shadow Color — Evitar bans',
+    homeLinkRules: 'Regras — Uso correto'
   },
   it: {
     ...uiEn,
@@ -358,7 +363,8 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     homeLinkColorHowToUse: 'Shadow Color — Come usare',
     homeLinkColorTutorial: 'Shadow Color — Tutorial',
     homeLinkColorFixErrors: 'Shadow Color — Correggere errori',
-    homeLinkColorAvoidingBans: 'Shadow Color — Evitare ban'
+    homeLinkColorAvoidingBans: 'Shadow Color — Evitare ban',
+    homeLinkRules: 'Regole — Uso corretto'
   },
   vi: {
     ...uiEn,
@@ -387,7 +393,8 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     homeLinkColorHowToUse: 'Shadow Color — Cách sử dụng',
     homeLinkColorTutorial: 'Shadow Color — Hướng dẫn',
     homeLinkColorFixErrors: 'Shadow Color — Sửa lỗi',
-    homeLinkColorAvoidingBans: 'Shadow Color — Tránh bị ban'
+    homeLinkColorAvoidingBans: 'Shadow Color — Tránh bị ban',
+    homeLinkRules: 'Quy tắc — Sử dụng đúng cách'
   },
   zh: {
     ...uiEn,
@@ -416,7 +423,8 @@ export const uiLabels: Record<LocaleKey, UiLabels> = {
     homeLinkColorHowToUse: 'Shadow Color — 使用方法',
     homeLinkColorTutorial: 'Shadow Color — 教程',
     homeLinkColorFixErrors: 'Shadow Color — 修复错误',
-    homeLinkColorAvoidingBans: 'Shadow Color — 避免封号'
+    homeLinkColorAvoidingBans: 'Shadow Color — 避免封号',
+    homeLinkRules: '规则 — 正确使用'
   }
 }
 

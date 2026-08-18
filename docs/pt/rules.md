@@ -2,7 +2,7 @@
 
 ## Uso correto da aplicação
 
-Ao usar as aplicações Shadow, você concorda em seguir estas regras. O descumprimento pode resultar em sanções permanentes.
+Ao usar as aplicações Shadow, você concorda em seguir estas regras. Elas se aplicam ao **Shadow Emulator** e ao **Shadow Color**. O descumprimento pode resultar em sanções permanentes.
 
 ## Comportamentos proibidos
 
@@ -23,6 +23,62 @@ Qualquer falta de respeito, assédio ou comentários inadequados em relação à
 <div class="gb-notice gb-notice--danger">
 
 **Ban permanente** — aplicação e Discord.
+
+</div>
+
+### Compartilhamento ou revenda de acesso
+
+Compartilhar sua conta, licença ou acesso com outras pessoas, ou revender acesso, é proibido e pode resultar em **ban permanente**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban permanente** — aplicação e Discord.
+
+</div>
+
+### Vazamentos e redistribuição
+
+Distribuir a aplicação, builds internas, versões crackeadas ou informações confidenciais é proibido e pode resultar em **ban permanente**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban permanente** — aplicação e Discord.
+
+</div>
+
+### Abuso do suporte e relatórios falsos
+
+Enviar spam nos canais de suporte, abusar dos Community Reports ou publicar informações falsas pode resultar em **ban permanente**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban permanente** — aplicação e Discord.
+
+</div>
+
+### Contorno de ban
+
+Criar novas contas ou usar identidades alternativas para contornar um ban permanente é proibido e pode resultar em **ban permanente**.
+
+<div class="gb-notice gb-notice--danger">
+
+**Ban permanente** — aplicação e Discord.
+
+</div>
+
+## Requisitos
+
+### Participação no Discord oficial
+
+Você deve entrar e permanecer no **servidor oficial do Discord** para usar a aplicação. Sair do servidor ou usar uma conta não vinculada pode resultar na perda de acesso.
+
+### Manter a aplicação atualizada
+
+Use sempre a **versão mais recente** da aplicação. Versões desatualizadas não são suportadas e aumentam o risco de erros, desconexões ou bans no jogo.
+
+<div class="gb-notice gb-notice--warning">
+
+**Atualização obrigatória** — baixe a versão mais recente no Discord oficial ou neste site de documentação.
 
 </div>
 
