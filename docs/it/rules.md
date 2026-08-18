@@ -6,27 +6,27 @@ Utilizzando le applicazioni Shadow, accetti di rispettare queste regole. Si appl
 
 ## Comportamenti vietati
 
-### Tentativo di crack <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
+### Tentativo di crack <span class="gb-rule-sanction"><strong>Ban permanente</strong> — applicazione e Discord.</span>
 
 Qualsiasi tentativo di crack, reverse engineering o bypass della protezione dell'applicazione comporterà un **ban permanente** dall'applicazione e dal server Discord ufficiale.
 
-### Mancanza di rispetto o commenti inappropriati <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
+### Mancanza di rispetto o commenti inappropriati <span class="gb-rule-sanction"><strong>Ban permanente</strong> — applicazione e Discord.</span>
 
 Qualsiasi mancanza di rispetto, molestie o commenti inappropriati verso il team o la community comporterà un **ban permanente** dall'applicazione e da Discord.
 
-### Condivisione o rivendita dell'accesso <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
+### Condivisione o rivendita dell'accesso <span class="gb-rule-sanction"><strong>Ban permanente</strong> — applicazione e Discord.</span>
 
 Condividere account, licenza o accesso con altri, o rivendere l'accesso, è vietato e può comportare un **ban permanente**.
 
-### Leak e redistribuzione <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
+### Leak e redistribuzione <span class="gb-rule-sanction"><strong>Ban permanente</strong> — applicazione e Discord.</span>
 
 Distribuire l'applicazione, build interne, versioni crackate o informazioni riservate è vietato e può comportare un **ban permanente**.
 
-### Abuso del supporto e segnalazioni false <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
+### Abuso del supporto e segnalazioni false <span class="gb-rule-sanction"><strong>Ban permanente</strong> — applicazione e Discord.</span>
 
 Spammare i canali di supporto, abusare dei Community Reports o pubblicare informazioni false può comportare un **ban permanente**.
 
-### Elusione del ban <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
+### Elusione del ban <span class="gb-rule-sanction"><strong>Ban permanente</strong> — applicazione e Discord.</span>
 
 Creare nuovi account o usare identità alternative per aggirare un ban permanente è vietato e può comportare un **ban permanente**.
 

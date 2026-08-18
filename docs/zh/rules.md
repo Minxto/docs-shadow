@@ -6,27 +6,27 @@
 
 ## 禁止行为
 
-### 尝试破解软件 <span class="gb-rule-sanction">永久封禁 — 应用程序和 Discord。</span>
+### 尝试破解软件 <span class="gb-rule-sanction"><strong>永久封禁</strong> — 应用程序和 Discord。</span>
 
 任何破解、逆向工程或绕过应用程序保护的行为将导致**永久封禁**应用程序和官方 Discord 服务器。
 
-### 缺乏尊重或不当言论 <span class="gb-rule-sanction">永久封禁 — 应用程序和 Discord。</span>
+### 缺乏尊重或不当言论 <span class="gb-rule-sanction"><strong>永久封禁</strong> — 应用程序和 Discord。</span>
 
 对团队或社区缺乏尊重、骚扰或发表不当言论将导致**永久封禁**应用程序和 Discord。
 
-### 共享或转售访问权限 <span class="gb-rule-sanction">永久封禁 — 应用程序和 Discord。</span>
+### 共享或转售访问权限 <span class="gb-rule-sanction"><strong>永久封禁</strong> — 应用程序和 Discord。</span>
 
 与他人共享账户、许可证或访问权限，或转售访问权限，均被禁止，可能导致**永久封禁**。
 
-### 泄露与再分发 <span class="gb-rule-sanction">永久封禁 — 应用程序和 Discord。</span>
+### 泄露与再分发 <span class="gb-rule-sanction"><strong>永久封禁</strong> — 应用程序和 Discord。</span>
 
 分发应用程序、内部构建、破解版本或机密信息均被禁止，可能导致**永久封禁**。
 
-### 滥用支持与虚假报告 <span class="gb-rule-sanction">永久封禁 — 应用程序和 Discord。</span>
+### 滥用支持与虚假报告 <span class="gb-rule-sanction"><strong>永久封禁</strong> — 应用程序和 Discord。</span>
 
 在支持频道刷屏、滥用 Community Reports 或发布虚假误导信息可能导致**永久封禁**。
 
-### 规避封禁 <span class="gb-rule-sanction">永久封禁 — 应用程序和 Discord。</span>
+### 规避封禁 <span class="gb-rule-sanction"><strong>永久封禁</strong> — 应用程序和 Discord。</span>
 
 创建新账户或使用其他身份规避永久封禁均被禁止，可能导致**永久封禁**。
 

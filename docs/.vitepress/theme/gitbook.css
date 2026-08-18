@@ -783,20 +783,43 @@ html:not(.dark) .gb-search kbd {
 .gb-content.vp-doc h3:has(.gb-rule-sanction) {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.35rem 0.65rem;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
 }
 
 .gb-content.vp-doc h3 .gb-rule-sanction {
-  font-size: 0.72rem;
+  display: inline-block;
+  padding: 0.22rem 0.6rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  line-height: 1.3;
-  color: #f87171;
+  line-height: 1.35;
   letter-spacing: 0.01em;
+  border-radius: 6px;
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  background: rgba(239, 68, 68, 0.1);
+  color: #fecaca;
+  white-space: nowrap;
+}
+
+.gb-content.vp-doc h3 .gb-rule-sanction strong {
+  font-weight: 700;
+  color: #fca5a5;
 }
 
 html:not(.dark) .gb-content.vp-doc h3 .gb-rule-sanction {
+  border-color: rgba(220, 38, 38, 0.35);
+  background: rgba(239, 68, 68, 0.08);
+  color: #b91c1c;
+}
+
+html:not(.dark) .gb-content.vp-doc h3 .gb-rule-sanction strong {
   color: #dc2626;
+}
+
+@media (max-width: 540px) {
+  .gb-content.vp-doc h3 .gb-rule-sanction {
+    white-space: normal;
+  }
 }
 
 .gb-content.vp-doc h4 {
