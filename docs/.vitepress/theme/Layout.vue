@@ -234,12 +234,6 @@ function pageIcon(link: string) {
             </div>
           </div>
           <div class="gb-sidebar-footer">
-            <a
-              href="https://discord.gg/8kaqgksB9W"
-              class="gb-powered"
-              target="_blank"
-              rel="noopener noreferrer"
-            >{{ ui.poweredBy }}</a>
             <SearchBar class="gb-sidebar-search" :placeholder="ui.search" />
           </div>
         </div>
