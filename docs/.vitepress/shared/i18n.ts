@@ -13,6 +13,8 @@ export const localeConfig: Record<LocaleKey, { label: string; lang: string; link
 type SidebarLabels = {
   shadowEmulator: string
   shadowColor: string
+  rules: string
+  rulesUsage: string
   requirements: string
   howToUse: string
   tutorial: string
@@ -92,6 +94,8 @@ type StatusLabels = {
 const sidebarEn: SidebarLabels = {
   shadowEmulator: 'Shadow Emulator',
   shadowColor: 'Shadow Color',
+  rules: 'Rules',
+  rulesUsage: 'Proper usage',
   requirements: 'Requirements',
   howToUse: 'How to use',
   tutorial: 'Tutorial',
@@ -104,6 +108,8 @@ export const sidebarLabels: Record<LocaleKey, SidebarLabels> = {
   fr: {
     shadowEmulator: 'Shadow Emulator',
     shadowColor: 'Shadow Color',
+    rules: 'Règles',
+    rulesUsage: 'Bon usage',
     requirements: 'Prérequis',
     howToUse: 'Comment utiliser',
     tutorial: 'Tutoriel',
@@ -113,6 +119,8 @@ export const sidebarLabels: Record<LocaleKey, SidebarLabels> = {
   es: {
     shadowEmulator: 'Shadow Emulator',
     shadowColor: 'Shadow Color',
+    rules: 'Reglas',
+    rulesUsage: 'Uso correcto',
     requirements: 'Requisitos',
     howToUse: 'Cómo usar',
     tutorial: 'Tutorial',
@@ -122,6 +130,8 @@ export const sidebarLabels: Record<LocaleKey, SidebarLabels> = {
   pt: {
     shadowEmulator: 'Shadow Emulator',
     shadowColor: 'Shadow Color',
+    rules: 'Regras',
+    rulesUsage: 'Uso correto',
     requirements: 'Requisitos',
     howToUse: 'Como usar',
     tutorial: 'Tutorial',
@@ -131,6 +141,8 @@ export const sidebarLabels: Record<LocaleKey, SidebarLabels> = {
   it: {
     shadowEmulator: 'Shadow Emulator',
     shadowColor: 'Shadow Color',
+    rules: 'Regole',
+    rulesUsage: 'Uso corretto',
     requirements: 'Requisiti',
     howToUse: 'Come usare',
     tutorial: 'Tutorial',
@@ -140,6 +152,8 @@ export const sidebarLabels: Record<LocaleKey, SidebarLabels> = {
   vi: {
     shadowEmulator: 'Shadow Emulator',
     shadowColor: 'Shadow Color',
+    rules: 'Quy tắc',
+    rulesUsage: 'Sử dụng đúng cách',
     requirements: 'Yêu cầu',
     howToUse: 'Cách sử dụng',
     tutorial: 'Hướng dẫn',
@@ -149,6 +163,8 @@ export const sidebarLabels: Record<LocaleKey, SidebarLabels> = {
   zh: {
     shadowEmulator: 'Shadow Emulator',
     shadowColor: 'Shadow Color',
+    rules: '规则',
+    rulesUsage: '正确使用',
     requirements: '要求',
     howToUse: '使用方法',
     tutorial: '教程',
@@ -179,6 +195,13 @@ export function createSidebar(labels: SidebarLabels) {
         { text: labels.tutorial, link: '/shadow-color/tutorial' },
         { text: labels.fixErrors, link: '/shadow-color/fix-errors' },
         { text: labels.avoidingGameBans, link: '/shadow-color/avoiding-game-bans' }
+      ]
+    },
+    {
+      text: labels.rules,
+      collapsed: false,
+      items: [
+        { text: labels.rulesUsage, link: '/rules' }
       ]
     }
   ]

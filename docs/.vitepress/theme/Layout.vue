@@ -22,7 +22,8 @@ const { homePath, localePath, normalizeDocPath } = useLocalePath()
 
 const sectionMetaByPrefix: Record<string, { icon: string; prefix: string }> = {
   '/shadow-emulator/': { icon: 'spark', prefix: '/shadow-emulator/' },
-  '/shadow-color/': { icon: 'target', prefix: '/shadow-color/' }
+  '/shadow-color/': { icon: 'target', prefix: '/shadow-color/' },
+  '/rules/': { icon: 'shield', prefix: '/rules/' }
 }
 
 const pageIcons: Record<string, string> = {
@@ -35,13 +36,15 @@ const pageIcons: Record<string, string> = {
   '/shadow-color/how-to-use': 'help',
   '/shadow-color/tutorial': 'video',
   '/shadow-color/fix-errors': 'wrench',
-  '/shadow-color/avoiding-game-bans': 'shield'
+  '/shadow-color/avoiding-game-bans': 'shield',
+  '/rules': 'shield'
 }
 
 function getSectionPrefix(link: string) {
   const path = normalizeDocPath(link)
   if (path.startsWith('/shadow-emulator/') || path === '/shadow-emulator') return '/shadow-emulator/'
   if (path.startsWith('/shadow-color/') || path === '/shadow-color') return '/shadow-color/'
+  if (path.startsWith('/rules') || path === '/rules') return '/rules/'
   return '/'
 }
 
@@ -86,7 +89,7 @@ const isActive = (link: string) => {
 
 const isDocPage = computed(() => {
   const path = normalizeDocPath(route.path)
-  return path.includes('/shadow-emulator/') || path.includes('/shadow-color/')
+  return path.includes('/shadow-emulator/') || path.includes('/shadow-color/') || path === '/rules' || path.endsWith('/rules')
 })
 
 const isStatusPage = computed(() => normalizeDocPath(route.path) === '/status')
