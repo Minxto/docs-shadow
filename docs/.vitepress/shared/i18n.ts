@@ -864,10 +864,10 @@ const patchNotesEn: PatchNotesLabels = {
   title: 'Patch Notes',
   ariaLabel: 'Patch notes',
   notes: [
-    'Fixed the VAL 5 ban that was happening constantly, even when you weren\'t doing anything.',
-    'Fixed temporary bans that you were receiving for no reason.',
-    'Fixed the VAL-102 error that occurred before a ban.',
-    'Improved and adapted the Vanguard dump.'
+    'New interface, more intuitive and easier to use',
+    'Fixed some Val5 and Val-102 issues',
+    'Some players had no issues, while others did, so we reworked it to improve compatibility for everyone',
+    'Script optimization'
   ]
 }
 
@@ -877,60 +877,60 @@ export const patchNotesLabels: Record<LocaleKey, PatchNotesLabels> = {
     title: 'Notes de patch',
     ariaLabel: 'Notes de patch',
     notes: [
-      'Correction du ban VAL 5 qui survenait en permanence, même sans rien faire.',
-      'Correction des bans temporaires reçus sans raison.',
-      'Correction de l\'erreur VAL-102 qui survenait avant un ban.',
-      'Amélioration et adaptation du dump Vanguard.'
+      'Nouvelle interface, plus intuitive et plus simple à utiliser',
+      'Correction de certains problèmes Val5 et VAL-102',
+      'Certains joueurs n\'avaient aucun problème, d\'autres si — nous avons retravaillé le système pour améliorer la compatibilité pour tous',
+      'Optimisation des scripts'
     ]
   },
   es: {
     title: 'Notas del parche',
     ariaLabel: 'Notas del parche',
     notes: [
-      'Corregido el ban VAL 5 que ocurría constantemente, incluso sin hacer nada.',
-      'Corregidos los baneos temporales recibidos sin motivo.',
-      'Corregido el error VAL-102 que ocurría antes de un ban.',
-      'Mejora y adaptación del dump de Vanguard.'
+      'Nueva interfaz, más intuitiva y fácil de usar',
+      'Corregidos algunos problemas Val5 y VAL-102',
+      'Algunos jugadores no tenían problemas y otros sí, así que lo rehicimos para mejorar la compatibilidad para todos',
+      'Optimización de scripts'
     ]
   },
   pt: {
     title: 'Notas de patch',
     ariaLabel: 'Notas de patch',
     notes: [
-      'Corrigido o ban VAL 5 que ocorria constantemente, mesmo sem fazer nada.',
-      'Corrigidos os bans temporários recebidos sem motivo.',
-      'Corrigido o erro VAL-102 que ocorria antes de um ban.',
-      'Melhoria e adaptação do dump do Vanguard.'
+      'Nova interface, mais intuitiva e fácil de usar',
+      'Corrigidos alguns problemas Val5 e VAL-102',
+      'Alguns jogadores não tinham problemas e outros sim, então retrabalhamos para melhorar a compatibilidade para todos',
+      'Otimização de scripts'
     ]
   },
   it: {
     title: 'Note di patch',
     ariaLabel: 'Note di patch',
     notes: [
-      'Risolto il ban VAL 5 che avveniva costantemente, anche senza fare nulla.',
-      'Risolti i ban temporanei ricevuti senza motivo.',
-      'Risolto l\'errore VAL-102 che si verificava prima di un ban.',
-      'Miglioramento e adattamento del dump Vanguard.'
+      'Nuova interfaccia, più intuitiva e facile da usare',
+      'Risolti alcuni problemi Val5 e VAL-102',
+      'Alcuni giocatori non avevano problemi e altri sì, quindi abbiamo rielaborato il sistema per migliorare la compatibilità per tutti',
+      'Ottimizzazione degli script'
     ]
   },
   vi: {
     title: 'Ghi chú bản vá',
     ariaLabel: 'Ghi chú bản vá',
     notes: [
-      'Sửa ban VAL 5 xảy ra liên tục, kể cả khi bạn không làm gì.',
-      'Sửa các ban tạm thời nhận được không có lý do.',
-      'Sửa lỗi VAL-102 xảy ra trước khi bị ban.',
-      'Cải thiện và điều chỉnh dump Vanguard.'
+      'Giao diện mới, trực quan và dễ sử dụng hơn',
+      'Sửa một số lỗi Val5 và VAL-102',
+      'Một số người chơi không gặp vấn đề, số khác thì có — chúng tôi đã cải thiện để tương thích tốt hơn cho mọi người',
+      'Tối ưu script'
     ]
   },
   zh: {
     title: '更新说明',
     ariaLabel: '更新说明',
     notes: [
-      '修复了即使什么都不做也会不断出现的 VAL 5 封禁。',
-      '修复了无理由收到的临时封禁。',
-      '修复了封禁前出现的 VAL-102 错误。',
-      '改进并适配 Vanguard dump。'
+      '全新界面，更直观、更易使用',
+      '修复部分 Val5 和 VAL-102 问题',
+      '部分玩家没有问题，部分玩家有问题，我们已重新优化以提高全体兼容性',
+      '脚本优化'
     ]
   }
 }

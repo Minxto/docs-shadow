@@ -54,7 +54,7 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
         <path d="M9 12h6M9 16h4" stroke-linecap="round" />
       </svg>
       <span>{{ labels.title }}</span>
-      <span class="gb-patch-badge">17/08</span>
+      <span class="gb-patch-badge">19/08</span>
       <svg class="gb-lang-chevron" :class="{ open }" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
@@ -63,7 +63,7 @@ onUnmounted(() => document.removeEventListener('click', onDocumentClick))
     <div v-if="open" class="gb-notify-panel">
       <div class="gb-notify-header">
         <span class="gb-notify-title">{{ labels.title }}</span>
-        <span class="gb-notify-date">17/08</span>
+        <span class="gb-notify-date">19/08</span>
       </div>
       <ul class="gb-notify-list">
         <li
