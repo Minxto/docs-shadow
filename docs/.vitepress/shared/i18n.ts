@@ -833,11 +833,10 @@ const patchNotesEn: PatchNotesLabels = {
   title: 'Patch Notes',
   ariaLabel: 'Patch notes',
   notes: [
-    'Adaptation following the Vanguard update',
-    'Reduced VAL-102 kicks',
-    'Improved the session system to prevent kicks',
-    'Further work on temporary bans',
-    'Improved emulator stability'
+    'Fixed the VAL 5 ban that was happening constantly, even when you weren\'t doing anything.',
+    'Fixed temporary bans that you were receiving for no reason.',
+    'Fixed the VAL-102 error that occurred before a ban.',
+    'Improved and adapted the Vanguard dump.'
   ]
 }
 
@@ -847,66 +846,60 @@ export const patchNotesLabels: Record<LocaleKey, PatchNotesLabels> = {
     title: 'Notes de patch',
     ariaLabel: 'Notes de patch',
     notes: [
-      'Adaptation suite à la mise à jour Vanguard',
-      'Réduction des kicks VAL-102',
-      'Amélioration du système de session pour éviter les kicks',
-      'Travail supplémentaire sur les bans temporaires',
-      'Amélioration de la stabilité de l\'émulateur'
+      'Correction du ban VAL 5 qui survenait en permanence, même sans rien faire.',
+      'Correction des bans temporaires reçus sans raison.',
+      'Correction de l\'erreur VAL-102 qui survenait avant un ban.',
+      'Amélioration et adaptation du dump Vanguard.'
     ]
   },
   es: {
     title: 'Notas del parche',
     ariaLabel: 'Notas del parche',
     notes: [
-      'Adaptación tras la actualización de Vanguard',
-      'Reducción de kicks VAL-102',
-      'Mejora del sistema de sesión para evitar kicks',
-      'Más trabajo sobre los baneos temporales',
-      'Mejora de la estabilidad del emulador'
+      'Corregido el ban VAL 5 que ocurría constantemente, incluso sin hacer nada.',
+      'Corregidos los baneos temporales recibidos sin motivo.',
+      'Corregido el error VAL-102 que ocurría antes de un ban.',
+      'Mejora y adaptación del dump de Vanguard.'
     ]
   },
   pt: {
     title: 'Notas de patch',
     ariaLabel: 'Notas de patch',
     notes: [
-      'Adaptação após a atualização do Vanguard',
-      'Redução de kicks VAL-102',
-      'Melhoria do sistema de sessão para evitar kicks',
-      'Mais trabalho em bans temporários',
-      'Melhoria da estabilidade do emulador'
+      'Corrigido o ban VAL 5 que ocorria constantemente, mesmo sem fazer nada.',
+      'Corrigidos os bans temporários recebidos sem motivo.',
+      'Corrigido o erro VAL-102 que ocorria antes de um ban.',
+      'Melhoria e adaptação do dump do Vanguard.'
     ]
   },
   it: {
     title: 'Note di patch',
     ariaLabel: 'Note di patch',
     notes: [
-      'Adattamento in seguito all\'aggiornamento Vanguard',
-      'Riduzione dei kick VAL-102',
-      'Miglioramento del sistema di sessione per prevenire i kick',
-      'Ulteriore lavoro sui ban temporanei',
-      'Miglioramento della stabilità dell\'emulatore'
+      'Risolto il ban VAL 5 che avveniva costantemente, anche senza fare nulla.',
+      'Risolti i ban temporanei ricevuti senza motivo.',
+      'Risolto l\'errore VAL-102 che si verificava prima di un ban.',
+      'Miglioramento e adattamento del dump Vanguard.'
     ]
   },
   vi: {
     title: 'Ghi chú bản vá',
     ariaLabel: 'Ghi chú bản vá',
     notes: [
-      'Điều chỉnh sau bản cập nhật Vanguard',
-      'Giảm kick VAL-102',
-      'Cải thiện hệ thống phiên để tránh kick',
-      'Tiếp tục xử lý ban tạm thời',
-      'Cải thiện độ ổn định của emulator'
+      'Sửa ban VAL 5 xảy ra liên tục, kể cả khi bạn không làm gì.',
+      'Sửa các ban tạm thời nhận được không có lý do.',
+      'Sửa lỗi VAL-102 xảy ra trước khi bị ban.',
+      'Cải thiện và điều chỉnh dump Vanguard.'
     ]
   },
   zh: {
     title: '更新说明',
     ariaLabel: '更新说明',
     notes: [
-      '适配 Vanguard 更新',
-      '减少 VAL-102 踢出',
-      '改进会话系统以防止踢出',
-      '进一步处理临时封禁',
-      '提升模拟器稳定性'
+      '修复了即使什么都不做也会不断出现的 VAL 5 封禁。',
+      '修复了无理由收到的临时封禁。',
+      '修复了封禁前出现的 VAL-102 错误。',
+      '改进并适配 Vanguard dump。'
     ]
   }
 }
