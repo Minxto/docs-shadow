@@ -27,6 +27,8 @@ Please wait until **Session:** changes from **WAITING** to **CONNECTED** before 
 
 </div>
 
+<div class="gb-notice gb-notice--danger">
+
 **Important note**
 
 The more third-party cheat software you use alongside the emulator, the more you expose yourself to restrictions or dropped connections.

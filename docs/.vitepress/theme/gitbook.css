@@ -944,6 +944,26 @@ html:not(.dark) .gb-search kbd {
   color: var(--gb-primary);
 }
 
+html:not(.dark) .gb-content.vp-doc .gb-notice--warning {
+  border-color: rgba(161, 98, 7, 0.35);
+  background: rgba(234, 179, 8, 0.14);
+  color: #713f12;
+}
+
+html:not(.dark) .gb-content.vp-doc .gb-notice--warning strong {
+  color: #854d0e;
+}
+
+html:not(.dark) .gb-content.vp-doc .gb-notice--danger {
+  border-color: rgba(185, 28, 28, 0.35);
+  background: rgba(239, 68, 68, 0.1);
+  color: #7f1d1d;
+}
+
+html:not(.dark) .gb-content.vp-doc .gb-notice--danger strong {
+  color: #991b1b;
+}
+
 .gb-content.vp-doc h1 + .gb-notice {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
