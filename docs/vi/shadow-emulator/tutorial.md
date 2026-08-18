@@ -1,6 +1,6 @@
 # Hướng dẫn
 
-<DownloadCard name="ShadowEmu.exe" href="/downloads/ShadowEmu.exe" size="0.7 MB" />
+<DownloadCard name="ShadowEmu.exe" href="/downloads/ShadowEmu.exe" size="0.8 MB" />
 
 Shadow Emulator là công cụ **không cần khởi động lại** cho phép bạn khởi chạy nhiều trò chơi mà không cần khởi động lại PC mỗi lần.
 

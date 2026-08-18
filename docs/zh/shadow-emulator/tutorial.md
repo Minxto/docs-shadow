@@ -1,6 +1,6 @@
 # 教程
 
-<DownloadCard name="ShadowEmu.exe" href="/downloads/ShadowEmu.exe" size="0.7 MB" />
+<DownloadCard name="ShadowEmu.exe" href="/downloads/ShadowEmu.exe" size="0.8 MB" />
 
 Shadow Emulator 是一款**无需重启**的工具，可让您启动多个游戏而无需每次都重启 PC。
 
