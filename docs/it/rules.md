@@ -6,65 +6,29 @@ Utilizzando le applicazioni Shadow, accetti di rispettare queste regole. Si appl
 
 ## Comportamenti vietati
 
-### Tentativo di crack
+### Tentativo di crack <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
 
 Qualsiasi tentativo di crack, reverse engineering o bypass della protezione dell'applicazione comporterà un **ban permanente** dall'applicazione e dal server Discord ufficiale.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — applicazione e Discord.
-
-</div>
-
-### Mancanza di rispetto o commenti inappropriati
+### Mancanza di rispetto o commenti inappropriati <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
 
 Qualsiasi mancanza di rispetto, molestie o commenti inappropriati verso il team o la community comporterà un **ban permanente** dall'applicazione e da Discord.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — applicazione e Discord.
-
-</div>
-
-### Condivisione o rivendita dell'accesso
+### Condivisione o rivendita dell'accesso <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
 
 Condividere account, licenza o accesso con altri, o rivendere l'accesso, è vietato e può comportare un **ban permanente**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — applicazione e Discord.
-
-</div>
-
-### Leak e redistribuzione
+### Leak e redistribuzione <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
 
 Distribuire l'applicazione, build interne, versioni crackate o informazioni riservate è vietato e può comportare un **ban permanente**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — applicazione e Discord.
-
-</div>
-
-### Abuso del supporto e segnalazioni false
+### Abuso del supporto e segnalazioni false <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
 
 Spammare i canali di supporto, abusare dei Community Reports o pubblicare informazioni false può comportare un **ban permanente**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — applicazione e Discord.
-
-</div>
-
-### Elusione del ban
+### Elusione del ban <span class="gb-rule-sanction">Ban permanente — applicazione e Discord.</span>
 
 Creare nuovi account o usare identità alternative per aggirare un ban permanente è vietato e può comportare un **ban permanente**.
-
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — applicazione e Discord.
-
-</div>
 
 ## Requisiti
 

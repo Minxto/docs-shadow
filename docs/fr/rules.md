@@ -6,65 +6,29 @@ En utilisant les applications Shadow, vous acceptez de respecter ces règles. El
 
 ## Comportements interdits
 
-### Tentative de crack
+### Tentative de crack <span class="gb-rule-sanction">Ban définitif — application et Discord.</span>
 
 Toute tentative de crack, de reverse engineering ou de contournement de la protection de l'application entraîne un **ban définitif** de l'application et du serveur Discord officiel.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban définitif** — application et Discord.
-
-</div>
-
-### Manque de respect ou propos inappropriés
+### Manque de respect ou propos inappropriés <span class="gb-rule-sanction">Ban permanent — application et Discord.</span>
 
 Tout manque de respect, harcèlement ou propos inappropriés envers l'équipe ou la communauté entraîne un **ban permanent** de l'application et du Discord.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanent** — application et Discord.
-
-</div>
-
-### Partage ou revente d'accès
+### Partage ou revente d'accès <span class="gb-rule-sanction">Ban définitif — application et Discord.</span>
 
 Partager votre compte, votre licence ou votre accès avec d'autres personnes, ou revendre un accès, est interdit et peut entraîner un **ban définitif**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban définitif** — application et Discord.
-
-</div>
-
-### Leak et redistribution
+### Leak et redistribution <span class="gb-rule-sanction">Ban définitif — application et Discord.</span>
 
 Diffuser l'application, des builds internes, des versions crackées ou des informations confidentielles est interdit et peut entraîner un **ban définitif**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban définitif** — application et Discord.
-
-</div>
-
-### Abus du support et faux signalements
+### Abus du support et faux signalements <span class="gb-rule-sanction">Ban définitif — application et Discord.</span>
 
 Spammer les canaux de support, abuser des Community Reports ou publier de fausses informations peut entraîner un **ban définitif**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban définitif** — application et Discord.
-
-</div>
-
-### Contournement de ban
+### Contournement de ban <span class="gb-rule-sanction">Ban définitif — application et Discord.</span>
 
 Créer de nouveaux comptes ou utiliser une autre identité pour contourner un ban définitif est interdit et peut entraîner un **ban définitif**.
-
-<div class="gb-notice gb-notice--danger">
-
-**Ban définitif** — application et Discord.
-
-</div>
 
 ## Obligations
 

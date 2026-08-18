@@ -6,65 +6,29 @@ By using Shadow applications, you agree to follow these rules. These rules apply
 
 ## Prohibited behavior
 
-### Attempting to crack the software
+### Attempting to crack the software <span class="gb-rule-sanction">Permanent ban — application and Discord.</span>
 
 Any attempt to crack, reverse-engineer, or bypass the protection of the application will result in a **permanent ban** from the application and the official Discord server.
 
-<div class="gb-notice gb-notice--danger">
-
-**Permanent ban** — application and Discord.
-
-</div>
-
-### Disrespectful or inappropriate behavior
+### Disrespectful or inappropriate behavior <span class="gb-rule-sanction">Permanent ban — application and Discord.</span>
 
 Any lack of respect, harassment, or inappropriate remarks toward the team or the community will result in a **permanent ban** from the application and the official Discord server.
 
-<div class="gb-notice gb-notice--danger">
-
-**Permanent ban** — application and Discord.
-
-</div>
-
-### Sharing or reselling access
+### Sharing or reselling access <span class="gb-rule-sanction">Permanent ban — application and Discord.</span>
 
 Sharing your account, license, or access with others, or reselling access, is prohibited and may result in a **permanent ban**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Permanent ban** — application and Discord.
-
-</div>
-
-### Leaks and redistribution
+### Leaks and redistribution <span class="gb-rule-sanction">Permanent ban — application and Discord.</span>
 
 Distributing the application, internal builds, cracked versions, or confidential information is prohibited and may result in a **permanent ban**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Permanent ban** — application and Discord.
-
-</div>
-
-### Support abuse and false reports
+### Support abuse and false reports <span class="gb-rule-sanction">Permanent ban — application and Discord.</span>
 
 Spamming support channels, abusing Community Reports, or posting false or misleading information may result in a **permanent ban**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Permanent ban** — application and Discord.
-
-</div>
-
-### Ban evasion
+### Ban evasion <span class="gb-rule-sanction">Permanent ban — application and Discord.</span>
 
 Creating new accounts or using alternate identities to bypass a permanent ban is prohibited and may result in a **permanent ban**.
-
-<div class="gb-notice gb-notice--danger">
-
-**Permanent ban** — application and Discord.
-
-</div>
 
 ## Requirements
 

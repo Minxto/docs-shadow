@@ -6,65 +6,29 @@ Ao usar as aplicações Shadow, você concorda em seguir estas regras. Elas se a
 
 ## Comportamentos proibidos
 
-### Tentativa de crack
+### Tentativa de crack <span class="gb-rule-sanction">Ban permanente — aplicação e Discord.</span>
 
 Qualquer tentativa de crack, engenharia reversa ou bypass da proteção da aplicação resultará em **ban permanente** da aplicação e do servidor oficial do Discord.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — aplicação e Discord.
-
-</div>
-
-### Falta de respeito ou comentários inadequados
+### Falta de respeito ou comentários inadequados <span class="gb-rule-sanction">Ban permanente — aplicação e Discord.</span>
 
 Qualquer falta de respeito, assédio ou comentários inadequados em relação à equipe ou à comunidade resultará em **ban permanente** da aplicação e do Discord.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — aplicação e Discord.
-
-</div>
-
-### Compartilhamento ou revenda de acesso
+### Compartilhamento ou revenda de acesso <span class="gb-rule-sanction">Ban permanente — aplicação e Discord.</span>
 
 Compartilhar sua conta, licença ou acesso com outras pessoas, ou revender acesso, é proibido e pode resultar em **ban permanente**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — aplicação e Discord.
-
-</div>
-
-### Vazamentos e redistribuição
+### Vazamentos e redistribuição <span class="gb-rule-sanction">Ban permanente — aplicação e Discord.</span>
 
 Distribuir a aplicação, builds internas, versões crackeadas ou informações confidenciais é proibido e pode resultar em **ban permanente**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — aplicação e Discord.
-
-</div>
-
-### Abuso do suporte e relatórios falsos
+### Abuso do suporte e relatórios falsos <span class="gb-rule-sanction">Ban permanente — aplicação e Discord.</span>
 
 Enviar spam nos canais de suporte, abusar dos Community Reports ou publicar informações falsas pode resultar em **ban permanente**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — aplicação e Discord.
-
-</div>
-
-### Contorno de ban
+### Contorno de ban <span class="gb-rule-sanction">Ban permanente — aplicação e Discord.</span>
 
 Criar novas contas ou usar identidades alternativas para contornar um ban permanente é proibido e pode resultar em **ban permanente**.
-
-<div class="gb-notice gb-notice--danger">
-
-**Ban permanente** — aplicação e Discord.
-
-</div>
 
 ## Requisitos
 

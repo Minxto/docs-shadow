@@ -6,65 +6,29 @@ Khi sử dụng các ứng dụng Shadow, bạn đồng ý tuân thủ các quy 
 
 ## Hành vi bị cấm
 
-### Cố gắng crack phần mềm
+### Cố gắng crack phần mềm <span class="gb-rule-sanction">Ban vĩnh viễn — ứng dụng và Discord.</span>
 
 Mọi hành vi crack, reverse engineering hoặc vượt qua bảo vệ của ứng dụng sẽ bị **ban vĩnh viễn** khỏi ứng dụng và máy chủ Discord chính thức.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban vĩnh viễn** — ứng dụng và Discord.
-
-</div>
-
-### Thiếu tôn trọng hoặc lời nói không phù hợp
+### Thiếu tôn trọng hoặc lời nói không phù hợp <span class="gb-rule-sanction">Ban vĩnh viễn — ứng dụng và Discord.</span>
 
 Mọi hành vi thiếu tôn trọng, quấy rối hoặc lời nói không phù hợp đối với đội ngũ hoặc cộng đồng sẽ bị **ban vĩnh viễn** khỏi ứng dụng và Discord.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban vĩnh viễn** — ứng dụng và Discord.
-
-</div>
-
-### Chia sẻ hoặc bán lại quyền truy cập
+### Chia sẻ hoặc bán lại quyền truy cập <span class="gb-rule-sanction">Ban vĩnh viễn — ứng dụng và Discord.</span>
 
 Chia sẻ tài khoản, giấy phép hoặc quyền truy cập với người khác, hoặc bán lại quyền truy cập, đều bị cấm và có thể dẫn đến **ban vĩnh viễn**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban vĩnh viễn** — ứng dụng và Discord.
-
-</div>
-
-### Rò rỉ và phân phối lại
+### Rò rỉ và phân phối lại <span class="gb-rule-sanction">Ban vĩnh viễn — ứng dụng và Discord.</span>
 
 Phân phối ứng dụng, bản build nội bộ, phiên bản crack hoặc thông tin bảo mật đều bị cấm và có thể dẫn đến **ban vĩnh viễn**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban vĩnh viễn** — ứng dụng và Discord.
-
-</div>
-
-### Lạm dụng hỗ trợ và báo cáo sai
+### Lạm dụng hỗ trợ và báo cáo sai <span class="gb-rule-sanction">Ban vĩnh viễn — ứng dụng và Discord.</span>
 
 Spam kênh hỗ trợ, lạm dụng Community Reports hoặc đăng thông tin sai lệch có thể dẫn đến **ban vĩnh viễn**.
 
-<div class="gb-notice gb-notice--danger">
-
-**Ban vĩnh viễn** — ứng dụng và Discord.
-
-</div>
-
-### Trốn ban
+### Trốn ban <span class="gb-rule-sanction">Ban vĩnh viễn — ứng dụng và Discord.</span>
 
 Tạo tài khoản mới hoặc dùng danh tính khác để né ban vĩnh viễn đều bị cấm và có thể dẫn đến **ban vĩnh viễn**.
-
-<div class="gb-notice gb-notice--danger">
-
-**Ban vĩnh viễn** — ứng dụng và Discord.
-
-</div>
 
 ## Yêu cầu
 
