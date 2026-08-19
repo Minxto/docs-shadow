@@ -864,10 +864,10 @@ const patchNotesEn: PatchNotesLabels = {
   title: 'Patch Notes',
   ariaLabel: 'Patch notes',
   notes: [
-    'New interface, more intuitive and easier to use',
-    'Fixed some Val5 and Val-102 issues',
-    'Some players had no issues, while others did, so we reworked it to improve compatibility for everyone',
-    'Script optimization'
+    'Return of No Restart **(F3 in the lobby)**',
+    'Fixes for some issues related to **VAL5** and **VAL-102**.',
+    'Optimized the UI design and reduced its performance impact.',
+    'Added the ability to **ban players** who have violated the rules directly from the application.'
   ]
 }
 
@@ -877,60 +877,60 @@ export const patchNotesLabels: Record<LocaleKey, PatchNotesLabels> = {
     title: 'Notes de patch',
     ariaLabel: 'Notes de patch',
     notes: [
-      'Nouvelle interface, plus intuitive et plus simple à utiliser',
-      'Correction de certains problèmes Val5 et VAL-102',
-      'Certains joueurs n\'avaient aucun problème, d\'autres si — nous avons retravaillé le système pour améliorer la compatibilité pour tous',
-      'Optimisation des scripts'
+      'Retour du No Restart **(F3 dans le lobby)**',
+      'Corrections de certains problèmes liés à **VAL5** et **VAL-102**.',
+      'Optimisation du design de l\'interface et réduction de son impact sur les performances.',
+      'Ajout de la possibilité de **bannir des joueurs** ayant enfreint les règles directement depuis l\'application.'
     ]
   },
   es: {
     title: 'Notas del parche',
     ariaLabel: 'Notas del parche',
     notes: [
-      'Nueva interfaz, más intuitiva y fácil de usar',
-      'Corregidos algunos problemas Val5 y VAL-102',
-      'Algunos jugadores no tenían problemas y otros sí, así que lo rehicimos para mejorar la compatibilidad para todos',
-      'Optimización de scripts'
+      'Regreso de No Restart **(F3 en el lobby)**',
+      'Correcciones de algunos problemas relacionados con **VAL5** y **VAL-102**.',
+      'Optimización del diseño de la interfaz y reducción de su impacto en el rendimiento.',
+      'Posibilidad de **banear jugadores** que hayan infringido las reglas directamente desde la aplicación.'
     ]
   },
   pt: {
     title: 'Notas de patch',
     ariaLabel: 'Notas de patch',
     notes: [
-      'Nova interface, mais intuitiva e fácil de usar',
-      'Corrigidos alguns problemas Val5 e VAL-102',
-      'Alguns jogadores não tinham problemas e outros sim, então retrabalhamos para melhorar a compatibilidade para todos',
-      'Otimização de scripts'
+      'Retorno do No Restart **(F3 no lobby)**',
+      'Correções de alguns problemas relacionados a **VAL5** e **VAL-102**.',
+      'Otimização do design da interface e redução do impacto no desempenho.',
+      'Adicionada a possibilidade de **banir jogadores** que violaram as regras diretamente pelo aplicativo.'
     ]
   },
   it: {
     title: 'Note di patch',
     ariaLabel: 'Note di patch',
     notes: [
-      'Nuova interfaccia, più intuitiva e facile da usare',
-      'Risolti alcuni problemi Val5 e VAL-102',
-      'Alcuni giocatori non avevano problemi e altri sì, quindi abbiamo rielaborato il sistema per migliorare la compatibilità per tutti',
-      'Ottimizzazione degli script'
+      'Ritorno del No Restart **(F3 nella lobby)**',
+      'Correzioni di alcuni problemi relativi a **VAL5** e **VAL-102**.',
+      'Ottimizzazione del design dell\'interfaccia e riduzione dell\'impatto sulle prestazioni.',
+      'Aggiunta la possibilità di **bannare i giocatori** che hanno violato le regole direttamente dall\'applicazione.'
     ]
   },
   vi: {
     title: 'Ghi chú bản vá',
     ariaLabel: 'Ghi chú bản vá',
     notes: [
-      'Giao diện mới, trực quan và dễ sử dụng hơn',
-      'Sửa một số lỗi Val5 và VAL-102',
-      'Một số người chơi không gặp vấn đề, số khác thì có — chúng tôi đã cải thiện để tương thích tốt hơn cho mọi người',
-      'Tối ưu script'
+      'Trở lại No Restart **(F3 trong lobby)**',
+      'Sửa một số vấn đề liên quan đến **VAL5** và **VAL-102**.',
+      'Tối ưu thiết kế giao diện và giảm ảnh hưởng đến hiệu năng.',
+      'Thêm khả năng **ban người chơi** vi phạm quy tắc trực tiếp từ ứng dụng.'
     ]
   },
   zh: {
     title: '更新说明',
     ariaLabel: '更新说明',
     notes: [
-      '全新界面，更直观、更易使用',
-      '修复部分 Val5 和 VAL-102 问题',
-      '部分玩家没有问题，部分玩家有问题，我们已重新优化以提高全体兼容性',
-      '脚本优化'
+      'No Restart 回归 **（大厅内按 F3）**',
+      '修复部分与 **VAL5** 和 **VAL-102** 相关的问题。',
+      '优化 UI 设计并降低性能影响。',
+      '新增直接从应用程序 **封禁违规玩家** 的功能。'
     ]
   }
 }
