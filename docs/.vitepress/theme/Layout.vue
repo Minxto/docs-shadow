@@ -178,7 +178,7 @@ function pageIcon(link: string) {
           </svg>
         </button>
         <a :href="homePath" class="gb-brand">
-          <span class="gb-brand-title">{{ ui.siteTitle }}</span>
+          <img src="/shadow-gg.png" alt="SHADOW.gg" class="gb-brand-logo" />
         </a>
         <div class="gb-header-actions">
           <StatusButton />

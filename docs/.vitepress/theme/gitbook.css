@@ -261,6 +261,15 @@ html:not(.dark) .gb-patch-badge {
   object-fit: cover;
 }
 
+.gb-brand-logo {
+  display: block;
+  height: 34px;
+  width: auto;
+  max-width: min(220px, 42vw);
+  object-fit: contain;
+  object-position: left center;
+}
+
 .gb-brand-title {
   color: var(--gb-text);
   font-size: 15px;
