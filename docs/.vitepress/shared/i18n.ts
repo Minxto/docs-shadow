@@ -209,7 +209,7 @@ export function createSidebar(labels: SidebarLabels) {
 }
 
 const uiEn: UiLabels = {
-  siteTitle: 'shadow.Locker | Documentation',
+  siteTitle: 'shadow.gg - Documentation',
   welcomeSidebar: 'Welcome to Shadow Tutorial',
   poweredBy: 'Powered by Shadow',
   search: 'Search...',
