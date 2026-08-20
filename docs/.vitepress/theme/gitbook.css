@@ -248,7 +248,7 @@ html:not(.dark) .gb-patch-badge {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 272px;
+  margin-left: 288px;
   text-decoration: none;
   min-width: 0;
 }
