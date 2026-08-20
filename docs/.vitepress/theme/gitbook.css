@@ -263,9 +263,9 @@ html:not(.dark) .gb-patch-badge {
 
 .gb-brand-logo {
   display: block;
-  height: 34px;
+  height: 52px;
   width: auto;
-  max-width: min(220px, 42vw);
+  max-width: min(320px, 50vw);
   object-fit: contain;
   object-position: left center;
 }
