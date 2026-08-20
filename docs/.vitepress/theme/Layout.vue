@@ -178,7 +178,6 @@ function pageIcon(link: string) {
           </svg>
         </button>
         <a :href="homePath" class="gb-brand">
-          <img src="/logo.webp" alt="Shadow" class="gb-brand-icon" />
           <span class="gb-brand-title">{{ ui.siteTitle }}</span>
         </a>
         <div class="gb-header-actions">
@@ -246,7 +245,7 @@ function pageIcon(link: string) {
 
           <div v-if="isDocPage && currentSection" class="gb-page-toolbar">
             <a :href="currentSection.base" class="gb-breadcrumb">
-              <img src="/logo.webp" alt="Shadow" class="gb-page-logo" />
+              <GbIcon :name="currentSection.icon" :size="16" />
               <span>{{ currentSection.title }}</span>
             </a>
             <button type="button" class="gb-copy" @click="copyPage">

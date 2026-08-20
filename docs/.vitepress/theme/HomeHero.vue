@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import GbIcon from './GbIcon.vue'
 import { getUiLabels } from '../shared/i18n'
 
 const DISCORD_URL = 'https://discord.gg/8kaqgksB9W'
@@ -27,7 +28,7 @@ const ui = computed(() => getUiLabels(localeIndex.value))
         rel="noopener noreferrer"
       >
         <span class="home-hero-action-icon home-hero-action-icon--shadow">
-          <img src="/logo.webp" alt="" />
+          <GbIcon name="monitor" :size="22" />
         </span>
         <span class="home-hero-action-text">
           <strong>{{ ui.homeWebsite }}</strong>

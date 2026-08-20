@@ -9,7 +9,7 @@ import {
 } from './shared/i18n'
 
 const sharedTheme = {
-  logo: '/logo.webp',
+  logo: undefined,
   sidebarMenuLabel: 'Menu',
   returnToTopLabel: 'Back to top',
   darkModeSwitchLabel: 'Appearance',

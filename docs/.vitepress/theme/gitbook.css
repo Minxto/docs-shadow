@@ -1198,14 +1198,8 @@ html:not(.dark) .gb-content.vp-doc .gb-notice--danger strong {
 }
 
 .home-hero-action-icon--shadow {
-  background: #0a0a0a;
-  overflow: hidden;
-}
-
-.home-hero-action-icon--shadow img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background: rgba(var(--gb-primary-rgb), 0.16);
+  color: var(--gb-primary);
 }
 
 .home-hero-action-icon--discord {
