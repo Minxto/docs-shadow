@@ -616,7 +616,7 @@ const tooltipStyle = computed(() => {
           >
             <polyline
               fill="none"
-              stroke="#2f81f7"
+              stroke="#8b5cf6"
               stroke-width="2.5"
               stroke-linejoin="round"
               stroke-linecap="round"
@@ -628,7 +628,7 @@ const tooltipStyle = computed(() => {
               :cx="chartCoords[metricHoverIndex].x"
               :cy="chartCoords[metricHoverIndex].y"
               r="4.5"
-              fill="#2f81f7"
+              fill="#8b5cf6"
               stroke="#fff"
               stroke-width="2"
               pointer-events="none"
