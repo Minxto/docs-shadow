@@ -245,7 +245,15 @@ function metricLatencyClass(value: number) {
 const pastIncidents = computed<PastIncidentDay[]>(() => [
   {
     date: daysAgo(0),
-    empty: true
+    entries: [
+      {
+        title: labels.value.maintenanceIssue,
+        tone: 'partial',
+        status: 'resolved',
+        statusLabel: labels.value.resolved,
+        message: labels.value.maintenanceMessage
+      }
+    ]
   },
   {
     date: new Date(GATEWAY_INCIDENT_17),
@@ -298,6 +306,11 @@ const metricPeriods = computed(() => ([
 const services = computed<ServiceGroup[]>(() => {
   const today = todayAnchor.value
   const gatewayOverrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {
+    [dateKey(today)]: {
+      status: 'degraded',
+      duration: '3 hrs',
+      related: labels.value.maintenanceIssue
+    },
     [dateKey(GATEWAY_INCIDENT_17)]: {
       status: 'partial',
       duration: '5 hrs',

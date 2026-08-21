@@ -90,6 +90,8 @@ type StatusLabels = {
   resolvedMessage: string
   monitoring: string
   monitoringMessage: string
+  maintenanceIssue: string
+  maintenanceMessage: string
 }
 
 const sidebarEn: SidebarLabels = {
@@ -465,7 +467,9 @@ const statusEn: StatusLabels = {
   resolved: 'Resolved',
   resolvedMessage: 'This incident has been resolved.',
   monitoring: 'Monitoring',
-  monitoringMessage: 'We are monitoring the situation after the outage.'
+  monitoringMessage: 'We are monitoring the situation after the outage.',
+  maintenanceIssue: 'Scheduled maintenance',
+  maintenanceMessage: 'A 3-hour maintenance was performed. All systems are now operational.'
 }
 
 export const statusLabels: Record<LocaleKey, StatusLabels> = {
@@ -503,7 +507,9 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolved: 'Résolu',
     resolvedMessage: 'Cet incident a été résolu.',
     monitoring: 'Surveillance',
-    monitoringMessage: 'Nous surveillons la situation après la panne.'
+    monitoringMessage: 'Nous surveillons la situation après la panne.',
+    maintenanceIssue: 'Maintenance planifiée',
+    maintenanceMessage: 'Une maintenance de 3 heures a été effectuée. Tous les systèmes sont de nouveau opérationnels.'
   },
   es: {
     button: 'Estado',
@@ -538,7 +544,9 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolved: 'Resuelto',
     resolvedMessage: 'Este incidente ha sido resuelto.',
     monitoring: 'Monitoreo',
-    monitoringMessage: 'Estamos monitoreando la situación después de la interrupción.'
+    monitoringMessage: 'Estamos monitoreando la situación después de la interrupción.',
+    maintenanceIssue: 'Mantenimiento programado',
+    maintenanceMessage: 'Se realizó un mantenimiento de 3 horas. Todos los sistemas están operativos.'
   },
   pt: {
     button: 'Status',
@@ -573,7 +581,9 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolved: 'Resolvido',
     resolvedMessage: 'Este incidente foi resolvido.',
     monitoring: 'Monitoramento',
-    monitoringMessage: 'Estamos monitorando a situação após a interrupção.'
+    monitoringMessage: 'Estamos monitorando a situação após a interrupção.',
+    maintenanceIssue: 'Manutenção programada',
+    maintenanceMessage: 'Foi realizada uma manutenção de 3 horas. Todos os sistemas estão operacionais.'
   },
   it: {
     button: 'Stato',
@@ -608,7 +618,9 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolved: 'Risolto',
     resolvedMessage: 'Questo incidente è stato risolto.',
     monitoring: 'Monitoraggio',
-    monitoringMessage: 'Stiamo monitorando la situazione dopo l’interruzione.'
+    monitoringMessage: 'Stiamo monitorando la situazione dopo l’interruzione.',
+    maintenanceIssue: 'Manutenzione programmata',
+    maintenanceMessage: 'È stata effettuata una manutenzione di 3 ore. Tutti i sistemi sono operativi.'
   },
   vi: {
     button: 'Trạng thái',
@@ -643,7 +655,9 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolved: 'Đã giải quyết',
     resolvedMessage: 'Sự cố này đã được giải quyết.',
     monitoring: 'Đang theo dõi',
-    monitoringMessage: 'Chúng tôi đang theo dõi tình hình sau sự cố.'
+    monitoringMessage: 'Chúng tôi đang theo dõi tình hình sau sự cố.',
+    maintenanceIssue: 'Bảo trì theo lịch',
+    maintenanceMessage: 'Đã thực hiện bảo trì trong 3 giờ. Tất cả hệ thống đã hoạt động trở lại.'
   },
   zh: {
     button: '状态',
@@ -678,7 +692,9 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolved: '已解决',
     resolvedMessage: '此事件已解决。',
     monitoring: '监控中',
-    monitoringMessage: '我们正在中断发生后监控情况。'
+    monitoringMessage: '我们正在中断发生后监控情况。',
+    maintenanceIssue: '计划维护',
+    maintenanceMessage: '进行了 3 小时的维护。所有系统现已恢复正常。'
   }
 }
 
