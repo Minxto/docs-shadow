@@ -1455,6 +1455,10 @@ html:not(.dark) .gb-status-btn.active {
   background: #d4a72c;
 }
 
+.gb-status-banner--maintenance {
+  background: #8b5cf6;
+}
+
 .gb-status-intro {
   margin: 0 0 16px;
   color: var(--gb-text-muted);

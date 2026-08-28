@@ -92,6 +92,9 @@ type StatusLabels = {
   monitoringMessage: string
   maintenanceIssue: string
   maintenanceMessage: string
+  underMaintenance: string
+  emulatorMaintenance: string
+  ongoing: string
 }
 
 const sidebarEn: SidebarLabels = {
@@ -468,8 +471,11 @@ const statusEn: StatusLabels = {
   resolvedMessage: 'This incident has been resolved.',
   monitoring: 'Monitoring',
   monitoringMessage: 'We are monitoring the situation after the outage.',
-  maintenanceIssue: 'Scheduled maintenance',
-  maintenanceMessage: 'A 3-hour maintenance was performed. All systems are now operational.'
+  maintenanceIssue: 'Shadow Emulator maintenance',
+  maintenanceMessage: 'Shadow Emulator has been under scheduled maintenance since August 21. Services will be restored as soon as possible.',
+  underMaintenance: 'Under Maintenance',
+  emulatorMaintenance: 'Shadow Emulator — Maintenance in Progress',
+  ongoing: 'Ongoing'
 }
 
 export const statusLabels: Record<LocaleKey, StatusLabels> = {
@@ -508,8 +514,11 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolvedMessage: 'Cet incident a été résolu.',
     monitoring: 'Surveillance',
     monitoringMessage: 'Nous surveillons la situation après la panne.',
-    maintenanceIssue: 'Maintenance planifiée',
-    maintenanceMessage: 'Une maintenance de 3 heures a été effectuée. Tous les systèmes sont de nouveau opérationnels.'
+    maintenanceIssue: 'Maintenance Shadow Emulator',
+    maintenanceMessage: 'Shadow Emulator est en maintenance planifiée depuis le 21 août. Les services seront rétablis dès que possible.',
+    underMaintenance: 'En maintenance',
+    emulatorMaintenance: 'Shadow Emulator — Maintenance en cours',
+    ongoing: 'En cours'
   },
   es: {
     button: 'Estado',
@@ -545,8 +554,11 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolvedMessage: 'Este incidente ha sido resuelto.',
     monitoring: 'Monitoreo',
     monitoringMessage: 'Estamos monitoreando la situación después de la interrupción.',
-    maintenanceIssue: 'Mantenimiento programado',
-    maintenanceMessage: 'Se realizó un mantenimiento de 3 horas. Todos los sistemas están operativos.'
+    maintenanceIssue: 'Mantenimiento de Shadow Emulator',
+    maintenanceMessage: 'Shadow Emulator está en mantenimiento programado desde el 21 de agosto. Los servicios se restablecerán lo antes posible.',
+    underMaintenance: 'En mantenimiento',
+    emulatorMaintenance: 'Shadow Emulator — Mantenimiento en curso',
+    ongoing: 'En curso'
   },
   pt: {
     button: 'Status',
@@ -582,8 +594,11 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolvedMessage: 'Este incidente foi resolvido.',
     monitoring: 'Monitoramento',
     monitoringMessage: 'Estamos monitorando a situação após a interrupção.',
-    maintenanceIssue: 'Manutenção programada',
-    maintenanceMessage: 'Foi realizada uma manutenção de 3 horas. Todos os sistemas estão operacionais.'
+    maintenanceIssue: 'Manutenção do Shadow Emulator',
+    maintenanceMessage: 'Shadow Emulator está em manutenção programada desde 21 de agosto. Os serviços serão restaurados o mais rápido possível.',
+    underMaintenance: 'Em manutenção',
+    emulatorMaintenance: 'Shadow Emulator — Manutenção em andamento',
+    ongoing: 'Em andamento'
   },
   it: {
     button: 'Stato',
@@ -619,8 +634,11 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolvedMessage: 'Questo incidente è stato risolto.',
     monitoring: 'Monitoraggio',
     monitoringMessage: 'Stiamo monitorando la situazione dopo l’interruzione.',
-    maintenanceIssue: 'Manutenzione programmata',
-    maintenanceMessage: 'È stata effettuata una manutenzione di 3 ore. Tutti i sistemi sono operativi.'
+    maintenanceIssue: 'Manutenzione Shadow Emulator',
+    maintenanceMessage: 'Shadow Emulator è in manutenzione programmata dal 21 agosto. I servizi verranno ripristinati il prima possibile.',
+    underMaintenance: 'In manutenzione',
+    emulatorMaintenance: 'Shadow Emulator — Manutenzione in corso',
+    ongoing: 'In corso'
   },
   vi: {
     button: 'Trạng thái',
@@ -656,8 +674,11 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolvedMessage: 'Sự cố này đã được giải quyết.',
     monitoring: 'Đang theo dõi',
     monitoringMessage: 'Chúng tôi đang theo dõi tình hình sau sự cố.',
-    maintenanceIssue: 'Bảo trì theo lịch',
-    maintenanceMessage: 'Đã thực hiện bảo trì trong 3 giờ. Tất cả hệ thống đã hoạt động trở lại.'
+    maintenanceIssue: 'Bảo trì Shadow Emulator',
+    maintenanceMessage: 'Shadow Emulator đang bảo trì theo lịch từ ngày 21 tháng 8. Dịch vụ sẽ được khôi phục sớm nhất có thể.',
+    underMaintenance: 'Đang bảo trì',
+    emulatorMaintenance: 'Shadow Emulator — Đang bảo trì',
+    ongoing: 'Đang diễn ra'
   },
   zh: {
     button: '状态',
@@ -693,8 +714,11 @@ export const statusLabels: Record<LocaleKey, StatusLabels> = {
     resolvedMessage: '此事件已解决。',
     monitoring: '监控中',
     monitoringMessage: '我们正在中断发生后监控情况。',
-    maintenanceIssue: '计划维护',
-    maintenanceMessage: '进行了 3 小时的维护。所有系统现已恢复正常。'
+    maintenanceIssue: 'Shadow Emulator 维护',
+    maintenanceMessage: 'Shadow Emulator 自 8 月 21 日起进行计划维护。服务将尽快恢复。',
+    underMaintenance: '维护中',
+    emulatorMaintenance: 'Shadow Emulator — 维护进行中',
+    ongoing: '进行中'
   }
 }
 

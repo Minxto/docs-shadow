@@ -38,6 +38,7 @@ const HISTORY_DAYS = 90
 const GATEWAY_INCIDENT_14 = new Date(2026, 7, 14)
 const GATEWAY_INCIDENT_15 = new Date(2026, 7, 15)
 const GATEWAY_INCIDENT_17 = new Date(2026, 7, 17)
+const MAINTENANCE_START = new Date(2026, 7, 21)
 const todayAnchor = ref(startOfToday())
 
 function startOfToday() {
@@ -78,6 +79,48 @@ function buildHistory(
   })
 }
 
+function isMaintenanceDay(date: Date, today: Date) {
+  const day = new Date(date)
+  day.setHours(0, 0, 0, 0)
+
+  const start = new Date(MAINTENANCE_START)
+  start.setHours(0, 0, 0, 0)
+
+  const end = new Date(today)
+  end.setHours(0, 0, 0, 0)
+
+  return day >= start && day <= end
+}
+
+function buildMaintenanceOverrides(
+  today: Date,
+  related: string,
+  duration: string
+): Record<string, Omit<Partial<DayEntry>, 'date'>> {
+  const overrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {}
+
+  for (let index = 0; index < HISTORY_DAYS; index++) {
+    const date = new Date(today)
+    date.setDate(date.getDate() - (HISTORY_DAYS - 1 - index))
+
+    if (isMaintenanceDay(date, today)) {
+      overrides[dateKey(date)] = {
+        status: 'partial',
+        duration,
+        related
+      }
+    }
+  }
+
+  return overrides
+}
+
+function mergeOverrides(
+  ...sources: Record<string, Omit<Partial<DayEntry>, 'date'>>[]
+): Record<string, Omit<Partial<DayEntry>, 'date'>> {
+  return Object.assign({}, ...sources)
+}
+
 function worstStatus(statuses: DayStatus[]): DayStatus {
   const rank: Record<DayStatus, number> = {
     operational: 0,
@@ -102,6 +145,15 @@ function statusLabel(status: DayStatus, labels: ReturnType<typeof getStatusLabel
   if (status === 'degraded') return labels.degraded
   if (status === 'partial') return labels.partial
   return labels.major
+}
+
+function displayStatusLabel(
+  status: DayStatus,
+  labels: ReturnType<typeof getStatusLabels>,
+  inMaintenance: boolean
+) {
+  if (inMaintenance) return labels.underMaintenance
+  return statusLabel(status, labels)
 }
 
 function formatDayDate(date: Date, locale: string) {
@@ -249,8 +301,8 @@ const pastIncidents = computed<PastIncidentDay[]>(() => [
       {
         title: labels.value.maintenanceIssue,
         tone: 'partial',
-        status: 'resolved',
-        statusLabel: labels.value.resolved,
+        status: 'monitoring',
+        statusLabel: labels.value.monitoring,
         message: labels.value.maintenanceMessage
       }
     ]
@@ -305,12 +357,13 @@ const metricPeriods = computed(() => ([
 
 const services = computed<ServiceGroup[]>(() => {
   const today = todayAnchor.value
-  const gatewayOverrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {
-    [dateKey(today)]: {
-      status: 'degraded',
-      duration: '3 hrs',
-      related: labels.value.maintenanceIssue
-    },
+  const maintenanceActive = isMaintenanceDay(today, today)
+  const maintenanceOverrides = buildMaintenanceOverrides(
+    today,
+    labels.value.maintenanceIssue,
+    labels.value.ongoing
+  )
+  const gatewayIncidentOverrides: Record<string, Omit<Partial<DayEntry>, 'date'>> = {
     [dateKey(GATEWAY_INCIDENT_17)]: {
       status: 'partial',
       duration: '5 hrs',
@@ -327,27 +380,27 @@ const services = computed<ServiceGroup[]>(() => {
       related: labels.value.gatewayMajorIssue
     }
   }
+  const emulatorHistoryOverrides = mergeOverrides(gatewayIncidentOverrides, maintenanceOverrides)
+  const emulatorComponentStatus: DayStatus = maintenanceActive ? 'partial' : 'operational'
 
-  const gatewayHistory = buildHistory(today, gatewayOverrides)
-  const gatewayStatus: DayStatus = 'operational'
   const emulatorComponents: ComponentStatus[] = [
     {
       id: 'api',
       name: labels.value.api,
-      status: 'operational',
-      history: buildHistory(today)
+      status: emulatorComponentStatus,
+      history: buildHistory(today, emulatorHistoryOverrides)
     },
     {
       id: 'gateway',
       name: labels.value.gateway,
-      status: gatewayStatus,
-      history: gatewayHistory
+      status: emulatorComponentStatus,
+      history: buildHistory(today, emulatorHistoryOverrides)
     },
     {
       id: 'discord-link',
       name: labels.value.discordLink,
-      status: 'operational',
-      history: buildHistory(today)
+      status: emulatorComponentStatus,
+      history: buildHistory(today, emulatorHistoryOverrides)
     }
   ]
 
@@ -355,7 +408,7 @@ const services = computed<ServiceGroup[]>(() => {
     {
       id: 'shadow-emulator',
       name: 'Shadow Emulator',
-      status: 'operational',
+      status: worstStatus(emulatorComponents.map(component => component.status)),
       components: emulatorComponents
     },
     {
@@ -367,6 +420,10 @@ const services = computed<ServiceGroup[]>(() => {
   ]
 })
 
+const isMaintenanceActive = computed(() =>
+  isMaintenanceDay(todayAnchor.value, todayAnchor.value)
+)
+
 const allOperational = computed(() =>
   services.value.every(service => {
     if (service.components) {
@@ -375,6 +432,12 @@ const allOperational = computed(() =>
     return service.status === 'operational'
   })
 )
+
+const bannerMessage = computed(() => {
+  if (isMaintenanceActive.value) return labels.value.emulatorMaintenance
+  if (allOperational.value) return labels.value.allOperational
+  return labels.value.someIssues
+})
 
 const active = ref<BarTarget | null>(null)
 const pinned = ref(false)
@@ -494,9 +557,12 @@ const tooltipStyle = computed(() => {
   <div class="gb-status">
     <div
       class="gb-status-banner"
-      :class="{ 'gb-status-banner--warn': !allOperational }"
+      :class="{
+        'gb-status-banner--warn': !allOperational && !isMaintenanceActive,
+        'gb-status-banner--maintenance': isMaintenanceActive
+      }"
     >
-      {{ allOperational ? labels.allOperational : labels.someIssues }}
+      {{ bannerMessage }}
     </div>
 
     <p class="gb-status-intro">{{ labels.uptimeIntro }}</p>
@@ -514,7 +580,7 @@ const tooltipStyle = computed(() => {
             class="gb-status-service-state"
             :class="`gb-status-service-state--${service.status}`"
           >
-            {{ statusLabel(service.status, labels) }}
+            {{ displayStatusLabel(service.status, labels, isMaintenanceActive && service.id === 'shadow-emulator') }}
           </span>
         </div>
 
@@ -530,7 +596,7 @@ const tooltipStyle = computed(() => {
                 class="gb-status-service-state"
                 :class="`gb-status-service-state--${component.status}`"
               >
-                {{ statusLabel(component.status, labels) }}
+                {{ displayStatusLabel(component.status, labels, isMaintenanceActive) }}
               </span>
             </div>
 
