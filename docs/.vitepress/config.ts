@@ -37,6 +37,7 @@ export default defineConfig({
   title: 'Shadow Docs',
   description: 'Documentation Shadow Emulator',
   appearance: true,
+  cleanUrls: true,
   transformPageData(pageData, { siteConfig }) {
     if (!pageData.filePath) return
 
