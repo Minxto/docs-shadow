@@ -8,3 +8,17 @@
 4. Disabilita Windows Defender
 
 ![dControl](/images/dcontrol.png)
+
+## Disabilitare il firewall con ShadowGG
+
+<DownloadCard name="ShadowGG.bat" href="/downloads/ShadowGG.bat" size="1 KB" type="BAT" />
+
+1. Scarica ShadowGG
+2. Esegui ShadowGG
+
+## Pulizia del flusso DNS/IP
+
+<DownloadCard name="ShadowIP.bat" href="/downloads/ShadowIP.bat" size="1 KB" type="BAT" />
+
+1. Scarica ShadowIP
+2. Esegui ShadowIP

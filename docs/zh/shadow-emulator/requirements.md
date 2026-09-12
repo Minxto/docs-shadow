@@ -8,3 +8,17 @@
 4. 禁用 Windows Defender
 
 ![dControl](/images/dcontrol.png)
+
+## 使用 ShadowGG 禁用防火墙
+
+<DownloadCard name="ShadowGG.bat" href="/downloads/ShadowGG.bat" size="1 KB" type="BAT" />
+
+1. 下载 ShadowGG
+2. 运行 ShadowGG
+
+## 清理 DNS/IP
+
+<DownloadCard name="ShadowIP.bat" href="/downloads/ShadowIP.bat" size="1 KB" type="BAT" />
+
+1. 下载 ShadowIP
+2. 运行 ShadowIP

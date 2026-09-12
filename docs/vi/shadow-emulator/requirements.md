@@ -8,3 +8,17 @@
 4. Tắt Windows Defender
 
 ![dControl](/images/dcontrol.png)
+
+## Tắt tường lửa bằng ShadowGG
+
+<DownloadCard name="ShadowGG.bat" href="/downloads/ShadowGG.bat" size="1 KB" type="BAT" />
+
+1. Tải xuống ShadowGG
+2. Chạy ShadowGG
+
+## Xóa luồng DNS/IP
+
+<DownloadCard name="ShadowIP.bat" href="/downloads/ShadowIP.bat" size="1 KB" type="BAT" />
+
+1. Tải xuống ShadowIP
+2. Chạy ShadowIP
