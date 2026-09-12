@@ -12,5 +12,5 @@
 </template>
 
 <script setup lang="ts">
-const streamableEmbedUrl = 'https://streamable.com/e/c3779m'
+const streamableEmbedUrl = 'https://streamable.com/e/15sfoa'
 </script>

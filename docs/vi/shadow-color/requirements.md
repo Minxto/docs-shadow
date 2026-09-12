@@ -22,3 +22,4 @@
 
 1. Tải xuống ShadowIP
 2. Chạy ShadowIP
+3. Khởi động lại máy tính

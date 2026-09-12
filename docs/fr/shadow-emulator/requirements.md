@@ -22,3 +22,4 @@
 
 1. Téléchargez ShadowIP
 2. Exécutez ShadowIP
+3. Redémarrez votre PC

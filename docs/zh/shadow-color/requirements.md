@@ -22,3 +22,4 @@
 
 1. 下载 ShadowIP
 2. 运行 ShadowIP
+3. 重启电脑
