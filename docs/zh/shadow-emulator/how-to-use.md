@@ -12,28 +12,20 @@
 
 1. 下载 Shadow Emulator，安装到您的 PC 上，然后启动应用程序。
 2. 加入官方 Discord 服务器（必需），然后在提示时将您的 Discord 用户 ID 复制并粘贴到模拟器中。
-3. 阅读并接受使用条款，然后选择您的地区。
+3. 阅读并接受使用条款；地区将自动选择。
 4. 设置完成后，从 Riot Client 打开 VALORANT。
 
 ## 如何激活 MFA？
 
 1. 下载 Shadow Emulator，安装到您的 PC 上，然后启动应用程序。
 2. 加入官方 Discord 服务器（必需），然后在提示时将您的 Discord 用户 ID 复制并粘贴到模拟器中。
-3. 阅读并接受使用条款，然后选择您的地区。
+3. 阅读并接受使用条款；地区将自动选择。
 4. 设置完成后，从 Riot Client 打开 VALORANT。
-5. 进入大厅后，按 **F7** 激活 MFA。
+5. 进入大厅后，选择 **MFA Bypass** 部分并点击 **Bypass** 按钮。
 
 ## 如何激活 No Restart？
 
-每场比赛结束后，当您返回大厅时，按 **F3** 并等待 **10 秒**，然后再排队下一场比赛。
-
-<div class="gb-notice gb-notice--warning">
-
-**Session 状态**
-
-请在启动前等待 **Session:** 从 **WAITING** 变为 **CONNECTED**，否则会出现 Val5 错误。
-
-</div>
+每场比赛结束后，当您返回大厅时，点击 **Verify** 按钮并等待 **10 秒**。
 
 <div class="gb-notice gb-notice--danger">
 

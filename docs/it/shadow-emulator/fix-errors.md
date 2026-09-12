@@ -25,7 +25,7 @@ sc start vgk
 
 È normale. Alla fine di ogni partita, devi premere **F3** e attendere 10–20 secondi affinché lo stato dell'emulatore passi da «In attesa» a «Connesso».
 
-## Ho ricevuto un errore VAL-102. Cosa l'ha causato?
+## Ho ricevuto un errore VAL-102 e 5001. Cosa l'ha causato?
 
 Stai spammando troppo l'applicazione e il cooldown di reset, il che attiva un limite di frequenza sul tuo accesso a Riot. Attendi semplicemente tra **5 e 30 minuti** prima di riprovare. Più spammi e forzi, più a lungo durerà il limite di frequenza.
 

@@ -25,7 +25,7 @@ sc start vgk
 
 This is normal. At the end of each game, you need to press **F3** and wait 10–20 seconds for the emulator's status to change from "Waiting" to "Connected."
 
-## I got a VAL-102 error. What caused it?
+## I got a VAL-102 and 5001 error. What caused it?
 
 You are spamming the application and the reset cooldown too much, which triggers a rate limit on your access to Riot. Simply wait between **5 and 30 minutes** before trying again. The more you spam and force it, the longer the rate limit will last.
 

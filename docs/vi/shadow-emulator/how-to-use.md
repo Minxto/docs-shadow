@@ -12,28 +12,20 @@ Trước khi sử dụng ứng dụng, hãy đọc [quy tắc sử dụng](/vi/r
 
 1. Tải xuống Shadow Emulator, cài đặt trên PC của bạn, sau đó khởi chạy ứng dụng.
 2. Tham gia máy chủ Discord chính thức (bắt buộc), sau đó sao chép và dán ID người dùng Discord của bạn vào trình giả lập khi được yêu cầu.
-3. Đọc và chấp nhận Điều khoản sử dụng, sau đó chọn khu vực của bạn.
+3. Đọc và chấp nhận Điều khoản sử dụng; khu vực sẽ được chọn tự động.
 4. Khi thiết lập hoàn tất, mở VALORANT từ Riot Client.
 
 ## Cách kích hoạt MFA?
 
 1. Tải xuống Shadow Emulator, cài đặt trên PC của bạn, sau đó khởi chạy ứng dụng.
 2. Tham gia máy chủ Discord chính thức (bắt buộc), sau đó sao chép và dán ID người dùng Discord của bạn vào trình giả lập khi được yêu cầu.
-3. Đọc và chấp nhận Điều khoản sử dụng, sau đó chọn khu vực của bạn.
+3. Đọc và chấp nhận Điều khoản sử dụng; khu vực sẽ được chọn tự động.
 4. Khi thiết lập hoàn tất, mở VALORANT từ Riot Client.
-5. Khi bạn ở trong sảnh chờ, nhấn **F7** để kích hoạt MFA.
+5. Khi bạn ở trong sảnh chờ, chọn mục **MFA Bypass** và nhấn nút **Bypass**.
 
 ## Cách kích hoạt No Restart?
 
-Sau mỗi trận đấu, khi bạn quay lại sảnh chờ, nhấn **F3** và đợi **10 giây** trước khi xếp hàng cho trận tiếp theo.
-
-<div class="gb-notice gb-notice--warning">
-
-**Trạng thái Session**
-
-Vui lòng đợi **Session:** chuyển từ **WAITING** sang **CONNECTED** trước khi khởi chạy, nếu không bạn sẽ gặp lỗi Val5.
-
-</div>
+Sau mỗi trận đấu, khi bạn quay lại sảnh chờ, nhấn nút **Verify** và đợi **10 giây**.
 
 <div class="gb-notice gb-notice--danger">
 

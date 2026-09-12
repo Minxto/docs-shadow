@@ -25,7 +25,7 @@ sc start vgk
 
 C'est normal. À la fin de chaque partie, vous devez appuyer sur **F3** et attendre 10 à 20 secondes pour que le statut de l'émulateur passe de « En attente » à « Connecté ».
 
-## J'ai eu une erreur VAL-102. Qu'est-ce qui l'a causée ?
+## J'ai eu une erreur VAL-102 et 5001. Qu'est-ce qui l'a causée ?
 
 Vous spammez trop l'application et le temps de recharge de réinitialisation, ce qui déclenche une limite de débit sur votre accès à Riot. Attendez simplement entre **5 et 30 minutes** avant de réessayer. Plus vous spammez et forcez, plus la limite de débit durera longtemps.
 

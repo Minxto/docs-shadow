@@ -25,7 +25,7 @@ sc start vgk
 
 Điều này là bình thường. Cuối mỗi trận đấu, bạn cần nhấn **F3** và đợi 10–20 giây để trạng thái của trình giả lập chuyển từ «Đang chờ» sang «Đã kết nối».
 
-## Tôi gặp lỗi VAL-102. Nguyên nhân là gì?
+## Tôi gặp lỗi VAL-102 và 5001. Nguyên nhân là gì?
 
 Bạn đang spam ứng dụng và thời gian chờ reset quá nhiều, điều này kích hoạt giới hạn tốc độ truy cập Riot của bạn. Chỉ cần đợi từ **5 đến 30 phút** trước khi thử lại. Càng spam và ép buộc, giới hạn tốc độ sẽ kéo dài càng lâu.
 

@@ -25,7 +25,7 @@ sc start vgk
 
 Es normal. Al final de cada partida, debes presionar **F3** y esperar 10–20 segundos para que el estado del emulador cambie de «Esperando» a «Conectado».
 
-## Obtuve un error VAL-102. ¿Qué lo causó?
+## Obtuve un error VAL-102 y 5001. ¿Qué lo causó?
 
 Estás spameando demasiado la aplicación y el tiempo de espera de reinicio, lo que activa un límite de tasa en tu acceso a Riot. Simplemente espera entre **5 y 30 minutos** antes de intentarlo de nuevo. Cuanto más spamees y fuerces, más durará el límite de tasa.
 

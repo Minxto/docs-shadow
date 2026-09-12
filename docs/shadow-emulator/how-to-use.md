@@ -12,28 +12,20 @@ Before using the application, read the [usage rules](/rules).
 
 1. Download Shadow Emulator, install it on your PC, then launch the application.
 2. Join the official Discord server (required), then copy and paste your Discord User ID into the emulator when asked.
-3. Read and accept the Terms of Use, then select your region.
+3. Read and accept the Terms of Use; the region will be selected automatically.
 4. When setup is complete, open VALORANT from the Riot Client.
 
 ## How to activate MFA?
 
 1. Download Shadow Emulator, install it on your PC, then launch the application.
 2. Join the official Discord server (required), then copy and paste your Discord User ID into the emulator when asked.
-3. Read and accept the Terms of Use, then select your region.
+3. Read and accept the Terms of Use; the region will be selected automatically.
 4. When setup is complete, open VALORANT from the Riot Client.
-5. Once you are in the lobby, press **F7** to activate MFA.
+5. Once you are in the lobby, choose the **MFA Bypass** section and click the **Bypass** button.
 
 ## How to activate No Restart?
 
-After each game, when you return to the lobby, press **F3** and wait **10 seconds** before queuing for your next match.
-
-<div class="gb-notice gb-notice--warning">
-
-**Session status**
-
-Please wait until **Session:** changes from **WAITING** to **CONNECTED** before launching, otherwise you will get a Val5 error.
-
-</div>
+After each game, when you return to the lobby, press the **Verify** button and wait **10 seconds**.
 
 <div class="gb-notice gb-notice--danger">
 
