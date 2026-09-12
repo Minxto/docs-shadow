@@ -22,9 +22,9 @@ Chia sẻ tài khoản, giấy phép hoặc quyền truy cập với người kh
 
 Phân phối ứng dụng, bản build nội bộ, phiên bản crack hoặc thông tin bảo mật đều bị cấm và có thể dẫn đến **ban vĩnh viễn**.
 
-### Lạm dụng hỗ trợ và báo cáo sai <span class="gb-rule-sanction"><strong>Ban vĩnh viễn</strong></span>
+### Lạm dụng hỗ trợ và báo cáo sai <span class="gb-rule-sanction"><strong>Ban tạm thời</strong></span>
 
-Spam kênh hỗ trợ, lạm dụng Community Reports hoặc đăng thông tin sai lệch có thể dẫn đến **ban vĩnh viễn**.
+Spam kênh hỗ trợ, lạm dụng Community Reports hoặc đăng thông tin sai lệch có thể dẫn đến **ban tạm thời**.
 
 ### Trốn ban <span class="gb-rule-sanction"><strong>Ban vĩnh viễn</strong></span>
 

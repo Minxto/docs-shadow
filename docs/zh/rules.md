@@ -22,9 +22,9 @@
 
 分发应用程序、内部构建、破解版本或机密信息均被禁止，可能导致**永久封禁**。
 
-### 滥用支持与虚假报告 <span class="gb-rule-sanction"><strong>永久封禁</strong></span>
+### 滥用支持与虚假报告 <span class="gb-rule-sanction"><strong>临时封禁</strong></span>
 
-在支持频道刷屏、滥用 Community Reports 或发布虚假误导信息可能导致**永久封禁**。
+在支持频道刷屏、滥用 Community Reports 或发布虚假误导信息可能导致**临时封禁**。
 
 ### 规避封禁 <span class="gb-rule-sanction"><strong>永久封禁</strong></span>
 

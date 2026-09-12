@@ -22,9 +22,9 @@ Partager votre compte, votre licence ou votre accès avec d'autres personnes, ou
 
 Diffuser l'application, des builds internes, des versions crackées ou des informations confidentielles est interdit et peut entraîner un **ban définitif**.
 
-### Abus du support et faux signalements <span class="gb-rule-sanction"><strong>Ban définitif</strong></span>
+### Abus du support et faux signalements <span class="gb-rule-sanction"><strong>Ban temporaire</strong></span>
 
-Spammer les canaux de support, abuser des Community Reports ou publier de fausses informations peut entraîner un **ban définitif**.
+Spammer les canaux de support, abuser des Community Reports ou publier de fausses informations peut entraîner un **ban temporaire**.
 
 ### Contournement de ban <span class="gb-rule-sanction"><strong>Ban définitif</strong></span>
 

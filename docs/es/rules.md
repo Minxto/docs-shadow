@@ -22,9 +22,9 @@ Compartir tu cuenta, licencia o acceso con otras personas, o revender acceso, es
 
 Distribuir la aplicación, builds internas, versiones crackeadas o información confidencial está prohibido y puede resultar en un **ban permanente**.
 
-### Abuso del soporte e informes falsos <span class="gb-rule-sanction"><strong>Ban permanente</strong></span>
+### Abuso del soporte e informes falsos <span class="gb-rule-sanction"><strong>Ban temporal</strong></span>
 
-Hacer spam en los canales de soporte, abusar de los Community Reports o publicar información falsa puede resultar en un **ban permanente**.
+Hacer spam en los canales de soporte, abusar de los Community Reports o publicar información falsa puede resultar en un **ban temporal**.
 
 ### Evasión de ban <span class="gb-rule-sanction"><strong>Ban permanente</strong></span>
 

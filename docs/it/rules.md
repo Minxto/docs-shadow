@@ -22,9 +22,9 @@ Condividere account, licenza o accesso con altri, o rivendere l'accesso, è viet
 
 Distribuire l'applicazione, build interne, versioni crackate o informazioni riservate è vietato e può comportare un **ban permanente**.
 
-### Abuso del supporto e segnalazioni false <span class="gb-rule-sanction"><strong>Ban permanente</strong></span>
+### Abuso del supporto e segnalazioni false <span class="gb-rule-sanction"><strong>Ban temporaneo</strong></span>
 
-Spammare i canali di supporto, abusare dei Community Reports o pubblicare informazioni false può comportare un **ban permanente**.
+Spammare i canali di supporto, abusare dei Community Reports o pubblicare informazioni false può comportare un **ban temporaneo**.
 
 ### Elusione del ban <span class="gb-rule-sanction"><strong>Ban permanente</strong></span>
 

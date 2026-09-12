@@ -22,9 +22,9 @@ Sharing your account, license, or access with others, or reselling access, is pr
 
 Distributing the application, internal builds, cracked versions, or confidential information is prohibited and may result in a **permanent ban**.
 
-### Support abuse and false reports <span class="gb-rule-sanction"><strong>Permanent ban</strong></span>
+### Support abuse and false reports <span class="gb-rule-sanction"><strong>Temporary ban</strong></span>
 
-Spamming support channels, abusing Community Reports, or posting false or misleading information may result in a **permanent ban**.
+Spamming support channels, abusing Community Reports, or posting false or misleading information may result in a **temporary ban**.
 
 ### Ban evasion <span class="gb-rule-sanction"><strong>Permanent ban</strong></span>
 
