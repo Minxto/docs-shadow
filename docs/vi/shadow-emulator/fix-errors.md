@@ -23,7 +23,7 @@ sc start vgk
 
 ## Tôi gặp lỗi VAL-5 sau khi kết thúc trận đấu. Tôi nên làm gì?
 
-Điều này là bình thường. Cuối mỗi trận đấu, bạn cần nhấn **F3** và đợi 10–20 giây để trạng thái của trình giả lập chuyển từ «Đang chờ» sang «Đã kết nối».
+Nguyên nhân là do xác minh phiên không đúng, khiến phiên bị crash. Hãy khởi chạy lại trò chơi và trình giả lập.
 
 ## Tôi gặp lỗi VAL-102 và 5001. Nguyên nhân là gì?
 

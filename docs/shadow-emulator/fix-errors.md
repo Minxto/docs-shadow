@@ -23,7 +23,7 @@ sc start vgk
 
 ## I get a VAL-5 error after finishing a game. What should I do?
 
-This is normal. At the end of each game, you need to press **F3** and wait 10–20 seconds for the emulator's status to change from "Waiting" to "Connected."
+This is caused by a failed session verification, which crashes the session. Restart the game and the emulator.
 
 ## I got a VAL-102 and 5001 error. What caused it?
 

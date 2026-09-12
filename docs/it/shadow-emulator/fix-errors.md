@@ -23,7 +23,7 @@ sc start vgk
 
 ## Ricevo un errore VAL-5 dopo aver finito una partita. Cosa devo fare?
 
-È normale. Alla fine di ogni partita, devi premere **F3** e attendere 10–20 secondi affinché lo stato dell'emulatore passi da «In attesa» a «Connesso».
+È dovuto a una verifica errata della sessione, che provoca un crash. Riavvia il gioco e l'emulatore.
 
 ## Ho ricevuto un errore VAL-102 e 5001. Cosa l'ha causato?
 
